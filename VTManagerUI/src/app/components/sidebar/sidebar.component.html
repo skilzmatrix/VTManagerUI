@@ -1,0 +1,104 @@
+<div class="w-[240px] h-screen md:block md:fixed bg-white z-10 hidden md:block  font-sans">
+  <div class="p-4">
+    <a [routerLink]="['/']" class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0">
+      <img src="assets/img/verstrade_logo_vertical@2x.png" class="h-[54px] w-[54px]" >
+    </a>
+
+    <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+      <li class="items-center ">
+        <a [routerLink]="['/dashboard']"
+           class="text-[14px]   py-3 font-medium text-[#00000061] hover:border border-[#009CB2] rounded block flex items-center"
+           routerLinkActive #adminDashboard="routerLinkActive"
+           [ngClass]="adminDashboard.isActive ? 'text-[#009CB2] bg-[#E0FFFF]' : ''">
+          <i class="fi fi-rr-apps h-[14px] px-2"></i>
+          Dashboard
+        </a>
+      </li>
+      <li class="items-center">
+        <a (click)="condition=true"
+          [routerLink]="['/orders']"
+          class="text-[14px] flex  py-3 font-medium text-[#00000061] hover:border border-[#009CB2] rounded items-center block"
+          routerLinkActive
+          #adminOrders="routerLinkActive"
+          [ngClass]="adminOrders.isActive ? '': ''">
+          <i class="fi fi-rr-box-alt h-[14px] px-2"></i>
+          Orders
+        </a>
+        <ul  class="list-disc list-inside" [ngClass]="adminOrders.isActive ? 'block':'hidden'">
+            <a
+              [routerLink]="['/orders/orders']"
+              class="text-[14px]   py-3 font-medium text-[#00000061] rounded block"
+              routerLinkActive
+              #adminOrdersOrders="routerLinkActive"
+              [ngClass]="adminOrdersOrders.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+              <li class="items-center px-2	">Orders</li>
+            </a>
+          <a
+            [routerLink]="['/orders/unconfirmed-orders']"
+            class="text-[14px]   py-3 font-medium text-[#00000061]  rounded block"
+            routerLinkActive
+            #adminOrdersUnconfirmedOrders="routerLinkActive"
+            [ngClass]="adminOrdersUnconfirmedOrders.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Unconfirmed Orders</li>
+          </a>
+          <a
+            [routerLink]="['/orders/deleted-orders']"
+            class="text-[14px]   py-3 font-medium text-[#00000061]  rounded block"
+            routerLinkActive
+            #adminOrdersDeletedOrders="routerLinkActive"
+            [ngClass]="adminOrdersDeletedOrders.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Deleted Orders</li>
+          </a>
+          <a
+            [routerLink]="['/orders/completed-orders']"
+            class="text-[14px]  py-3 font-medium text-[#00000061]  rounded block"
+            routerLinkActive
+            #adminOrdersCompletedOrders="routerLinkActive"
+            [ngClass]="adminOrdersCompletedOrders.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Completed Orders</li>
+          </a>
+          <a
+            [routerLink]="['/orders/deliveries-via-csv-files']"
+            class="text-[14px]  py-3 font-medium text-[#00000061]  rounded block"
+            routerLinkActive
+            #adminOrdersDeliveriesViaCsvFiles="routerLinkActive"
+            [ngClass]="adminOrdersDeliveriesViaCsvFiles.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Deliveries via .csv files</li>
+          </a>
+          <a
+            [routerLink]="['orders/colli-orders-tomorrow']"
+            class="text-[14px] py-3 font-medium text-[#00000061]  rounded block"
+            routerLinkActive
+            #adminOrdersColliOrdersTomorrow="routerLinkActive"
+            [ngClass]="adminOrdersColliOrdersTomorrow.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Colli Orders Tomorrow</li>
+          </a>
+          <a
+            [routerLink]="['/orders/supplier-overview']"
+            class="text-[14px] py-3 font-medium text-[#00000061]  rounded block"
+            routerLinkActive
+            #adminOrdersSupplierOverview="routerLinkActive"
+            [ngClass]="adminOrdersSupplierOverview.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Supplier Overview</li>
+          </a>
+          <a
+            [routerLink]="['/orders/order-list']"
+            class="text-[14px] py-3 font-medium text-[#00000061]  rounded block"
+            routerLinkActive
+            #adminOrdersOrderList="routerLinkActive"
+            [ngClass]="adminOrdersOrderList.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Order List</li>
+          </a>
+          <a
+            [routerLink]="['/orders/statistics']"
+            class="text-[14px] py-3 font-medium  rounded block"
+            routerLinkActive
+            #adminOrdersStatistics="routerLinkActive"
+            [ngClass]="adminOrdersStatistics.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Statistics</li>
+          </a>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
