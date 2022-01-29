@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout/admin-layout.component';
 import { DashboardComponent } from './views/admin/dashboard/dashboard.component';
-import { OrdersComponent } from './views/admin/orders/orders.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
@@ -21,6 +20,11 @@ import { ColliOrdersTomorrowComponent } from './views/admin/orders/colli-orders-
 import { SupplierOverviewComponent } from './views/admin/orders/supplier-overview/supplier-overview.component';
 import { OrderListComponent } from './views/admin/orders/order-list/order-list.component';
 import { StatisticsComponent } from './views/admin/orders/statistics/statistics.component';
+import {MatTableModule} from "@angular/material/table";
+import {OrdersComponent} from "./views/admin/orders/orders/orders.component";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -42,13 +46,17 @@ import { StatisticsComponent } from './views/admin/orders/statistics/statistics.
     OrderListComponent,
     StatisticsComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatSidenavModule,
-        MatExpansionModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatExpansionModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatButtonModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
