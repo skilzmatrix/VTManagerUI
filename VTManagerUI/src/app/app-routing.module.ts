@@ -18,6 +18,7 @@ import {UnconfirmedOrdersComponent} from "./views/admin/orders/unconfirmed-order
 import {
   DeliveriesViaCsvFilesComponent
 } from "./views/admin/orders/deliveries-via-csv-files/deliveries-via-csv-files.component";
+import {LoginComponent} from "./views/auth/login/login.component";
 const routes: Routes = [
   // admin views
   {
@@ -51,6 +52,7 @@ const routes: Routes = [
   //   ],
   // },
   // no layout views
+  { path: "login", component: LoginComponent },
 ];
 
 @NgModule({

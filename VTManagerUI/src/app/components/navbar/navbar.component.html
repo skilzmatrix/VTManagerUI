@@ -12,10 +12,25 @@
       <div>
         <i class="fi fi-rr-apps text-[24px] text-light-text"></i>
       </div>
-      <div class="flex space-x-1 my-auto	">
-        <img src="assets/img/cat.jpg" class="rounded-full h-[40px] w-[40px]" alt="vt">
-        <span class="translate-y-1/4 font-light	">Rod Modon <i class="fi fi-rr-caret-down text-dark-blue"></i></span>
-      </div>
+      <button mat-button [matMenuTriggerFor]="profileMenu">
+        <div class="flex space-x-1 justify-items-center	align-middle">
+          <img src="assets/img/cat.jpg" class="rounded-full my-auto h-[40px] w-[40px]" alt="vt">
+          <span class=" font-light	">Rod Modon <i class="fi fi-rr-caret-down text-dark-blue"></i></span>
+        </div>
+      </button>
+        <mat-menu #profileMenu="matMenu" xPosition="before">
+              <div class="justify-center flex flex-col mx-auto text-center w-[260px] object-center items-center	font-sans pt-4 overscroll-none">
+                <img  src="assets/img/cat.jpg" alt='vt' class="h-[70px] w-[70px] rounded-full">
+                <div class="py-3 text-[#26A6C3] text-[20px] font-sans">Rod Modan</div>
+                <div class=" text-[#E5E5E5] border-b w-full "></div>
+                <div class="text-[#00000061] py-2 font-light text-[14px] font-sans">Administrator, VersTrade</div>
+                <button mat-menu-item class="text-[#56CBE5] my-auto font-sans"><span class="fi fi-rr-user pl-2 pr-6 "></span>View Profile</button>
+                <button mat-menu-item class="text-[#56CBE5] my-auto font-sans"><span class="fi fi-rr-world pl-2 pr-6 "></span>Language Settings</button>
+                <button mat-menu-item class="text-[#56CBE5] my-auto font-sans"><span class="fi fi-rr-lock-alt pl-2 pr-6 "></span>Change Password</button>
+                <button mat-menu-item class="text-[#F4511E] my-auto font-sans"><span class="fi fi-rr-sign-out pl-2 pr-6 "></span>Sign Out</button>
+              </div>
+
+      </mat-menu>
     </div>
   </div>
 </div>

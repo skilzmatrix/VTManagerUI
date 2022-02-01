@@ -25,6 +25,13 @@ import {OrdersComponent} from "./views/admin/orders/orders/orders.component";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
+import { LoginComponent } from './views/auth/login/login.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -44,7 +51,8 @@ import {MatButtonModule} from "@angular/material/button";
     ColliOrdersTomorrowComponent,
     SupplierOverviewComponent,
     OrderListComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +63,14 @@ import {MatButtonModule} from "@angular/material/button";
     MatTableModule,
     MatCheckboxModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
