@@ -12,20 +12,19 @@ import {OrdersInterface} from "../../../../interfaces/orders";
 })
 export class OrdersComponent implements OnInit {
   orders: OrdersInterface[] | any;
-  headerExpand: any;
+  headerExpand: false | any;
   constructor(private ordersService:OrdersService) { }
 
   ngOnInit() {
     this.ordersService.getOrders().subscribe(data => {
       console.log(data);
       this.orders = data.orders;
-      this.headerExpand = {};
-      for (let i = 0; i < this.orders.length; i++) {
-        this.headerExpand[i] = false;
-      }
     });
 
   }
+headerRow(){
+    this.headerExpand = !this.headerExpand;
+}
 
 
 
