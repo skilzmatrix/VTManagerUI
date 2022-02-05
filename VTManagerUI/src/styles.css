@@ -33,3 +33,32 @@
   padding-left: 0px !important;
 }
 
+.mat-typography {
+  font-family: none !important;
+}
+.p-component{
+  font-family: Raleway !important;
+
+
+}
+_ngcontent-fkn-c127{
+  font-family: Raleway !important;
+  padding: 0px !important;
+}
+.p-datatable .p-datatable-tbody > tr > td {
+  font-family: Raleway !important;
+  padding: 0px !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  padding: 0px !important;
+}
+.p-multiselect .p-multiselect-label{
+  padding: 5px !important;
+}
+.p-inuttext{
+  padding: 0px !important;
+}
+.p-datatable .p-datatable-thead > tr > th {
+  background-color: #ffffff !important;
+}

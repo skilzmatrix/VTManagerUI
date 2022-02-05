@@ -32,7 +32,13 @@ import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
-
+import {InputTextModule} from "primeng/inputtext";
+import {PasswordModule} from "primeng/password";
+import {MultiSelectModule} from "primeng/multiselect";
+import {TableModule} from "primeng/table";
+import {RatingModule} from "primeng/rating";
+import {ButtonModule} from "primeng/button";
+import {RippleModule} from "primeng/ripple";
 
 @NgModule({
   declarations: [
@@ -71,6 +77,13 @@ import {MatCardModule} from "@angular/material/card";
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
+    InputTextModule,
+    PasswordModule,
+    MultiSelectModule,
+    TableModule,
+    RatingModule,
+    ButtonModule,
+    RippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
