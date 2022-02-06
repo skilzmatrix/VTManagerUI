@@ -32,13 +32,10 @@ import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
-import {InputTextModule} from "primeng/inputtext";
-import {PasswordModule} from "primeng/password";
-import {MultiSelectModule} from "primeng/multiselect";
-import {TableModule} from "primeng/table";
-import {RatingModule} from "primeng/rating";
-import {ButtonModule} from "primeng/button";
-import {RippleModule} from "primeng/ripple";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatSelectModule} from "@angular/material/select";
+import {StylePaginatorDirective} from "./shared/style-paginator.directive";
+
 
 @NgModule({
   declarations: [
@@ -58,33 +55,29 @@ import {RippleModule} from "primeng/ripple";
     SupplierOverviewComponent,
     OrderListComponent,
     StatisticsComponent,
+    StylePaginatorDirective,
     LoginComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatExpansionModule,
-    MatTableModule,
-    MatCheckboxModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatCardModule,
-    InputTextModule,
-    PasswordModule,
-    MultiSelectModule,
-    TableModule,
-    RatingModule,
-    ButtonModule,
-    RippleModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatExpansionModule,
+        MatTableModule,
+        MatCheckboxModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatCardModule,
+        MatPaginatorModule,
+        MatSelectModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -33,32 +33,33 @@
   padding-left: 0px !important;
 }
 
-.mat-typography {
-  font-family: none !important;
+.mat-paginator-container {
+  ;
+  justify-content: space-between !important;
+  }
+.mat-paginator-page-size-label{
+  display: none;
 }
-.p-component{
-  font-family: Raleway !important;
+.mat-form-field-underline{
+  display: none !important;
+}
+.mat-form-field{
+  border:2px solid #EFEFEF !important;
+}
+.mat-form-field-wrapper {
+  padding-bottom: 0px !important;
 
-
+  padding-left: 5px;
+  padding-right: 5px;
 }
-_ngcontent-fkn-c127{
-  font-family: Raleway !important;
-  padding: 0px !important;
-}
-.p-datatable .p-datatable-tbody > tr > td {
-  font-family: Raleway !important;
-  padding: 0px !important;
+.mat-paginator-range-actions{
+  justify-content: flex-end;
 }
 
-.p-datatable .p-datatable-thead > tr > th {
-  padding: 0px !important;
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+border-bottom: none !important;
+
 }
-.p-multiselect .p-multiselect-label{
-  padding: 5px !important;
-}
-.p-inuttext{
-  padding: 0px !important;
-}
-.p-datatable .p-datatable-thead > tr > th {
-  background-color: #ffffff !important;
+.td{
+  width: auto !important;
 }
