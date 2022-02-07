@@ -63,3 +63,14 @@ border-bottom: none !important;
 .td{
   width: auto !important;
 }
+
+.mat-form-field.mat-form-field.mat-primary.mat-form-field-type-mat-select.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-has-label.mat-form-field-hide-placeholder.mat-form-field-should-float{
+  border-radius: 5px !important;
+  height: 43px;
+}
+.mat-select-min-line{
+  color:#56CBE5 !important;
+}
+span.mat-option-text {
+  color: #00000099 !important;
+}

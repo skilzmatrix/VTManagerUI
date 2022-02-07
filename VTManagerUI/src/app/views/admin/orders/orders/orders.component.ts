@@ -79,6 +79,7 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
   }
 
   /** Selects all rows if they are not all selected; otherwise clear selection. */
+  selectedOptions: any;
 
 
   /** The label for the checkbox on the passed row */

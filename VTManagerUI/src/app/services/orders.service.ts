@@ -12,6 +12,9 @@ export class OrdersService {
   getOrders():Observable<OrderList>{
     return this.http.get<OrderList>('/assets/orders.json');
   }
+  deleteOrderById(no: number): Observable<OrderList> {
+    return this.http.delete<OrderList>('/assets/orders.json');
+  }
 
   // getOrders() {
   //   return this.http.get<OrderList>('/assets/orders.json');

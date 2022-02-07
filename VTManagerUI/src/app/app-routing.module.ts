@@ -19,6 +19,7 @@ import {
   DeliveriesViaCsvFilesComponent
 } from "./views/admin/orders/deliveries-via-csv-files/deliveries-via-csv-files.component";
 import {LoginComponent} from "./views/auth/login/login.component";
+import {OrderDeatailsComponent} from "./views/admin/orders/orders/order-deatails/order-deatails.component";
 const routes: Routes = [
   // admin views
   {
@@ -32,10 +33,10 @@ const routes: Routes = [
       { path: "orders/completed-orders", component: CompletedOrdersComponent},
       { path: "orders/order-list", component: OrderListComponent},
       { path: "orders/deliveries-via-csv-files", component: DeliveriesViaCsvFilesComponent},
-
       { path: "orders/statistics", component: StatisticsComponent},
       { path: "orders/supplier-overview", component: SupplierOverviewComponent},
       { path: "orders/unconfirmed-orders", component: UnconfirmedOrdersComponent},
+      { path: "orders/orders/:no", component: OrderDeatailsComponent},
       { path: "orders", redirectTo: "orders/orders", pathMatch: "full" },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],

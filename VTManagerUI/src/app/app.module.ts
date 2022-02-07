@@ -35,6 +35,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSelectModule} from "@angular/material/select";
 import {StylePaginatorDirective} from "./shared/style-paginator.directive";
+import {MultiSelectModule} from "primeng/multiselect";
+import { OrderDeatailsComponent } from './views/admin/orders/orders/order-deatails/order-deatails.component';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import {StylePaginatorDirective} from "./shared/style-paginator.directive";
     OrderListComponent,
     StatisticsComponent,
     StylePaginatorDirective,
-    LoginComponent
+    LoginComponent,
+    OrderDeatailsComponent,
+    OrderDeatailsComponent
   ],
     imports: [
         BrowserModule,
@@ -77,6 +81,7 @@ import {StylePaginatorDirective} from "./shared/style-paginator.directive";
         MatCardModule,
         MatPaginatorModule,
         MatSelectModule,
+        MultiSelectModule,
     ],
   providers: [],
   bootstrap: [AppComponent]
