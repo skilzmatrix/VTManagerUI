@@ -1,0 +1,237 @@
+<section class="bg-[#F7F7F7] text-gray md:pl-[240px] md:pt-[80px] font-sans min-h-screen w-full mx-auto ">
+  <div class="p-4">
+    <div class="flex justify-between">
+      <div>
+        <div class="text-[20px] text-head-text font-bold">
+          Products
+        </div>
+        <div>
+          Home - <span class="font-semibold text-dark-text">Products</span>
+        </div>
+      </div>
+      <div class="flex space-x-2">
+        <button [matMenuTriggerFor]="actions" class="text-light-blue border border-border-gray rounded px-3 h-[36px] text-[14px] items-center bg-white">
+          Action<i class="fi fi-rr-caret-down text-dark-text align-middle pl-2"></i>
+        </button>
+        <mat-menu #actions="matMenu" xPosition="before">
+          <button mat-menu-item class="text-[#FF0000] "><i class="fi fi-rr-trash  align-middle px-2"></i>Delete</button>
+        </mat-menu>
+        <button class="text-white bg-light-blue rounded px-3 h-[36px] text-[14px] "><i class="fi fi-rr-plus font-bold  align-middle pr-1"></i>New Product</button>
+      </div>
+    </div>
+    <div class="bg-white mt-[24px]">
+      <div class="px-8 pt-8 flex justify-between">
+        <div class="flex space-x-10">
+          <div class=" flex rounded w-[362px] h-[36px] bg-dark-gray">
+            <i class="fi fi-rr-search bg-dark-gray p-2 my-auto rounded"></i>
+            <input (keyup)="applyFilter($event)" placeholder="Search Products" class=" outline-0 rounded bg-dark-gray w-full">
+          </div >
+          <button (click)=headFill() [ngClass]="exHeadFill ? 'bg-dark-blue rounded-full text-white w-[36px] h-[36px]' : 'bg-none text-dark-blue w-[36px] h-[36px]'">
+            <i class="fi fi-rr-filter text-lg  "></i>
+          </button>
+        </div>
+        <div>
+          <mat-form-field >
+            <mat-select multiple [(ngModel)]="columnsToDisplay"   placeholder='Columns'>
+              <mat-option *ngFor="let col of availableColumns" [value]="col" class="text-primary-blue">{{col}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="px-4">
+        <table mat-table
+               [dataSource]="listOfProduct"
+               multiTemplateDataRows
+               class="px-4 overflow-auto">
+
+          <ng-container matColumnDef="select" >
+            <th mat-header-cell *matHeaderCellDef>
+              <div class="flex-col items-center">
+                <mat-checkbox
+                  (change)="$event ? masterToggle() : null"
+                  [checked]="selection.hasValue() && isAllSelected()"
+                  [indeterminate]="selection.hasValue() && !isAllSelected()"
+                  [aria-label]="checkboxLabel()" class="h-[46px] pt-[20px] px-2">
+                </mat-checkbox>
+                <div *ngIf="exHeadFill">
+                  <div class=" border-t h-[46px]" >
+                  </div>
+                </div>
+              </div>
+
+            </th>
+            <td mat-cell *matCellDef="let row" >
+              <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="$event ? selection.toggle(row) : null"
+                            [checked]="selection.isSelected(row)"
+                            [aria-label]="checkboxLabel(row)">
+              </mat-checkbox>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+              <div class="flex-col items-center">
+                <div class="h-[46px] pt-[20px] px-2">IMAGE</div>
+                <div *ngIf="exHeadFill">
+                  <div class=" border-t h-[46px]" >
+                  </div>
+                </div>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans font-bold">
+              <img class="rounded-full h-[36px] w-[36px]" src='https://picsum.photos/seed/{{math}}/400/400'>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+              <div class="flex-col items-center">
+                <div class="h-[46px] pt-[20px] px-2">NAME</div>
+                <div *ngIf="exHeadFill">
+                  <div class=" border-t h-[46px]" >
+                    <input (keyup)="applyFilter($event)"  placeholder="NAME" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[50px] mx-2">
+                  </div>
+                </div>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans "> {{element.name}} </td>
+          </ng-container>
+
+         <ng-container matColumnDef="product_type" >
+              <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                <div class="flex-col items-center">
+                  <div class="h-[46px] pt-[20px] px-2">PRODUCT TYPE</div>
+                  <div *ngIf="exHeadFill">
+                    <div class=" border-t h-[46px]" >
+                      <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2"></select>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.product_type}} </td>
+            </ng-container>
+
+          <ng-container matColumnDef="categories" >
+              <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                <div class="flex-col items-center">
+                  <div class="h-[46px] pt-[20px] px-2">CATEGORIES</div>
+                  <div *ngIf="exHeadFill">
+                    <div class=" border-t h-[46px]" >
+                      <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2"></select>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.categories}} </td>
+            </ng-container>
+
+          <ng-container matColumnDef="supplier">
+            <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+              <div class="flex-col items-center">
+                <div class="h-[46px] pt-[20px] px-2">SUPPLIER</div>
+                <div *ngIf="exHeadFill">
+                  <div class=" border-t h-[46px]" >
+                    <input (keyup)="applyFilter($event)"  placeholder="Supplier" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[80px] mx-2">
+                  </div>
+                </div>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.supplier}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="stock">
+            <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+              <div class="flex-col items-center">
+                <div class="h-[46px] pt-[20px] px-2">STOCK</div>
+                <div *ngIf="exHeadFill">
+                  <div class=" border-t h-[46px] w-[130px]  flex" >
+                    <input  (keyup)="applyFilter($event)"  placeholder="Stock" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[50px] ml-2 ">
+                  </div>
+                </div>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.stock}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="btw">
+            <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+              <div class="flex-col items-center">
+                <div class="h-[46px] pt-[20px] px-2">BTW</div>
+                <div *ngIf="exHeadFill">
+                  <div class=" border-t h-[46px] w-[140px]  flex" >
+                    <input  (keyup)="applyFilter($event)"  placeholder="BTW" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[50px] ml-2 ">
+                  </div>
+                </div>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.btw}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+              <div class="flex-col items-center">
+                <div class="h-[46px] pt-[20px] px-2">STATUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div *ngIf="exHeadFill">
+                  <div class=" border-t h-[46px]" >
+                    <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2"></select>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element" class="px-2 text-[11px] text-dark-text font-sans " ><div class="bg-[#4C9ED1] rounded-full text-center text-white"> {{element.status}} </div></td>
+          </ng-container>
+
+          <ng-container matColumnDef="kind">
+            <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+              <div class="flex-col items-center">
+                <div class="h-[46px] pt-[20px] px-2">KIND</div>
+                <div *ngIf="exHeadFill">
+                  <div class=" border-t h-[46px] w-[140px]  flex" >
+                    <input  (keyup)="applyFilter($event)"  placeholder="Kind" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[105px] ml-2 ">
+                    <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r h-[40px] mt-[3px] pt-[12px] w-[20px] mr-2">
+                      <i class="fi fi-rr-calendar "></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.kind}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="actions" >
+            <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+              <div class="flex-col items-center">
+                <div class="h-[46px] pt-[20px] px-2">ACTIONS</div>
+                <div *ngIf="exHeadFill">
+                  <div class=" border-t h-[46px]" >
+                  </div>
+                </div>
+              </div>
+            </th>
+            <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans">
+              <div class=" px-2 mt-4 text-[14px] text-dark-text font-sans flex justify-center ">
+                <i routerLink={{element.id}} class="fi fi-rr-pencil text-primary-blue"></i>
+                <i class="fi fi-rr-copy text-primary-blue"></i>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row  *matHeaderRowDef="[ 'select'].concat(columnsToDisplay).concat(['actions'])" class=" border-b-2 border-[#EFEFEF]"></tr>
+          <tr mat-row *matRowDef="let element; columns: [ 'select'].concat(columnsToDisplay).concat(['actions']);"
+              [class.example-expanded-row]="expandedElement === element"
+              class="example-element-row border-b-2 border-[#EFEFEF] "></tr>
+
+        </table>
+        <mat-paginator style-paginator
+                       [pageSizeOptions]="[10, 20,50]"
+                       [pageSize]="10"
+                       [length]="listOfProduct.data.length"
+                       [showTotalPages]="5 ">
+          ></mat-paginator >
+
+      </div>
+    </div>
+  </div>
+</section>

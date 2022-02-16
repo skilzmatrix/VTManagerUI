@@ -16,26 +16,26 @@
       </li>
       <li class="items-center">
         <a (click)="condition=true"
-          [routerLink]="['/orders']"
-          class="text-[14px] flex  py-3 font-medium text-[#00000061] hover:border border-[#009CB2] rounded items-center block"
-          routerLinkActive
-          #adminOrders="routerLinkActive"
-          [ngClass]="adminOrders.isActive ? '': ''">
+           [routerLink]="['/orders']"
+           class="text-[14px] flex  py-3 font-medium text-[#00000061] hover:border border-[#009CB2] rounded items-center block"
+           routerLinkActive
+           #adminOrders="routerLinkActive"
+           [ngClass]="adminOrders.isActive ? '': ''">
           <i class="fi fi-rr-box-alt h-[14px] px-2"></i>
           Orders
         </a>
         <ul  class="list-disc list-inside" [ngClass]="adminOrders.isActive ? 'block':'hidden'">
-            <a
-              [routerLink]="['/orders/orders']"
-              class="text-[14px]   py-3 font-medium text-[#00000061] rounded block"
-              routerLinkActive
-              #adminOrdersOrders="routerLinkActive"
-              [ngClass]="adminOrdersOrders.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
-              <li class="items-center px-2	">Orders</li>
-            </a>
+          <a
+            [routerLink]="['/orders/orders']"
+            class="text-[14px]   py-3 font-medium rounded block"
+            routerLinkActive
+            #adminOrdersOrders="routerLinkActive"
+            [ngClass]="adminOrdersOrders.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Orders</li>
+          </a>
           <a
             [routerLink]="['/orders/unconfirmed-orders']"
-            class="text-[14px]   py-3 font-medium text-[#00000061]  rounded block"
+            class="text-[14px]   py-3 font-medium   rounded block"
             routerLinkActive
             #adminOrdersUnconfirmedOrders="routerLinkActive"
             [ngClass]="adminOrdersUnconfirmedOrders.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
@@ -43,7 +43,7 @@
           </a>
           <a
             [routerLink]="['/orders/deleted-orders']"
-            class="text-[14px]   py-3 font-medium text-[#00000061]  rounded block"
+            class="text-[14px]   py-3 font-medium   rounded block"
             routerLinkActive
             #adminOrdersDeletedOrders="routerLinkActive"
             [ngClass]="adminOrdersDeletedOrders.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
@@ -51,7 +51,7 @@
           </a>
           <a
             [routerLink]="['/orders/completed-orders']"
-            class="text-[14px]  py-3 font-medium text-[#00000061]  rounded block"
+            class="text-[14px]  py-3 font-medium  rounded block"
             routerLinkActive
             #adminOrdersCompletedOrders="routerLinkActive"
             [ngClass]="adminOrdersCompletedOrders.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
@@ -59,7 +59,7 @@
           </a>
           <a
             [routerLink]="['/orders/deliveries-via-csv-files']"
-            class="text-[14px]  py-3 font-medium text-[#00000061]  rounded block"
+            class="text-[14px]  py-3 font-medium   rounded block"
             routerLinkActive
             #adminOrdersDeliveriesViaCsvFiles="routerLinkActive"
             [ngClass]="adminOrdersDeliveriesViaCsvFiles.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
@@ -67,7 +67,7 @@
           </a>
           <a
             [routerLink]="['orders/colli-orders-tomorrow']"
-            class="text-[14px] py-3 font-medium text-[#00000061]  rounded block"
+            class="text-[14px] py-3 font-medium  rounded block"
             routerLinkActive
             #adminOrdersColliOrdersTomorrow="routerLinkActive"
             [ngClass]="adminOrdersColliOrdersTomorrow.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
@@ -75,7 +75,7 @@
           </a>
           <a
             [routerLink]="['/orders/supplier-overview']"
-            class="text-[14px] py-3 font-medium text-[#00000061]  rounded block"
+            class="text-[14px] py-3 font-medium  rounded block"
             routerLinkActive
             #adminOrdersSupplierOverview="routerLinkActive"
             [ngClass]="adminOrdersSupplierOverview.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
@@ -83,7 +83,7 @@
           </a>
           <a
             [routerLink]="['/orders/order-list']"
-            class="text-[14px] py-3 font-medium text-[#00000061]  rounded block"
+            class="text-[14px] py-3 font-medium   rounded block"
             routerLinkActive
             #adminOrdersOrderList="routerLinkActive"
             [ngClass]="adminOrdersOrderList.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
@@ -99,6 +99,101 @@
           </a>
         </ul>
       </li>
+
+      <li class="items-center">
+        <a (click)="condition=true"
+           [routerLink]="['/catalog']"
+           class="text-[14px] flex  py-3 font-medium text-[#00000061] hover:border border-[#009CB2] rounded items-center block"
+           routerLinkActive
+           #adminCatalog="routerLinkActive"
+           [ngClass]="adminCatalog.isActive ? '': ''">
+          <i class="fi fi-rr-resources h-[14px] px-2"></i>
+          Catalog
+        </a>
+        <ul  class="list-disc list-inside" [ngClass]="adminCatalog.isActive ? 'block':'hidden'">
+          <a
+            [routerLink]="['/catalog/products']"
+            class="text-[14px]   py-3 font-medium  rounded block"
+            routerLinkActive
+            #adminCatalogProducts="routerLinkActive"
+            [ngClass]="adminCatalogProducts.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Products</li>
+          </a>
+          <a
+            [routerLink]="['/catalog/removed-products']"
+            class="text-[14px]   py-3 font-medium   rounded block"
+            routerLinkActive
+            #adminCatalogRemovedProducts="routerLinkActive"
+            [ngClass]="adminCatalogRemovedProducts.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Removed Products</li>
+          </a>
+          <a
+            [routerLink]="['/catalog/customer-specific-products']"
+            class="text-[14px]   py-3 font-medium   rounded block"
+            routerLinkActive
+            #adminCatalogCustomerSpecificProducts="routerLinkActive"
+            [ngClass]="adminCatalogCustomerSpecificProducts.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Customer Specific Products</li>
+          </a>
+          <a
+            [routerLink]="['/catalog/franchise-specific-products']"
+            class="text-[14px]  py-3 font-medium  rounded block"
+            routerLinkActive
+            #adminCatalogFranchiseSpecificProducts="routerLinkActive"
+            [ngClass]="adminCatalogFranchiseSpecificProducts.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Franchise Specific Products</li>
+          </a>
+          <a
+            [routerLink]="['/catalog/product-invitations-franchise']"
+            class="text-[14px]  py-3 font-medium   rounded block"
+            routerLinkActive
+            #adminCatalogProductInvitationsFranchise="routerLinkActive"
+            [ngClass]="adminCatalogProductInvitationsFranchise.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Product Invitations (Franchise)</li>
+          </a>
+          <a
+            [routerLink]="['catalog/categories']"
+            class="text-[14px] py-3 font-medium   rounded block"
+            routerLinkActive
+            #adminCatalogCategories="routerLinkActive"
+            [ngClass]="adminCatalogCategories.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Categories</li>
+          </a>
+          <a
+            [routerLink]="['/catalog/product-types']"
+            class="text-[14px] py-3 font-medium   rounded block"
+            routerLinkActive
+            #adminCatalogProductTypes="routerLinkActive"
+            [ngClass]="adminCatalogProductTypes.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Product Types</li>
+          </a>
+          <a
+            [routerLink]="['/catalog/offers']"
+            class="text-[14px] py-3 font-medium  rounded block"
+            routerLinkActive
+            #adminCatalogOffers="routerLinkActive"
+            [ngClass]="adminCatalogOffers.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Offers</li>
+          </a>
+          <a
+            [routerLink]="['/catalog/price-margins-franchise']"
+            class="text-[14px] py-3 font-medium  rounded block"
+            routerLinkActive
+            #adminCatalogPriceMarginsFranchise="routerLinkActive"
+            [ngClass]="adminCatalogPriceMarginsFranchise.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Price Margins (Franchise)</li>
+          </a>
+          <a
+            [routerLink]="['/catalog/wish-list']"
+            class="text-[14px] py-3 font-medium  rounded block"
+            routerLinkActive
+            #adminCatalogWishList="routerLinkActive"
+            [ngClass]="adminCatalogWishList.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
+            <li class="items-center px-2	">Wish list</li>
+          </a>
+        </ul>
+      </li>
+
     </ul>
   </div>
 </div>

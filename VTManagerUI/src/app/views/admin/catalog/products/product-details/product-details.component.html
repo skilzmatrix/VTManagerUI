@@ -1,0 +1,1207 @@
+<section class="bg-[#F7F7F7] text-gray md:pl-[240px] md:pt-[80px] font-sans min-h-screen w-full mx-auto ">
+  <div class="p-4">
+    <div class="flex justify-between">
+      <div>
+        <div class="text-[20px] text-head-text font-bold">
+          Products
+        </div>
+        <div>
+          Home - Products -<span class="font-semibold text-dark-text">&nbsp;Product Details </span>
+        </div>
+      </div>
+      <div class="flex space-x-2">
+          <button  class="text-white bg-[#FF0000] w-[100px] rounded-md"><i class="fi fi-rr-trash  align-middle pr-2"></i>Delete</button>
+      </div>
+    </div>
+  </div>
+  the id is : {{id}}
+  <div class="h-[168px] bg-white rounded-md m-4 ">
+    <div class="flex flex-row p-6">
+      <img src="./assets/img/cat.jpg" class="  w-[120px] h-[120px] rounded-2xl ">
+      <div class="pl-6">
+        <div class="flex py-4">
+          <p class="text-[#00000099] font-bold text-[24px]">Rund ribeye geportioneerd 5x200gram</p>
+          <select class="text-[#56CBE5] border border-[#0000001F] rounded-md  ml-6 -mt-1 px-4">
+            <option>English</option>
+            <option>Dutch</option>
+            <option>French</option>
+          </select>
+        </div>
+        <p class="text-[#00000099] text-[14px]">de Zeeuw’s Meat and Meat Products BV</p>
+        <p class="text-[16px]  text-black"><span class="fi-rr-resources text-primary-blue pr-2"></span>Around</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="bg-white rounded-md m-4 ">
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          BASIC DETAILS
+        </ng-template>
+        <div class="p-4 flex flex-col space-y-4" >
+          <p>Product Info</p>
+          <div class="flex space-x-6">
+            <div class="w-[150px] h-[150px] relative">
+              <img src="./assets/img/cat.jpg" class="rounded-2xl relative w-[150px] h-[150px]">
+
+              <span class="absolute  bg-black/20 w-full h-[36px] bottom-0 absolute rounded-b-2xl flex justify-center items-center ">
+                COVER
+              </span>
+              <span class="fi fi-rr-menu-dots right-1 bg-black/20 w-[36px] h-[36px] top-1 absolute flex justify-center items-center rounded-full"></span>
+            </div>
+            <div class="w-[150px] h-[150px] relative">
+              <img src="./assets/img/cat.jpg" class="rounded-2xl  w-[150px] h-[150px]">
+              <button [matMenuTriggerFor]="imgTroggle" class="absolute bg-black/20 w-[36px] h-[36px] right-1  top-1 flex justify-center items-center rounded-full">
+                <span class="fi fi-rr-menu-dots ">
+                  <mat-menu #imgTroggle="matMenu" class="absolute -left-20">
+                    <button mat-menu-item>Make Cover</button>
+                    <button mat-menu-item class="text-red-500">Delete Image</button>
+                  </mat-menu>
+                </span>
+              </button>
+            </div>
+            <label class="bg-[#F7F7F7] flex w-[150px] h-[150px] rounded justify-center items-center border border-dashed	">
+
+              <div class="h-[36px] w-[36px] bg-white rounded-full flex justify-center items-center">
+                <i class=" fi fi-rr-add pt-1"></i>
+              </div>
+              <input type="file" class=" hidden">
+            </label>
+          </div>
+          <div class="space-y-[30px] pt-[30px]">
+            <div class="flex space-x-[10px]">
+              <div class="w-[810px]">
+                <span class="p-float-label w-[810px]">
+                <input type="text" pInputText [(ngModel)]="value1" class="w-[810px] border-red-400">
+              <label> Product Name </label>
+              </span>
+              </div>
+              <p-dropdown [options]="langTitle" [(ngModel)]="selectedlangTitle" ></p-dropdown>
+            </div>
+            <div class="flex space-x-[10px]">
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px] "></p-dropdown>
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px]"></p-dropdown>
+            </div>
+            <div class="flex space-x-[10px]">
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px] "></p-dropdown>
+              <p-checkbox name="groupname" value="val1" [(ngModel)]="selectedValues"></p-checkbox>
+            </div>
+            <div class="flex space-x-[10px]">
+              <div class="w-[400px] ">
+                <span class="p-float-label">
+                  <input type="text" pInputText [(ngModel)]="value1" >
+                  <label >InputText</label>
+                </span>
+                </div>
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px] "></p-dropdown>
+            </div>
+            <p>Product Pricing</p>
+            <div class="flex space-x-[10px]">
+              <div class="w-[400px] ">
+                <span class="p-float-label">
+                    <input type="text"  pInputText [(ngModel)]="value1">
+                    <label >InputText</label>
+                </span>
+              </div>
+              <div class="w-[195px] ">
+                <span class="p-float-label">
+                  <input type="text" pInputText [(ngModel)]="value1" >
+                  <label >InputText</label>
+              </span>
+              </div>
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[195px] "></p-dropdown>
+            </div>
+            <p>Product Details</p>
+            <div class="flex space-x-[10px]">
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px] "></p-dropdown>
+              <div class="w-[400px]">
+                 <span class="p-float-label">
+                  <input type="text" id="inputtext" pInputText [(ngModel)]="value1" >
+                  <label for="inputtext">InputText</label>
+                </span>
+              </div>
+            </div>
+            <div class="flex space-x-[10px]">
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px] "></p-dropdown>
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px] "></p-dropdown>
+            </div>
+            <div class="flex space-x-[10px]">
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px] "></p-dropdown>
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px] "></p-dropdown>
+            </div>
+            <div class="flex space-x-[10px]">
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px] "></p-dropdown>
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px] "></p-dropdown>
+            </div>
+            <div class="flex space-x-[10px]">
+            </div>
+            <div class="flex space-x-[10px]">
+            <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px] "></p-dropdown>
+            <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[400px] "></p-dropdown>
+          </div>
+            <div class="w-[810px] " ><p-multiSelect [options]="cities" [(ngModel)]="selectedCities" defaultLabel="Select a City" optionLabel="name" display="chip" ></p-multiSelect></div>
+            <div class="w-[810px] "><p-chips [(ngModel)]="values2" separator=","  ></p-chips></div>
+            <div class="flex space-x-[10px]">
+              <div class="w-[810px] "> <p-editor [(ngModel)]="text2" [style]="{'height':'180px'}"></p-editor></div>
+              <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" class="w-[80px] "></p-dropdown>
+            </div>
+          </div>
+          <hr class="text-[#00000029]">
+          <div class="flex justify-end space-x-[10px]">
+            <button  type="button" class="h-[36px] w-[78px] text-[#FBC02D] rounded border">Cancel</button>
+            <button  type="button" class="h-[36px] w-[64px] text-white rounded bg-[#56CAE5]">Save</button>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <i class="fi fi-rr-shopping-cart"></i>
+          &nbsp;Orders &nbsp;<span class="bg-[#F57F17] rounded-full h-[20px] w-[39px]">15</span>
+        </ng-template>
+        <div>
+          <div class="bg-white mt-[24px]">
+            <div class="px-8 pt-8 flex justify-between">
+              <div class="flex space-x-10">
+                <div class=" flex rounded w-[362px] h-[36px] bg-dark-gray">
+                  <i class="fi fi-rr-search bg-dark-gray p-2 my-auto rounded"></i>
+                  <input (keyup)="applyFilter($event)" placeholder="Search Orders" class=" outline-0 rounded bg-dark-gray w-full">
+                </div >
+                <button (click)=headFill() [ngClass]="exHeadFill ? 'bg-dark-blue rounded-full text-white w-[36px] h-[36px]' : 'bg-none text-dark-blue w-[36px] h-[36px]'">
+                  <i class="fi fi-rr-filter text-lg  "></i>
+                </button>
+              </div>
+              <div>
+                <mat-form-field >
+                  <mat-select multiple [(ngModel)]="columnsToDisplay"   placeholder='Columns'>
+                    <mat-option *ngFor="let col of availableColumns" [value]="col" class="text-primary-blue">{{col}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="px-4">
+              <table mat-table
+                     [dataSource]="listOfOrder"
+                     multiTemplateDataRows
+                     class="px-4">
+                <ng-container matColumnDef="extend" >
+                  <th mat-header-cell *matHeaderCellDef>`
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2"></div>
+                      <div class=" h-[46px]" >
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" (click)="expandedElement = expandedElement === element ? null : element">
+                    <i class="fi fi-rr-angle-right align-middle"></i>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="select" >
+                  <th mat-header-cell *matHeaderCellDef>
+                    <div class="flex-col items-center">
+                      <mat-checkbox
+                        (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()"
+                        [aria-label]="checkboxLabel()" class="h-[46px] pt-[20px] px-2">
+                      </mat-checkbox>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                        </div>
+                      </div>
+                    </div>
+
+                  </th>
+                  <td mat-cell *matCellDef="let row" >
+                    <mat-checkbox (click)="$event.stopPropagation()"
+                                  (change)="$event ? selection.toggle(row) : null"
+                                  [checked]="selection.isSelected(row)"
+                                  [aria-label]="checkboxLabel(row)">
+                    </mat-checkbox>
+                  </td>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container matColumnDef="no">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">NUMBER</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Number" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[70px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans font-bold"> {{element.no}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="customer">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">CUSTOMER</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Customer" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans "> {{element.customer}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="business" >
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">BUSINESS</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Business" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.business}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="postcode">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">POSTCODE</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Postcode" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[80px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.postcode}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="order_date">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">ORDER&nbsp;DATE</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px] w-[130px]  flex" >
+                          <input  (keyup)="applyFilter($event)"  placeholder="Order Date" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[90px] ml-2 ">
+                          <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r h-[40px] mt-[3px] pt-[12px] w-[20px] mr-2">
+                            <i class="fi fi-rr-calendar "></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.order_date}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="date_of_delivery">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">DATE&nbsp;OF&nbsp;DELIVERY</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px] w-[140px]  flex" >
+                          <input  (keyup)="applyFilter($event)"  placeholder="Delivery Date" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[105px] ml-2 ">
+                          <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r h-[40px] mt-[3px] pt-[12px] w-[20px] mr-2">
+                            <i class="fi fi-rr-calendar "></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.date_of_delivery}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="delivery">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">DELIVERY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2"></select>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[11px] text-dark-text font-sans " ><div class="bg-[#4C9ED1] rounded-full text-center text-white"> {{element.delivery}} </div></td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions" >
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">ACTIONS</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans">
+                    <div class="flex space-x-2 px-2 text-center">
+                      <i class="fi fi-rr-pencil text-primary-blue"></i>
+                      <i class="fi fi-rr-cloud-download text-primary-blue"></i>
+                      <i class="fi fi-rr-trash text-[#FF0000]"></i>
+                    </div>
+                  </td>
+                </ng-container>
+                <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+                <ng-container matColumnDef="expandedDetail">
+                  <td mat-cell *matCellDef="let element" colspan="12" >
+                    <div class="example-element-detail"
+                         [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                      <div class="bg-[#F7F7F7] w-full grid grid-cols-6 font-sans">
+                        <div class="col-span-1 p-4">
+                          <div class="space-y-4">
+                            <div class="">
+                              <div class="text-[12px] text-[#00000061] font-sans">Venue</div>
+                              <div class="text-[16px] text-dark-text font-sans">Amsterdam</div>
+                            </div>
+                            <div class="">
+                              <div class="text-[12px] text-[#00000061] font-sans">Discount</div>
+                              <div class="text-[16px] text-dark-text font-sans">€0.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="space-y-4">
+                            <div class="row-span-1">
+                              <div class="text-[12px] text-[#00000061]">Billing</div>
+                              <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-[#F57F17]">Billable</span></div>
+                            </div>
+                            <div class="row-span-1">
+                              <div class="text-[12px] text-[#00000061]">Invoice</div>
+                              <div class="text-[16px]  text-primary-blue">25071</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061]">Payment</div>
+                          <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-primary-blue">Paid</span></div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Price</div>
+                          <div class="text-[16px] text-dark-text font-sans">€663.34</div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Transport</div>
+                          <div class="text-[16px] text-dark-text font-sans">€0.00</div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061]">Packing slip</div>
+                          <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-[#F57F17]">issues</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row  *matHeaderRowDef="['extend', 'select','no'].concat(columnsToDisplay).concat(['actions'])" class=" border-b-2 border-[#EFEFEF]"></tr>
+
+                <tr mat-row *matRowDef="let element; columns: ['extend', 'select','no'].concat(columnsToDisplay).concat(['actions']);"
+                    [class.example-expanded-row]="expandedElement === element"
+                    class="example-element-row border-b-2 border-[#EFEFEF] "></tr>
+                <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row" ></tr>
+              </table>
+              <mat-paginator style-paginator
+                             [pageSizeOptions]="[10, 20,50]"
+                             [pageSize]="10"
+                             [length]="listOfOrder.data.length"
+                             [showTotalPages]="5 ">
+                ></mat-paginator >
+
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <i class="fi fi-rr-earnings"></i>
+          &nbsp; MARGINS
+        </ng-template>
+        <div>
+          <div class="bg-white mt-[24px]">
+            <div class="px-8 pt-8 flex justify-between">
+              <div class="flex space-x-10">
+                <div class=" flex rounded w-[362px] h-[36px] bg-dark-gray">
+                  <i class="fi fi-rr-search bg-dark-gray p-2 my-auto rounded"></i>
+                  <input (keyup)="applyFilter($event)" placeholder="Search Orders" class=" outline-0 rounded bg-dark-gray w-full">
+                </div >
+                <button (click)=headFill() [ngClass]="exHeadFill ? 'bg-dark-blue rounded-full text-white w-[36px] h-[36px]' : 'bg-none text-dark-blue w-[36px] h-[36px]'">
+                  <i class="fi fi-rr-filter text-lg  "></i>
+                </button>
+              </div>
+              <div>
+                <mat-form-field >
+                  <mat-select multiple [(ngModel)]="columnsToDisplay"   placeholder='Columns'>
+                    <mat-option *ngFor="let col of availableColumns" [value]="col" class="text-primary-blue">{{col}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="px-4">
+              <table mat-table
+                     [dataSource]="listOfOrder"
+                     multiTemplateDataRows
+                     class="px-4">
+                <ng-container matColumnDef="extend" >
+                  <th mat-header-cell *matHeaderCellDef>`
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2"></div>
+                      <div class=" h-[46px]" >
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" (click)="expandedElement = expandedElement === element ? null : element">
+                    <i class="fi fi-rr-angle-right align-middle"></i>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="select" >
+                  <th mat-header-cell *matHeaderCellDef>
+                    <div class="flex-col items-center">
+                      <mat-checkbox
+                        (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()"
+                        [aria-label]="checkboxLabel()" class="h-[46px] pt-[20px] px-2">
+                      </mat-checkbox>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                        </div>
+                      </div>
+                    </div>
+
+                  </th>
+                  <td mat-cell *matCellDef="let row" >
+                    <mat-checkbox (click)="$event.stopPropagation()"
+                                  (change)="$event ? selection.toggle(row) : null"
+                                  [checked]="selection.isSelected(row)"
+                                  [aria-label]="checkboxLabel(row)">
+                    </mat-checkbox>
+                  </td>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container matColumnDef="no">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">NUMBER</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Number" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[70px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans font-bold"> {{element.no}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="customer">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">CUSTOMER</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Customer" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans "> {{element.customer}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="business" >
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">BUSINESS</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Business" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.business}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="postcode">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">POSTCODE</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Postcode" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[80px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.postcode}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="order_date">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">ORDER&nbsp;DATE</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px] w-[130px]  flex" >
+                          <input  (keyup)="applyFilter($event)"  placeholder="Order Date" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[90px] ml-2 ">
+                          <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r h-[40px] mt-[3px] pt-[12px] w-[20px] mr-2">
+                            <i class="fi fi-rr-calendar "></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.order_date}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="date_of_delivery">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">DATE&nbsp;OF&nbsp;DELIVERY</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px] w-[140px]  flex" >
+                          <input  (keyup)="applyFilter($event)"  placeholder="Delivery Date" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[105px] ml-2 ">
+                          <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r h-[40px] mt-[3px] pt-[12px] w-[20px] mr-2">
+                            <i class="fi fi-rr-calendar "></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.date_of_delivery}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="delivery">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">DELIVERY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2"></select>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[11px] text-dark-text font-sans " ><div class="bg-[#4C9ED1] rounded-full text-center text-white"> {{element.delivery}} </div></td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions" >
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">ACTIONS</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans">
+                    <div class="flex space-x-2 px-2 text-center">
+                      <i class="fi fi-rr-pencil text-primary-blue"></i>
+                      <i class="fi fi-rr-cloud-download text-primary-blue"></i>
+                      <i class="fi fi-rr-trash text-[#FF0000]"></i>
+                    </div>
+                  </td>
+                </ng-container>
+                <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+                <ng-container matColumnDef="expandedDetail">
+                  <td mat-cell *matCellDef="let element" colspan="12" >
+                    <div class="example-element-detail"
+                         [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                      <div class="bg-[#F7F7F7] w-full grid grid-cols-6 font-sans">
+                        <div class="col-span-1 p-4">
+                          <div class="space-y-4">
+                            <div class="">
+                              <div class="text-[12px] text-[#00000061] font-sans">Venue</div>
+                              <div class="text-[16px] text-dark-text font-sans">Amsterdam</div>
+                            </div>
+                            <div class="">
+                              <div class="text-[12px] text-[#00000061] font-sans">Discount</div>
+                              <div class="text-[16px] text-dark-text font-sans">€0.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="space-y-4">
+                            <div class="row-span-1">
+                              <div class="text-[12px] text-[#00000061]">Billing</div>
+                              <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-[#F57F17]">Billable</span></div>
+                            </div>
+                            <div class="row-span-1">
+                              <div class="text-[12px] text-[#00000061]">Invoice</div>
+                              <div class="text-[16px]  text-primary-blue">25071</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061]">Payment</div>
+                          <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-primary-blue">Paid</span></div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Price</div>
+                          <div class="text-[16px] text-dark-text font-sans">€663.34</div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Transport</div>
+                          <div class="text-[16px] text-dark-text font-sans">€0.00</div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061]">Packing slip</div>
+                          <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-[#F57F17]">issues</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row  *matHeaderRowDef="['extend', 'select','no'].concat(columnsToDisplay).concat(['actions'])" class=" border-b-2 border-[#EFEFEF]"></tr>
+
+                <tr mat-row *matRowDef="let element; columns: ['extend', 'select','no'].concat(columnsToDisplay).concat(['actions']);"
+                    [class.example-expanded-row]="expandedElement === element"
+                    class="example-element-row border-b-2 border-[#EFEFEF] "></tr>
+                <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row" ></tr>
+              </table>
+              <mat-paginator style-paginator
+                             [pageSizeOptions]="[10, 20,50]"
+                             [pageSize]="10"
+                             [length]="listOfOrder.data.length"
+                             [showTotalPages]="5 ">
+                ></mat-paginator >
+
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <i class="fi fi-rr-user-add"></i>
+          &nbsp;INVITATIONS
+        </ng-template>
+        <div>
+          <div class="bg-white mt-[24px]">
+            <div class="px-8 pt-8 flex justify-between">
+              <div class="flex space-x-10">
+                <div class=" flex rounded w-[362px] h-[36px] bg-dark-gray">
+                  <i class="fi fi-rr-search bg-dark-gray p-2 my-auto rounded"></i>
+                  <input (keyup)="applyFilter($event)" placeholder="Search Orders" class=" outline-0 rounded bg-dark-gray w-full">
+                </div >
+                <button (click)=headFill() [ngClass]="exHeadFill ? 'bg-dark-blue rounded-full text-white w-[36px] h-[36px]' : 'bg-none text-dark-blue w-[36px] h-[36px]'">
+                  <i class="fi fi-rr-filter text-lg  "></i>
+                </button>
+              </div>
+              <div>
+                <mat-form-field >
+                  <mat-select multiple [(ngModel)]="columnsToDisplay"   placeholder='Columns'>
+                    <mat-option *ngFor="let col of availableColumns" [value]="col" class="text-primary-blue">{{col}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="px-4">
+              <table mat-table
+                     [dataSource]="listOfOrder"
+                     multiTemplateDataRows
+                     class="px-4">
+                <ng-container matColumnDef="extend" >
+                  <th mat-header-cell *matHeaderCellDef>`
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2"></div>
+                      <div class=" h-[46px]" >
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" (click)="expandedElement = expandedElement === element ? null : element">
+                    <i class="fi fi-rr-angle-right align-middle"></i>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="select" >
+                  <th mat-header-cell *matHeaderCellDef>
+                    <div class="flex-col items-center">
+                      <mat-checkbox
+                        (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()"
+                        [aria-label]="checkboxLabel()" class="h-[46px] pt-[20px] px-2">
+                      </mat-checkbox>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                        </div>
+                      </div>
+                    </div>
+
+                  </th>
+                  <td mat-cell *matCellDef="let row" >
+                    <mat-checkbox (click)="$event.stopPropagation()"
+                                  (change)="$event ? selection.toggle(row) : null"
+                                  [checked]="selection.isSelected(row)"
+                                  [aria-label]="checkboxLabel(row)">
+                    </mat-checkbox>
+                  </td>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container matColumnDef="no">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">NUMBER</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Number" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[70px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans font-bold"> {{element.no}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="customer">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">CUSTOMER</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Customer" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans "> {{element.customer}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="business" >
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">BUSINESS</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Business" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.business}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="postcode">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">POSTCODE</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Postcode" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[80px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.postcode}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="order_date">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">ORDER&nbsp;DATE</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px] w-[130px]  flex" >
+                          <input  (keyup)="applyFilter($event)"  placeholder="Order Date" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[90px] ml-2 ">
+                          <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r h-[40px] mt-[3px] pt-[12px] w-[20px] mr-2">
+                            <i class="fi fi-rr-calendar "></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.order_date}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="date_of_delivery">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">DATE&nbsp;OF&nbsp;DELIVERY</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px] w-[140px]  flex" >
+                          <input  (keyup)="applyFilter($event)"  placeholder="Delivery Date" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[105px] ml-2 ">
+                          <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r h-[40px] mt-[3px] pt-[12px] w-[20px] mr-2">
+                            <i class="fi fi-rr-calendar "></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.date_of_delivery}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="delivery">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">DELIVERY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2"></select>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[11px] text-dark-text font-sans " ><div class="bg-[#4C9ED1] rounded-full text-center text-white"> {{element.delivery}} </div></td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions" >
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">ACTIONS</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans">
+                    <div class="flex space-x-2 px-2 text-center">
+                      <i class="fi fi-rr-pencil text-primary-blue"></i>
+                      <i class="fi fi-rr-cloud-download text-primary-blue"></i>
+                      <i class="fi fi-rr-trash text-[#FF0000]"></i>
+                    </div>
+                  </td>
+                </ng-container>
+                <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+                <ng-container matColumnDef="expandedDetail">
+                  <td mat-cell *matCellDef="let element" colspan="12" >
+                    <div class="example-element-detail"
+                         [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                      <div class="bg-[#F7F7F7] w-full grid grid-cols-6 font-sans">
+                        <div class="col-span-1 p-4">
+                          <div class="space-y-4">
+                            <div class="">
+                              <div class="text-[12px] text-[#00000061] font-sans">Venue</div>
+                              <div class="text-[16px] text-dark-text font-sans">Amsterdam</div>
+                            </div>
+                            <div class="">
+                              <div class="text-[12px] text-[#00000061] font-sans">Discount</div>
+                              <div class="text-[16px] text-dark-text font-sans">€0.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="space-y-4">
+                            <div class="row-span-1">
+                              <div class="text-[12px] text-[#00000061]">Billing</div>
+                              <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-[#F57F17]">Billable</span></div>
+                            </div>
+                            <div class="row-span-1">
+                              <div class="text-[12px] text-[#00000061]">Invoice</div>
+                              <div class="text-[16px]  text-primary-blue">25071</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061]">Payment</div>
+                          <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-primary-blue">Paid</span></div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Price</div>
+                          <div class="text-[16px] text-dark-text font-sans">€663.34</div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Transport</div>
+                          <div class="text-[16px] text-dark-text font-sans">€0.00</div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061]">Packing slip</div>
+                          <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-[#F57F17]">issues</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row  *matHeaderRowDef="['extend', 'select','no'].concat(columnsToDisplay).concat(['actions'])" class=" border-b-2 border-[#EFEFEF]"></tr>
+
+                <tr mat-row *matRowDef="let element; columns: ['extend', 'select','no'].concat(columnsToDisplay).concat(['actions']);"
+                    [class.example-expanded-row]="expandedElement === element"
+                    class="example-element-row border-b-2 border-[#EFEFEF] "></tr>
+                <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row" ></tr>
+              </table>
+              <mat-paginator style-paginator
+                             [pageSizeOptions]="[10, 20,50]"
+                             [pageSize]="10"
+                             [length]="listOfOrder.data.length"
+                             [showTotalPages]="5 ">
+                ></mat-paginator >
+
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <span>%</span>
+          &nbsp;OFFERS
+        </ng-template>
+        <div>
+          <div class="bg-white mt-[24px]">
+            <div class="px-8 pt-8 flex justify-between">
+              <div class="flex space-x-10">
+                <div class=" flex rounded w-[362px] h-[36px] bg-dark-gray">
+                  <i class="fi fi-rr-search bg-dark-gray p-2 my-auto rounded"></i>
+                  <input (keyup)="applyFilter($event)" placeholder="Search Orders" class=" outline-0 rounded bg-dark-gray w-full">
+                </div >
+                <button (click)=headFill() [ngClass]="exHeadFill ? 'bg-dark-blue rounded-full text-white w-[36px] h-[36px]' : 'bg-none text-dark-blue w-[36px] h-[36px]'">
+                  <i class="fi fi-rr-filter text-lg  "></i>
+                </button>
+              </div>
+              <div>
+                <mat-form-field >
+                  <mat-select multiple [(ngModel)]="columnsToDisplay"   placeholder='Columns'>
+                    <mat-option *ngFor="let col of availableColumns" [value]="col" class="text-primary-blue">{{col}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="px-4">
+              <table mat-table
+                     [dataSource]="listOfOrder"
+                     multiTemplateDataRows
+                     class="px-4">
+                <ng-container matColumnDef="extend" >
+                  <th mat-header-cell *matHeaderCellDef>`
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2"></div>
+                      <div class=" h-[46px]" >
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" (click)="expandedElement = expandedElement === element ? null : element">
+                    <i class="fi fi-rr-angle-right align-middle"></i>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="select" >
+                  <th mat-header-cell *matHeaderCellDef>
+                    <div class="flex-col items-center">
+                      <mat-checkbox
+                        (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()"
+                        [aria-label]="checkboxLabel()" class="h-[46px] pt-[20px] px-2">
+                      </mat-checkbox>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                        </div>
+                      </div>
+                    </div>
+
+                  </th>
+                  <td mat-cell *matCellDef="let row" >
+                    <mat-checkbox (click)="$event.stopPropagation()"
+                                  (change)="$event ? selection.toggle(row) : null"
+                                  [checked]="selection.isSelected(row)"
+                                  [aria-label]="checkboxLabel(row)">
+                    </mat-checkbox>
+                  </td>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container matColumnDef="no">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">NUMBER</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Number" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[70px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans font-bold"> {{element.no}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="customer">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">CUSTOMER</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Customer" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans "> {{element.customer}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="business" >
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">BUSINESS</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Business" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.business}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="postcode">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">POSTCODE</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <input (keyup)="applyFilter($event)"  placeholder="Postcode" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[80px] mx-2">
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.postcode}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="order_date">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">ORDER&nbsp;DATE</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px] w-[130px]  flex" >
+                          <input  (keyup)="applyFilter($event)"  placeholder="Order Date" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[90px] ml-2 ">
+                          <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r h-[40px] mt-[3px] pt-[12px] w-[20px] mr-2">
+                            <i class="fi fi-rr-calendar "></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.order_date}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="date_of_delivery">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">DATE&nbsp;OF&nbsp;DELIVERY</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px] w-[140px]  flex" >
+                          <input  (keyup)="applyFilter($event)"  placeholder="Delivery Date" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[105px] ml-2 ">
+                          <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r h-[40px] mt-[3px] pt-[12px] w-[20px] mr-2">
+                            <i class="fi fi-rr-calendar "></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.date_of_delivery}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="delivery">
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">DELIVERY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                          <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2"></select>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[11px] text-dark-text font-sans " ><div class="bg-[#4C9ED1] rounded-full text-center text-white"> {{element.delivery}} </div></td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions" >
+                  <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                    <div class="flex-col items-center">
+                      <div class="h-[46px] pt-[20px] px-2">ACTIONS</div>
+                      <div *ngIf="exHeadFill">
+                        <div class=" border-t h-[46px]" >
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans">
+                    <div class="flex space-x-2 px-2 text-center">
+                      <i class="fi fi-rr-pencil text-primary-blue"></i>
+                      <i class="fi fi-rr-cloud-download text-primary-blue"></i>
+                      <i class="fi fi-rr-trash text-[#FF0000]"></i>
+                    </div>
+                  </td>
+                </ng-container>
+                <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+                <ng-container matColumnDef="expandedDetail">
+                  <td mat-cell *matCellDef="let element" colspan="12" >
+                    <div class="example-element-detail"
+                         [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                      <div class="bg-[#F7F7F7] w-full grid grid-cols-6 font-sans">
+                        <div class="col-span-1 p-4">
+                          <div class="space-y-4">
+                            <div class="">
+                              <div class="text-[12px] text-[#00000061] font-sans">Venue</div>
+                              <div class="text-[16px] text-dark-text font-sans">Amsterdam</div>
+                            </div>
+                            <div class="">
+                              <div class="text-[12px] text-[#00000061] font-sans">Discount</div>
+                              <div class="text-[16px] text-dark-text font-sans">€0.00</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="space-y-4">
+                            <div class="row-span-1">
+                              <div class="text-[12px] text-[#00000061]">Billing</div>
+                              <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-[#F57F17]">Billable</span></div>
+                            </div>
+                            <div class="row-span-1">
+                              <div class="text-[12px] text-[#00000061]">Invoice</div>
+                              <div class="text-[16px]  text-primary-blue">25071</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061]">Payment</div>
+                          <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-primary-blue">Paid</span></div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Price</div>
+                          <div class="text-[16px] text-dark-text font-sans">€663.34</div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Transport</div>
+                          <div class="text-[16px] text-dark-text font-sans">€0.00</div>
+                        </div>
+                        <div class="col-span-1 p-4">
+                          <div class="text-[12px] text-[#00000061]">Packing slip</div>
+                          <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-[#F57F17]">issues</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row  *matHeaderRowDef="['extend', 'select','no'].concat(columnsToDisplay).concat(['actions'])" class=" border-b-2 border-[#EFEFEF]"></tr>
+
+                <tr mat-row *matRowDef="let element; columns: ['extend', 'select','no'].concat(columnsToDisplay).concat(['actions']);"
+                    [class.example-expanded-row]="expandedElement === element"
+                    class="example-element-row border-b-2 border-[#EFEFEF] "></tr>
+                <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row" ></tr>
+              </table>
+              <mat-paginator style-paginator
+                             [pageSizeOptions]="[10, 20,50]"
+                             [pageSize]="10"
+                             [length]="listOfOrder.data.length"
+                             [showTotalPages]="5 ">
+                ></mat-paginator >
+
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</section>

@@ -9,6 +9,9 @@ export interface OrdersInterface {
   actions:string;
   extend:string;
   filter:string;
+  billing:string;
+  payment:string;
+  price:string;
 }
 
 export interface OrderList {

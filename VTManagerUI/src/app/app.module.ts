@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -37,6 +38,32 @@ import {MatSelectModule} from "@angular/material/select";
 import {StylePaginatorDirective} from "./shared/style-paginator.directive";
 import {MultiSelectModule} from "primeng/multiselect";
 import { OrderDeatailsComponent } from './views/admin/orders/orders/order-deatails/order-deatails.component';
+import { ProductsComponent } from './views/admin/catalog/products/products.component';
+import { RemovedProductsComponent } from './views/admin/catalog/removed-products/removed-products.component';
+import { CustomerSpecificProductsComponent } from './views/admin/catalog/customer-specific-products/customer-specific-products.component';
+import { ProductsInvitationsFranchiseComponent } from './views/admin/catalog/products-invitations-franchise/products-invitations-franchise.component';
+import { CategoriesComponent } from './views/admin/catalog/categories/categories.component';
+import { ProductTypesComponent } from './views/admin/catalog/product-types/product-types.component';
+import { OffersComponent } from './views/admin/catalog/offers/offers.component';
+import { PriceMarginsFranchiseComponent } from './views/admin/catalog/price-margins-franchise/price-margins-franchise.component';
+import { WishListComponent } from './views/admin/catalog/wish-list/wish-list.component';
+import { CatalogComponent } from './views/admin/catalog/catalog.component';
+import { FranchiseSpecificProductsComponent } from './views/admin/catalog/franchise-specific-products/franchise-specific-products.component';
+import { ProductDetailsComponent } from './views/admin/catalog/products/product-details/product-details.component';
+import {ProductsService} from "./services/products.service";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatChipsModule} from "@angular/material/chips";
+import {EditorModule} from "primeng/editor";
+import {InputTextModule} from "primeng/inputtext";
+import {CalendarModule} from "primeng/calendar";
+import {ChipsModule} from "primeng/chips";
+import {DropdownModule} from "primeng/dropdown";
+import {CheckboxModule} from "primeng/checkbox";
+import { EditProductsInvitationsFranchiseComponent } from './views/admin/catalog/products-invitations-franchise/edit-products-invitations-franchise/edit-products-invitations-franchise.component';
+import { ProductTypesDetailsComponent } from './views/admin/catalog/product-types/product-types-details/product-types-details.component';
+import { OffersDetailsComponent } from './views/admin/catalog/offers/offers-details/offers-details.component';
+import { PriceMarginFranchiseDetailsComponent } from './views/admin/catalog/price-margins-franchise/price-margin-franchise-details/price-margin-franchise-details.component';
+import { AddProductRequestComponent } from './views/admin/catalog/wish-list/add-product-request/add-product-request.component';
 
 
 @NgModule({
@@ -60,30 +87,58 @@ import { OrderDeatailsComponent } from './views/admin/orders/orders/order-deatai
     StylePaginatorDirective,
     LoginComponent,
     OrderDeatailsComponent,
-    OrderDeatailsComponent
+    OrderDeatailsComponent,
+    ProductsComponent,
+    RemovedProductsComponent,
+    CustomerSpecificProductsComponent,
+    ProductsInvitationsFranchiseComponent,
+    CategoriesComponent,
+    ProductTypesComponent,
+    OffersComponent,
+    PriceMarginsFranchiseComponent,
+    WishListComponent,
+    CatalogComponent,
+    FranchiseSpecificProductsComponent,
+    ProductDetailsComponent,
+    EditProductsInvitationsFranchiseComponent,
+    ProductTypesDetailsComponent,
+    OffersDetailsComponent,
+    PriceMarginFranchiseDetailsComponent,
+    AddProductRequestComponent,
+
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatSidenavModule,
-        MatExpansionModule,
-        MatTableModule,
-        MatCheckboxModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        HttpClientModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatCardModule,
-        MatPaginatorModule,
-        MatSelectModule,
-        MultiSelectModule,
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatExpansionModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatPaginatorModule,
+    MatSelectModule,
+    MultiSelectModule,
+    MatTabsModule,
+    MatChipsModule,
+    EditorModule,
+    InputTextModule,
+    CalendarModule,
+    ChipsModule,
+    DropdownModule,
+    CheckboxModule,
+  ],
+  providers: [
+    ProductsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

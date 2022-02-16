@@ -6,7 +6,6 @@ import {OrdersService} from "../../../../services/orders.service";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
-import {renderFlagCheckIfStmt} from "@angular/compiler/src/render3/view/template";
 import {FormControl} from "@angular/forms";
 @Component({
   selector: 'app-orders',
@@ -22,8 +21,8 @@ import {FormControl} from "@angular/forms";
   ],
 })
 export class OrdersComponent implements OnInit,AfterViewInit  {
-  availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery'];
-  columnsToDisplay = [  'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery',];
+  availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery','billing','payment','price'];
+  columnsToDisplay = [  'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery'];
   exHeadFill=false;
   expandedElement: OrdersInterface|null = null;
   listOfOrder: MatTableDataSource<OrdersInterface> = new MatTableDataSource();
@@ -80,6 +79,7 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
 
   /** Selects all rows if they are not all selected; otherwise clear selection. */
   selectedOptions: any;
+
 
 
   /** The label for the checkbox on the passed row */

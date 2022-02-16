@@ -74,3 +74,27 @@ border-bottom: none !important;
 span.mat-option-text {
   color: #00000099 !important;
 }
+.p-dropdown{
+  width: 100% !important;
+}
+.p-multiselect {
+  width: 100% !important;
+}
+.p-chips{
+  width: 100% !important;
+}
+.p-inputtext{
+  width: 100% !important;
+}
+.p-inputtext:focus{
+  border:2px solid #56CAE5 !important;
+  ring: none !important;
+  outline: none !important;
+
+}
+.p-float-label{
+  width: 100% !important;
+}
+.ql-header{
+  color:#2babd3 !important;
+}

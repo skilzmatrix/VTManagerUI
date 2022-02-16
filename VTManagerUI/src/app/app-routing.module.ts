@@ -1,3 +1,4 @@
+
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
@@ -19,7 +20,27 @@ import {
   DeliveriesViaCsvFilesComponent
 } from "./views/admin/orders/deliveries-via-csv-files/deliveries-via-csv-files.component";
 import {LoginComponent} from "./views/auth/login/login.component";
-import {OrderDeatailsComponent} from "./views/admin/orders/orders/order-deatails/order-deatails.component";
+import {ProductsComponent} from "./views/admin/catalog/products/products.component";
+import {RemovedProductsComponent} from "./views/admin/catalog/removed-products/removed-products.component";
+import {CustomerSpecificProductsComponent} from "./views/admin/catalog/customer-specific-products/customer-specific-products.component";
+import {ProductsInvitationsFranchiseComponent} from "./views/admin/catalog/products-invitations-franchise/products-invitations-franchise.component";
+import {CategoriesComponent} from "./views/admin/catalog/categories/categories.component";
+import {ProductTypesComponent} from "./views/admin/catalog/product-types/product-types.component";
+import {OffersComponent} from "./views/admin/catalog/offers/offers.component";
+import {PriceMarginsFranchiseComponent} from "./views/admin/catalog/price-margins-franchise/price-margins-franchise.component";
+import{WishListComponent} from "./views/admin/catalog/wish-list/wish-list.component";
+import {FranchiseSpecificProductsComponent} from "./views/admin/catalog/franchise-specific-products/franchise-specific-products.component";
+import {ProductDetailsComponent} from "./views/admin/catalog/products/product-details/product-details.component";
+import {
+  EditProductsInvitationsFranchiseComponent
+} from "./views/admin/catalog/products-invitations-franchise/edit-products-invitations-franchise/edit-products-invitations-franchise.component";
+import {
+  ProductTypesDetailsComponent
+} from "./views/admin/catalog/product-types/product-types-details/product-types-details.component";
+import {OffersDetailsComponent} from "./views/admin/catalog/offers/offers-details/offers-details.component";
+import {
+  PriceMarginFranchiseDetailsComponent
+} from "./views/admin/catalog/price-margins-franchise/price-margin-franchise-details/price-margin-franchise-details.component";
 const routes: Routes = [
   // admin views
   {
@@ -36,8 +57,24 @@ const routes: Routes = [
       { path: "orders/statistics", component: StatisticsComponent},
       { path: "orders/supplier-overview", component: SupplierOverviewComponent},
       { path: "orders/unconfirmed-orders", component: UnconfirmedOrdersComponent},
-      { path: "orders/orders/:no", component: OrderDeatailsComponent},
+      { path: "catalog/products", component: ProductsComponent},
+      { path: "catalog/categories", component: CategoriesComponent},
+      { path: "catalog/removed-products", component: RemovedProductsComponent},
+      { path: "catalog/customer-specific-products", component: CustomerSpecificProductsComponent},
+      { path: "catalog/product-invitations-franchise", component: ProductsInvitationsFranchiseComponent},
+      { path: "catalog/franchise-specific-products", component: FranchiseSpecificProductsComponent},
+      { path: "catalog/product-types", component: ProductTypesComponent},
+      { path: "catalog/offers", component: OffersComponent},
+      { path: "catalog/price-margins-franchise", component: PriceMarginsFranchiseComponent},
+      { path: "catalog/price-margins-franchise/:id", component: PriceMarginFranchiseDetailsComponent},
+      { path: "catalog/wish-list", component: WishListComponent},
+      { path: "catalog/products/:id", component:ProductDetailsComponent},
+      { path: "catalog/product-invitations-franchise/:id", component:EditProductsInvitationsFranchiseComponent},
+      { path: "catalog/product-types/:id", component: ProductTypesDetailsComponent},
+      { path: "catalog/offers/:id", component: OffersDetailsComponent},
+
       { path: "orders", redirectTo: "orders/orders", pathMatch: "full" },
+      { path: "catalog", redirectTo: "catalog/products", pathMatch: "full" },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
 
