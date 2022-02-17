@@ -41,6 +41,9 @@ import {OffersDetailsComponent} from "./views/admin/catalog/offers/offers-detail
 import {
   PriceMarginFranchiseDetailsComponent
 } from "./views/admin/catalog/price-margins-franchise/price-margin-franchise-details/price-margin-franchise-details.component";
+import {
+  AddProductRequestComponent
+} from "./views/admin/catalog/wish-list/add-product-request/add-product-request.component";
 const routes: Routes = [
   // admin views
   {
@@ -68,11 +71,11 @@ const routes: Routes = [
       { path: "catalog/price-margins-franchise", component: PriceMarginsFranchiseComponent},
       { path: "catalog/price-margins-franchise/:id", component: PriceMarginFranchiseDetailsComponent},
       { path: "catalog/wish-list", component: WishListComponent},
+      { path: "catalog/wish-list/:id", component: AddProductRequestComponent},
       { path: "catalog/products/:id", component:ProductDetailsComponent},
       { path: "catalog/product-invitations-franchise/:id", component:EditProductsInvitationsFranchiseComponent},
       { path: "catalog/product-types/:id", component: ProductTypesDetailsComponent},
       { path: "catalog/offers/:id", component: OffersDetailsComponent},
-
       { path: "orders", redirectTo: "orders/orders", pathMatch: "full" },
       { path: "catalog", redirectTo: "catalog/products", pathMatch: "full" },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
