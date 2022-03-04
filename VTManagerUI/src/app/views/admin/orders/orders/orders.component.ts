@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core';
 import {SelectionModel} from '@angular/cdk/collections';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {OrderList, OrdersInterface} from "../../../../interfaces/orders";
@@ -21,15 +21,18 @@ import {FormControl} from "@angular/forms";
   ],
 })
 export class OrdersComponent implements OnInit,AfterViewInit  {
+  title1="Orders";
+  title2="Home -";
+  title3="Orders";
   availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery','billing','payment','price'];
   columnsToDisplay = [  'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery'];
-  exHeadFill=false;
   expandedElement: OrdersInterface|null = null;
   listOfOrder: MatTableDataSource<OrdersInterface> = new MatTableDataSource();
   selection = new SelectionModel<OrdersInterface>(true, []);
   toppings = new FormControl();
   @ViewChild(MatPaginator,{static:true}) paginator?: MatPaginator;
   @ViewChild(MatSort) sort: MatSort | null = null;
+  exHeadFill=false;
 
 
   constructor(private ordersService: OrdersService) {

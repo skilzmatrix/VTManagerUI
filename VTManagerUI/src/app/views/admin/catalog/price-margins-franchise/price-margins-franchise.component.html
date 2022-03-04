@@ -1,11 +1,13 @@
-<section class="bg-[#F7F7F7] text-gray md:pl-[240px] md:pt-[80px] font-sans min-h-screen w-full mx-auto ">
+<section class="bg-[#F7F7F7] text-gray font-sans ">
   <div class="p-4">
     <div class="flex justify-between">
       <div>
-        <div class="text-[20px] text-head-text font-bold">
-          Price margins (Franchise)
+        <div class="text-[18px] text-head-text " >
+          <div class="font-semibold">
+            Price margins (Franchise)
+          </div>
         </div>
-        <div>
+        <div class="font-light text-[14px]">
           Home - Catalog  <span class="font-semibold text-dark-text">- Price Margins</span>
         </div>
       </div>
@@ -35,7 +37,7 @@
       <div class="px-8 pt-8 flex justify-between">
         <div class="flex space-x-10">
           <div class=" flex rounded w-[362px] h-[36px] bg-dark-gray">
-            <i class="fi fi-rr-search bg-dark-gray p-2 my-auto rounded"></i>
+            <i class="fi fi-rr-search bg-dark-gray pt-1.5 pl-4 pr-4 my-auto rounded"></i>
             <input (keyup)="applyFilter($event)" placeholder="Search Orders" class=" outline-0 rounded bg-dark-gray w-full">
           </div >
           <button (click)=headFill() [ngClass]="exHeadFill ? 'bg-dark-blue rounded-full text-white w-[36px] h-[36px]' : 'bg-none text-dark-blue w-[36px] h-[36px]'">
@@ -56,7 +58,7 @@
                multiTemplateDataRows
                class="px-4">
           <ng-container matColumnDef="extend" >
-            <th mat-header-cell *matHeaderCellDef>`
+            <th mat-header-cell *matHeaderCellDef>
               <div class="flex-col items-center">
                 <div class="h-[46px] pt-[20px] px-2"></div>
                 <div class=" h-[46px]" >

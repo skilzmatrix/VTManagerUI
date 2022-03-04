@@ -5,13 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AdminLayoutComponent } from './layouts/admin/admin-layout/admin-layout.component';
 import { DashboardComponent } from './views/admin/dashboard/dashboard.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
-import { UserDropdownComponent } from './components/dropdowns/user-dropdown/user-dropdown.component';
-import { NotificationDropdownComponent } from './components/dropdowns/notification-dropdown/notification-dropdown.component';
 import {MatExpansionModule} from "@angular/material/expansion";
 import { UnconfirmedOrdersComponent } from './views/admin/orders/unconfirmed-orders/unconfirmed-orders.component';
 import { DeletedOrdersComponent } from './views/admin/orders/deleted-orders/deleted-orders.component';
@@ -64,18 +59,40 @@ import { ProductTypesDetailsComponent } from './views/admin/catalog/product-type
 import { OffersDetailsComponent } from './views/admin/catalog/offers/offers-details/offers-details.component';
 import { PriceMarginFranchiseDetailsComponent } from './views/admin/catalog/price-margins-franchise/price-margin-franchise-details/price-margin-franchise-details.component';
 import { AddProductRequestComponent } from './views/admin/catalog/wish-list/add-product-request/add-product-request.component';
+import { NavigationComponent } from './layouts/admin/navigation/navigation.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { CustomersComponent } from './views/admin/customers/customers/customers.component';
+import { DeletedCustomersComponent } from './views/admin/customers/deleted-customers/deleted-customers.component';
+import { CustomerTypeComponent } from './views/admin/customers/customer-type/customer-type.component';
+import { SuppliersComponent } from './views/admin/suppliers/suppliers/suppliers.component';
+import { DeletedSuppliersComponent } from './views/admin/suppliers/deleted-suppliers/deleted-suppliers.component';
+import { SupplierTypeComponent } from './views/admin/suppliers/supplier-type/supplier-type.component';
+import { FranchisersComponent } from './views/admin/franchisers/franchisers/franchisers.component';
+import { DeletedFranchisersComponent } from './views/admin/franchisers/deleted-franchisers/deleted-franchisers.component';
+import { FranchiserTypeComponent } from './views/admin/franchisers/franchiser-type/franchiser-type.component';
+import { AccountManagersComponent } from './views/admin/account-managers/account-managers/account-managers.component';
+import { DeletedAccountManagersComponent } from './views/admin/account-managers/deleted-account-managers/deleted-account-managers.component';
+import { ChatsComponent } from './views/admin/chats/chats.component';
+import { ComplaintsComponent } from './views/admin/complaints/complaints.component';
+import { SettingsComponent } from './views/admin/settings/settings.component';
+import { ProfilesComponent } from './views/admin/settings/profiles/profiles.component';
+import { UsersComponent } from './views/admin/settings/users/users.component';
+import { ConfigurationsComponent } from './views/admin/settings/configurations/configurations.component';
+import { LogComponent } from './views/admin/settings/log/log.component';
+import { SystemInfoComponent } from './views/admin/settings/system-info/system-info.component';
+import { PageHeadComponent } from './components/page-head/page-head.component';
+import { PageBodyComponent } from './components/page-body/page-body.component';
+import { TableComponent } from './components/table/table.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
     DashboardComponent,
-    NavbarComponent,
-    SidebarComponent,
     OrdersComponent,
-    UserDropdownComponent,
-    NotificationDropdownComponent,
     UnconfirmedOrdersComponent,
     DeletedOrdersComponent,
     CompletedOrdersComponent,
@@ -105,6 +122,29 @@ import { AddProductRequestComponent } from './views/admin/catalog/wish-list/add-
     OffersDetailsComponent,
     PriceMarginFranchiseDetailsComponent,
     AddProductRequestComponent,
+    NavigationComponent,
+    CustomersComponent,
+    DeletedCustomersComponent,
+    CustomerTypeComponent,
+    SuppliersComponent,
+    DeletedSuppliersComponent,
+    SupplierTypeComponent,
+    FranchisersComponent,
+    DeletedFranchisersComponent,
+    FranchiserTypeComponent,
+    AccountManagersComponent,
+    DeletedAccountManagersComponent,
+    ChatsComponent,
+    ComplaintsComponent,
+    SettingsComponent,
+    ProfilesComponent,
+    UsersComponent,
+    ConfigurationsComponent,
+    LogComponent,
+    SystemInfoComponent,
+    PageHeadComponent,
+    PageBodyComponent,
+    TableComponent,
 
   ],
   imports: [
@@ -135,6 +175,10 @@ import { AddProductRequestComponent } from './views/admin/catalog/wish-list/add-
     ChipsModule,
     DropdownModule,
     CheckboxModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatListModule,
+    MatGridListModule,
   ],
   providers: [
     ProductsService

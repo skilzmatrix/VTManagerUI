@@ -12,8 +12,8 @@
       "btw": "0.21",
       "ean":"7390101010101",
       "kind":"Vitamin C",
-      "approved": true,
-      "status": "Approved",
+      "Active": true,
+      "status": "Active",
       "sale_unit": "1"
     },
     {
@@ -27,8 +27,8 @@
       "btw": "0.21",
       "ean":"7390101010101",
       "kind":"Vitamin C",
-      "approved": true,
-      "status": "Approved",
+      "Active": true,
+      "status": "Active",
       "sale_unit": "1"
     },
     {
@@ -42,8 +42,8 @@
       "btw": "0.21",
       "ean":"7390101010101",
       "kind":"Vitamin C",
-      "approved": true,
-      "status": "Approved",
+      "Active": true,
+      "status": "Active",
       "sale_unit": "1"
     },
     {
@@ -57,8 +57,8 @@
       "btw": "0.21",
       "ean":"7390101010101",
       "kind":"Vitamin C",
-      "approved": true,
-      "status": "Approved",
+      "Active": true,
+      "status": "Active",
       "sale_unit": "1"
     },
     {
@@ -72,8 +72,8 @@
       "btw": "0.21",
       "ean":"7390101010101",
       "kind":"Vitamin C",
-      "approved": true,
-      "status": "Approved",
+      "Active": true,
+      "status": "Active",
       "sale_unit": "1"
     },
     {
@@ -87,8 +87,98 @@
       "btw": "0.21",
       "ean":"7390101010101",
       "kind":"Vitamin C",
-      "approved": true,
-      "status": "Approved",
+      "Active": true,
+      "status": "Active",
+      "sale_unit": "1"
+    },
+    {
+      "id": "4",
+      "photo":"https://www.vitaminshoppe.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00100_1.jpg",
+      "name":"Vitamin C 4",
+      "product_type":"Vitamin",
+      "categories":"Vitamin",
+      "supplier":"Vitamin Shoppe",
+      "stock":"23",
+      "btw": "0.21",
+      "ean":"7390101010101",
+      "kind":"Vitamin C",
+      "Active": true,
+      "status": "Active",
+      "sale_unit": "1"
+    },
+    {
+      "id": "5",
+      "photo":"https://www.vitaminshoppe.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00100_1.jpg",
+      "name":"Vitamin C 5",
+      "product_type":"Vitamin",
+      "categories":"Vitamin",
+      "supplier":"Vitamin Shoppe",
+      "stock":"23",
+      "btw": "0.21",
+      "ean":"7390101010101",
+      "kind":"Vitamin C",
+      "Active": true,
+      "status": "Active",
+      "sale_unit": "1"
+    },
+    {
+      "id": "6",
+      "photo":"https://www.vitaminshoppe.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00100_1.jpg",
+      "name":"Vitamin C 6",
+      "product_type":"Vitamin",
+      "categories":"Vitamin",
+      "supplier":"Vitamin Shoppe",
+      "stock":"23",
+      "btw": "0.21",
+      "ean":"7390101010101",
+      "kind":"Vitamin C",
+      "Active": true,
+      "status": "Active",
+      "sale_unit": "1"
+    },
+    {
+      "id": "4",
+      "photo":"https://www.vitaminshoppe.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00100_1.jpg",
+      "name":"Vitamin C 4",
+      "product_type":"Vitamin",
+      "categories":"Vitamin",
+      "supplier":"Vitamin Shoppe",
+      "stock":"23",
+      "btw": "0.21",
+      "ean":"7390101010101",
+      "kind":"Vitamin C",
+      "Active": true,
+      "status": "Active",
+      "sale_unit": "1"
+    },
+    {
+      "id": "5",
+      "photo":"https://www.vitaminshoppe.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00100_1.jpg",
+      "name":"Vitamin C 5",
+      "product_type":"Vitamin",
+      "categories":"Vitamin",
+      "supplier":"Vitamin Shoppe",
+      "stock":"23",
+      "btw": "0.21",
+      "ean":"7390101010101",
+      "kind":"Vitamin C",
+      "Active": true,
+      "status": "Active",
+      "sale_unit": "1"
+    },
+    {
+      "id": "6",
+      "photo":"https://www.vitaminshoppe.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/0/00100_1.jpg",
+      "name":"Vitamin C 6",
+      "product_type":"Vitamin",
+      "categories":"Vitamin",
+      "supplier":"Vitamin Shoppe",
+      "stock":"23",
+      "btw": "0.21",
+      "ean":"7390101010101",
+      "kind":"Vitamin C",
+      "Active": true,
+      "status": "Active",
       "sale_unit": "1"
     }
   ]

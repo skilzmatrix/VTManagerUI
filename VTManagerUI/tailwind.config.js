@@ -23,5 +23,6 @@ module.exports = {
           'sans':['Raleway'],
         }
   },
-  plugins: [],
+  plugins: [
+  ],
 }

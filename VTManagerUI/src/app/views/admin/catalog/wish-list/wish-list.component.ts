@@ -81,6 +81,7 @@ export class WishListComponent implements OnInit {
   /** Selects all rows if they are not all selected; otherwise clear selection. */
   selectedOptions: any;
   iconChange=true;
+  expandIconChange=false;
 
 
   /** The label for the checkbox on the passed row */
@@ -107,6 +108,10 @@ export class WishListComponent implements OnInit {
 
   headFill() {
     this.exHeadFill = !this.exHeadFill;
+  }
+  expandedIconChange() {
+    this.expandIconChange = !this.expandIconChange;
+    console.log("expanded works")
   }
 }
 

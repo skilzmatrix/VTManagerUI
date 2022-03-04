@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 // layouts
-import {AdminLayoutComponent} from "./layouts/admin/admin-layout/admin-layout.component";
+import {NavigationComponent} from "./layouts/admin/navigation/navigation.component";
 // import { AuthComponent } from "./layouts/auth/auth.component";
 
 // admin views
@@ -44,11 +44,31 @@ import {
 import {
   AddProductRequestComponent
 } from "./views/admin/catalog/wish-list/add-product-request/add-product-request.component";
+import {CustomersComponent} from "./views/admin/customers/customers/customers.component";
+import {DeletedCustomersComponent} from "./views/admin/customers/deleted-customers/deleted-customers.component";
+import {CustomerTypeComponent} from "./views/admin/customers/customer-type/customer-type.component";
+import {SuppliersComponent} from "./views/admin/suppliers/suppliers/suppliers.component";
+import {DeletedSuppliersComponent} from "./views/admin/suppliers/deleted-suppliers/deleted-suppliers.component";
+import {SupplierTypeComponent} from "./views/admin/suppliers/supplier-type/supplier-type.component";
+import {FranchisersComponent} from "./views/admin/franchisers/franchisers/franchisers.component";
+import {DeletedFranchisersComponent} from "./views/admin/franchisers/deleted-franchisers/deleted-franchisers.component";
+import {FranchiserTypeComponent} from "./views/admin/franchisers/franchiser-type/franchiser-type.component";
+import {AccountManagersComponent} from "./views/admin/account-managers/account-managers/account-managers.component";
+import {
+  DeletedAccountManagersComponent
+} from "./views/admin/account-managers/deleted-account-managers/deleted-account-managers.component";
+import {ChatsComponent} from "./views/admin/chats/chats.component";
+import {ComplaintsComponent} from "./views/admin/complaints/complaints.component";
+import {ProfilesComponent} from "./views/admin/settings/profiles/profiles.component";
+import {ConfigurationsComponent} from "./views/admin/settings/configurations/configurations.component";
+import {UsersComponent} from "./views/admin/settings/users/users.component";
+import {LogComponent} from "./views/admin/settings/log/log.component";
+import {SystemInfoComponent} from "./views/admin/settings/system-info/system-info.component";
 const routes: Routes = [
   // admin views
   {
     path: "",
-    component: AdminLayoutComponent,
+    component: NavigationComponent,
     children: [
       { path: "dashboard", component: DashboardComponent },
       { path: "orders/orders", component: OrdersComponent },
@@ -76,8 +96,31 @@ const routes: Routes = [
       { path: "catalog/product-invitations-franchise/:id", component:EditProductsInvitationsFranchiseComponent},
       { path: "catalog/product-types/:id", component: ProductTypesDetailsComponent},
       { path: "catalog/offers/:id", component: OffersDetailsComponent},
+      { path: "customers/customers", component: CustomersComponent},
+      { path: "customers/deleted-customers", component: DeletedCustomersComponent},
+      { path: "customers/customer-type", component: CustomerTypeComponent},
+      { path: "suppliers/suppliers", component: SuppliersComponent},
+      { path: "suppliers/deleted-suppliers", component: DeletedSuppliersComponent},
+      { path: "suppliers/supplier-type", component: SupplierTypeComponent},
+      { path: "franchisers/franchisers", component: FranchisersComponent},
+      { path: "franchisers/deleted-franchisers", component: DeletedFranchisersComponent},
+      { path: "franchisers/franchiser-type", component: FranchiserTypeComponent},
+      { path: "account-managers/account-managers", component: AccountManagersComponent},
+      { path: "account-managers/deleted-account-managers", component: DeletedAccountManagersComponent},
+      { path: "chats", component: ChatsComponent},
+      { path: "complaints", component: ComplaintsComponent},
+      { path: "settings/profiles", component: ProfilesComponent},
+      { path: "settings/users", component: UsersComponent},
+      { path: "settings/configurations", component: ConfigurationsComponent},
+      { path: "settings/log", component: LogComponent},
+      { path: "settings/system-info", component: SystemInfoComponent},
       { path: "orders", redirectTo: "orders/orders", pathMatch: "full" },
       { path: "catalog", redirectTo: "catalog/products", pathMatch: "full" },
+      { path: "customers", redirectTo: "customers/customers", pathMatch: "full" },
+      { path: "suppliers", redirectTo: "suppliers/suppliers", pathMatch: "full" },
+      { path: "franchisers", redirectTo: "franchisers/franchisers", pathMatch: "full" },
+      { path: "settings", redirectTo: "settings/profiles", pathMatch: "full" },
+      { path: "account-managers", redirectTo: "account-managers/account-managers", pathMatch: "full" },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
 

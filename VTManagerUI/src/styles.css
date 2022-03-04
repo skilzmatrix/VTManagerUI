@@ -44,7 +44,18 @@
   display: none !important;
 }
 .mat-form-field{
-  border:2px solid #EFEFEF !important;
+  border:1px solid #0000001F !important;
+  width: 105px;
+  height: 36px !important;
+}
+.mat-toolbar {
+  height: 75px !important;
+}
+.mat-select-min-line{
+  font-size: 12px;
+}
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 2px;
 }
 .mat-form-field-wrapper {
   padding-bottom: 0px !important;
@@ -97,4 +108,16 @@ span.mat-option-text {
 }
 .ql-header{
   color:#2babd3 !important;
+}
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+  padding-left: 7px !important;
+}
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+  padding-right: 7px !important;
+}
+.mat-row{
+  border-bottom: 0.5px dashed #EFEFEF !important;
+}
+.mat-header-row{
+  border-bottom: 1px solid #EFEFEF !important;
 }
