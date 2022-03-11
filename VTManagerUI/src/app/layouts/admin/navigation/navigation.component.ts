@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-navigation',
@@ -9,11 +10,13 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
-  collapseShow = true;
-  condition =true;
+  collapseShow   = true;
+  condition      = true;
   panelOpenState = true;
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+
   toggleCollapseShow() {
     this.collapseShow = !this.collapseShow;
   }
@@ -23,7 +26,14 @@ export class NavigationComponent {
       map(result => result.matches),
       shareReplay()
     );
+  backButtonActive = true;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private _location: Location) {
+  }
+
+  backClicked() {
+    this._location.back();
+  }
+
 
 }

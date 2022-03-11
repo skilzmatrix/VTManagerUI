@@ -13,6 +13,7 @@ export interface ProductsInterface {
   approved: boolean;
   status: string;
   sales_unit:number;
+  extend:string;
 }
 export interface ProductList {
   products: ProductsInterface[];

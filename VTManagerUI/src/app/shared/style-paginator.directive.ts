@@ -51,7 +51,6 @@ export class StylePaginatorDirective implements AfterViewInit {
 
   get numOfPages(): number {
 
-    console.log(this.matPag.getNumberOfPages());
     return this.matPag.getNumberOfPages();
   }
 
@@ -123,12 +122,8 @@ export class StylePaginatorDirective implements AfterViewInit {
       });
     }
 
-    console.log('i fucked up before',this.numOfPages)
 
     for (let i = 0; i < this.numOfPages; i++) {
-      console.log(i);
-      console.log(this.numOfPages);
-      console.log(this._rangeStart , this._rangeEnd);
 
       if (i >= this._rangeStart && i <= this._rangeEnd) {
         this.ren.insertBefore(
@@ -175,7 +170,6 @@ export class StylePaginatorDirective implements AfterViewInit {
 
         if (pageIndex != this.lastPageIndex) {
           this.ren.listen(linkBtn, "click", () => {
-            console.log("working: ", pageIndex);
             this.switchPage(newIndex);
           });
         }
@@ -252,7 +246,6 @@ export class StylePaginatorDirective implements AfterViewInit {
   }
   //Helper function to switch page on non first, last, next and previous buttons only.
   private switchPage(i: number): void {
-    console.log("switch", i);
     const previousPageIndex = this.matPag.pageIndex;
     this.matPag.pageIndex = i;
     this.matPag["_emitPageEvent"](previousPageIndex);

@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container h-screen font-sans ">
-  <mat-sidenav #drawer class="sidenav z-30" fixedInViewport
+  <mat-sidenav #drawer class="sidenav  relative" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
@@ -9,7 +9,7 @@
     </a>
     </mat-toolbar>
     <div class="px-4 py-6">
-        <ul class="lg:flex-col lg:min-w-full flex flex-col list-none ">
+      <ul class="lg:flex-col lg:min-w-full flex flex-col list-none ">
           <li class="items-center ">
             <a [routerLink]="['/dashboard']"
                class="text-[13px]   py-1.5 font-medium text-[#00000061] hover:border border-[#009CB2] rounded block flex items-center"
@@ -482,12 +482,14 @@
               </a>
             </ul>
           </li>
-
-
         </ul>
     </div>
+    <button (click)="drawer.toggle()" class="absolute -right-3 bottom-9 bg-[#58CCE4] text-white rounded w-[36px] flex align-middle p-[2px] h-[36px] text-[14px] ">
+      <i class="fi-rr-arrow-small-left text-[20px] px-1 font-black pt-0.5 "></i>
+    </button>
   </mat-sidenav>
-  <mat-sidenav-content class="font-sans w-auto">
+  <mat-sidenav-content class="font-sans ">
+
     <mat-toolbar color="primary" >
       <button
         type="button"
@@ -498,7 +500,14 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <div class="flex justify-between lg:mr-[200px] w-full">
-        <div></div>
+        <div>
+          <div *ngIf="backButtonActive">
+            <button (click)="backClicked()" class="text-[#58CCE4] bg-white rounded w-[74px] flex align-middle p-[2px] h-[36px] text-[14px] ">
+              <i class="fi-rr-arrow-small-left text-[20px] px-1 font-black pt-0.5 "></i>Back
+            </button>
+          </div>
+        </div>
+
         <div class="flex my-auto space-x-5 items-center">
           <div>
             <i class="fi fi-rr-comments text-light-text text-[24px]"></i>
@@ -531,19 +540,8 @@
         </div>
       </div>
     </mat-toolbar>
-    <button (click)="drawer.toggle() ; toggleCollapseShow()"
-            class="fixed -ml-3 bottom-9 z-40 ">
-      <div *ngIf="collapseShow; else: closedSideNav"
-           class="bg-[#009CB2] text-white  w-[34px] h-[34px] rounded-[8px] p-2">
-        <i class="fi fi-rr-arrow-left"></i>
-      </div>
-      <ng-template #closedSideNav>
-        <div class="bg-[#009CB2] text-white  w-[34px] h-[34px] rounded-[8px] p-2">
-          <i class="fi fi-rr-arrow-right "></i>
-        </div>
-      </ng-template>
-    </button>
     <!-- Add Content Here -->
     <router-outlet class="font-sans"></router-outlet>
+
   </mat-sidenav-content>
 </mat-sidenav-container>

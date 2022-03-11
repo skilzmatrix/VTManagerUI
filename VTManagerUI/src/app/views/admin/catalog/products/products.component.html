@@ -1,37 +1,28 @@
-
 <section class="bg-[#F7F7F7] text-gray ">
   <div class="p-6">
-    <div class="flex justify-between pb-4">
-      <div>
-        <div class="text-[18px] text-head-text " >
-          <div class="font-semibold">Products</div>
-        </div>
-        <div class="font-light text-[14px]">
-          Home - <span class="font-semibold text-dark-text">Products</span>
-        </div>
-      </div>
-      <div class="">
-        <button class="text-white bg-light-blue rounded w-[119px] flex align-middle p-2 px-2 h-[36px] text-[14px] "><i class="fi fi-rr-plus font-black  align-middle pt-0.5 pr-1"></i>New Product</button>
-      </div>
-    </div>
-    <div class="bg-white mt-[4px] rounded-md">
-      <div class="px-6 pt-6 flex justify-between">
-        <div class="flex space-x-6">
-          <div class=" flex  relative w-[362px] h-[36px]">
-            <input (keyup)="applyFilter($event)" placeholder="Search Orders" class="absolute rounded-lg outline-0 indent-8 bg-dark-gray h-full w-full left-0 ">
-            <i class="fi fi-rr-search absolute left-0 p-2"></i>
-          </div >
-          <button (click)=headFill() [ngClass]="exHeadFill ? 'bg-dark-blue rounded-full text-white w-[36px] h-[36px] pt-2' : 'bg-none text-dark-blue w-[36px] h-[36px] pt-2'">
-            <i class="fi fi-rr-filter text-lg  "></i>
+    <app-page-head [text1]="title1" [text2]="title2" [text3]="title3">
+      <button class="text-white bg-light-blue rounded flex align-middle p-2 px-3 h-[36px] text-[14px] "><i class="fi fi-rr-plus font-black  align-middle pt-0.5 pr-1"></i>New Product</button>
+    </app-page-head>
+    <app-page-body>
+      <div class="px-5 pt-5 flex justify-between">
+        <div class="flex space-x-4">
+          <div class=" flex text-[14px] relative w-[342px] h-[32px]">
+            <input (keyup)="applyFilter($event)" placeholder="Search Products" class="absolute rounded-lg outline-0 indent-10  bg-[#F5F8FA] h-full w-full left-0 ">
+            <i class="fi fi-rr-search absolute left-0 p-2 pl-4"></i>
+          </div>
+          <button (click)=headFill() [ngClass]="exHeadFill ? 'bg-dark-blue rounded-full text-white w-[36px] h-[36px] pt-1' : 'bg-none text-[#56CBE5] w-[36px] h-[36px] pt-1'">
+            <i class="fi fi-rr-filter text-md  "></i>
           </button>
         </div>
         <div class="flex space-x-2">
-          <button [matMenuTriggerFor]="actions" class="text-light-blue border border-border-gray rounded px-3 h-[36px] text-[14px] items-center">
+          <button [matMenuTriggerFor]="actions" class="text-light-blue border border-border-gray rounded-md px-3 h-[36px] text-[14px] items-center">
             Action<i class="fi fi-rr-caret-down text-dark-text align-middle pl-2"></i>
           </button>
           <mat-menu #actions="matMenu" xPosition="before">
-            <button mat-menu-item class="text-[#FF0000] "><i class="fi fi-rr-trash  align-middle px-2"></i>Delete</button>
+            <button mat-menu-item class="text-[#00000099] "><i class="fi fi-rr-circle-small  align-middle px-1"></i>Activate</button>
+            <button mat-menu-item class="text-[#FF0000] "><i class="fi fi-rr-trash  align-middle px-1"></i>Delete</button>
           </mat-menu>
+
           <mat-form-field >
             <mat-select multiple [(ngModel)]="columnsToDisplay"   placeholder='Columns'>
               <mat-option *ngFor="let col of availableColumns" [value]="col" class="text-primary-blue">{{col}}</mat-option>
@@ -39,14 +30,13 @@
           </mat-form-field>
         </div>
       </div>
-      <div class="px-4">
+      <div class="pr-4 pl-6">
         <table mat-table
                [dataSource]="listOfProduct"
                multiTemplateDataRows
-               class="px-4 overflow-auto">
-
+               class="px-4 table-auto mx-auto w-full">
           <ng-container matColumnDef="select" >
-            <th mat-header-cell *matHeaderCellDef>
+            <th mat-header-cell *matHeaderCellDef class="w-[46px]">
               <div class="flex-col items-center">
                 <mat-checkbox
                   (change)="$event ? masterToggle() : null"
@@ -55,13 +45,13 @@
                   [aria-label]="checkboxLabel()" class="h-[46px] pt-[20px]">
                 </mat-checkbox>
                 <div *ngIf="exHeadFill">
-                  <div class=" border-t h-[46px]" >
+                  <div class=" border-t h-[46px] w-[46px] border-[#EFEFEF]" >
                   </div>
                 </div>
               </div>
 
             </th>
-            <td mat-cell *matCellDef="let row" >
+            <td mat-cell *matCellDef="let row" class="px-2">
               <mat-checkbox (click)="$event.stopPropagation()"
                             (change)="$event ? selection.toggle(row) : null"
                             [checked]="selection.isSelected(row)"
@@ -69,7 +59,6 @@
               </mat-checkbox>
             </td>
           </ng-container>
-
           <ng-container matColumnDef="image">
             <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
               <div class="flex-col items-center">
@@ -91,7 +80,7 @@
                 <div class="h-[46px] pt-[20px]">NAME</div>
                 <div *ngIf="exHeadFill">
                   <div class=" border-t h-[46px]" >
-                    <input (keyup)="applyFilter($event)"  placeholder="NAME" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[50px] mx-2">
+                    <input (keyup)="applyFilter($event)"  placeholder="NAME" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-md h-[36px] mt-[5px] w-[50px] mx-2">
                   </div>
                 </div>
               </div>
@@ -105,7 +94,7 @@
                 <div class="h-[46px] pt-[20px]">PRODUCT TYPE</div>
                 <div *ngIf="exHeadFill">
                   <div class=" border-t h-[46px]" >
-                    <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2"></select>
+                    <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-md h-[36px] mt-[5px] w-[100px] mx-2"></select>
                   </div>
                 </div>
               </div>
@@ -119,7 +108,7 @@
                 <div class="h-[46px] pt-[20px]">CATEGORIES</div>
                 <div *ngIf="exHeadFill">
                   <div class=" border-t h-[46px]" >
-                    <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2"></select>
+                    <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-md h-[36px] mt-[5px] w-[100px] mx-2"></select>
                   </div>
                 </div>
               </div>
@@ -133,7 +122,7 @@
                 <div class="h-[46px] pt-[20px]">SUPPLIER</div>
                 <div *ngIf="exHeadFill">
                   <div class=" border-t h-[46px]" >
-                    <input (keyup)="applyFilter($event)"  placeholder="Supplier" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[80px] mx-2">
+                    <input (keyup)="applyFilter($event)"  placeholder="Supplier" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-md h-[36px] mt-[5px] w-[80px] mx-2">
                   </div>
                 </div>
               </div>
@@ -147,7 +136,7 @@
                 <div class="h-[46px] pt-[20px]">STOCK</div>
                 <div *ngIf="exHeadFill">
                   <div class=" border-t h-[46px] w-[130px]  flex" >
-                    <input  (keyup)="applyFilter($event)"  placeholder="Stock" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[50px] ml-2 ">
+                    <input  (keyup)="applyFilter($event)"  placeholder="Stock" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l-md h-[36px] mt-[5px] w-[50px] ml-2 ">
                   </div>
                 </div>
               </div>
@@ -161,7 +150,7 @@
                 <div class="h-[46px] pt-[20px]">BTW</div>
                 <div *ngIf="exHeadFill">
                   <div class=" border-t h-[46px] w-[140px]  flex" >
-                    <input  (keyup)="applyFilter($event)"  placeholder="BTW" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[50px] ml-2 ">
+                    <input  (keyup)="applyFilter($event)"  placeholder="BTW" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l-md h-[36px] mt-[5px] w-[50px] ml-2 ">
                   </div>
                 </div>
               </div>
@@ -175,7 +164,7 @@
                 <div class="h-[46px] pt-[20px]">STATUS</div>
                 <div *ngIf="exHeadFill">
                   <div class=" border-t h-[46px]" >
-                    <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded h-[40px] mt-[3px] w-[100px] mx-2"></select>
+                    <select (click)="applyFilter($event)" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-md h-[36px] mt-[5px] w-[100px] mx-2"></select>
                   </div>
                 </div>
               </div>
@@ -189,8 +178,8 @@
                 <div class="h-[46px] pt-[20px]">KIND</div>
                 <div *ngIf="exHeadFill">
                   <div class=" border-t h-[46px] w-[140px]  flex" >
-                    <input  (keyup)="applyFilter($event)"  placeholder="Kind" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l h-[40px] mt-[3px] w-[105px] ml-2 ">
-                    <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r h-[40px] mt-[3px] pt-[12px] w-[20px] mr-2">
+                    <input  (keyup)="applyFilter($event)"  placeholder="Kind" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l-md h-[36px] mt-[5px] w-[105px] ml-2 ">
+                    <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r-md h-[36px] mt-[5px] pt-[12px] w-[20px] mr-2">
                       <i class="fi fi-rr-calendar "></i>
                     </div>
                   </div>
@@ -204,26 +193,27 @@
           <ng-container matColumnDef="actions" >
             <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
               <div class="flex-col items-center">
-                <div class="h-[46px] pt-[20px]">ACTIONS</div>
+                <div class="h-[46px] pt-[20px] px-r text-center">ACTIONS</div>
                 <div *ngIf="exHeadFill">
-                  <div class=" border-t h-[46px]" >
+                  <div class=" border-t h-[46px] border-[#EFEFEF]" >
                   </div>
                 </div>
               </div>
             </th>
-            <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans">
-              <div class=" px-2 mt-2 space-x-2 text-[14px] text-dark-text font-sans flex justify-center ">
+            <td mat-cell *matCellDef="let element" class=" mx-auto text-[14px] text-dark-text font-sans">
+              <div class="flex space-x-3 px-4 justify-center">
                 <i routerLink={{element.id}} class="fi fi-rr-pencil text-primary-blue"></i>
                 <i class="fi fi-rr-copy text-primary-blue"></i>
               </div>
             </td>
           </ng-container>
 
-          <tr mat-header-row  *matHeaderRowDef="[ 'select'].concat(columnsToDisplay).concat(['actions'])" class=" border-b-2 border-[#EFEFEF]"></tr>
-          <tr mat-row *matRowDef="let element; columns: [ 'select'].concat(columnsToDisplay).concat(['actions']);"
-              [class.example-expanded-row]="expandedElement === element"
-              class="example-element-row border-b-2 border-[#EFEFEF] "></tr>
 
+          <tr mat-header-row  *matHeaderRowDef="['select'].concat(columnsToDisplay).concat(['actions'])" class=" border-b-2  border-[#EFEFEF]" ></tr>
+
+          <tr mat-row *matRowDef="let element; columns: ['select'].concat(columnsToDisplay).concat(['actions']);"
+              [class.example-expanded-row]="expandedElement === element"
+              class="example-element-row  border-b-1 border-dashed border-[#EFEFEF]"></tr>
         </table>
         <mat-paginator style-paginator
                        [pageSizeOptions]="[10, 20,50]"
@@ -231,7 +221,9 @@
                        [length]="listOfProduct.data.length"
                        [showTotalPages]="5 ">
           ></mat-paginator >
+
       </div>
-    </div>
+
+    </app-page-body>
   </div>
 </section>

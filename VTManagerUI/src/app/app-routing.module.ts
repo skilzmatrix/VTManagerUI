@@ -64,11 +64,12 @@ import {ConfigurationsComponent} from "./views/admin/settings/configurations/con
 import {UsersComponent} from "./views/admin/settings/users/users.component";
 import {LogComponent} from "./views/admin/settings/log/log.component";
 import {SystemInfoComponent} from "./views/admin/settings/system-info/system-info.component";
+import {AdminComponent} from "./layouts/admin/admin.component";
 const routes: Routes = [
   // admin views
   {
     path: "",
-    component: NavigationComponent,
+    component: AdminComponent,
     children: [
       { path: "dashboard", component: DashboardComponent },
       { path: "orders/orders", component: OrdersComponent },

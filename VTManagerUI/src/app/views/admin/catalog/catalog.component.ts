@@ -39,7 +39,6 @@ export class CatalogComponent implements OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    console.log(this.listOfOrder);
     this.listOfOrder.filter = filterValue.trim().toLowerCase();
 
     if (this.listOfOrder.paginator) {
@@ -99,9 +98,6 @@ export class CatalogComponent implements OnInit {
   }
 
 
-  tableColumnController() {
-    console.log("activated table column controller");
-  }
 
   headFill() {
     this.exHeadFill = !this.exHeadFill;

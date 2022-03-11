@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {SelectionModel} from '@angular/cdk/collections';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {OrderList, OrdersInterface} from "../../../../interfaces/orders";
@@ -33,7 +33,7 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
   @ViewChild(MatPaginator,{static:true}) paginator?: MatPaginator;
   @ViewChild(MatSort) sort: MatSort | null = null;
   exHeadFill=false;
-
+  extention = true;
 
   constructor(private ordersService: OrdersService) {
 
@@ -42,7 +42,6 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    console.log(this.listOfOrder);
     this.listOfOrder.filter = filterValue.trim().toLowerCase();
 
     if (this.listOfOrder.paginator) {
@@ -109,6 +108,10 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
 
   headFill() {
     this.exHeadFill = !this.exHeadFill;
+  }
+
+  secExtendControl() {
+    this.extention = !this.extention;
   }
 }
 

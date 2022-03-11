@@ -21,6 +21,9 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
     ]),
   ],})
 export class ProductsInvitationsFranchiseComponent implements OnInit {
+  title1="Product Invitations (Franchise)";
+  title2="Home - Catalog - Product invitation -";
+  title3="Product invitation";
   availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery'];
   columnsToDisplay = [  'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery',];
   exHeadFill=false;

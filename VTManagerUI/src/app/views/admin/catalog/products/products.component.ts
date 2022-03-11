@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from "@angular/core";
+import {AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild} from "@angular/core";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {ProductList, ProductsInterface} from "../../../../interfaces/products";
 import {MatTableDataSource} from "@angular/material/table";
@@ -22,6 +22,13 @@ import {FormControl} from "@angular/forms";
   ],
 })
 export class ProductsComponent implements AfterViewInit,OnInit {
+  title1="Products";
+  title2="Home -";
+  title3="Products";
+  @Output() newItemEvent = new EventEmitter<string>();
+  addNewItem(value: string) {
+    this.newItemEvent.emit(value);
+  }
   availableColumns:any = [  'image','name', 'product_type', 'categories', 'supplier', 'stock', 'btw', 'status'];
   columnsToDisplay = ['image','name', 'product_type', 'categories', 'supplier', 'stock', 'btw', 'status'];
   exHeadFill=false;

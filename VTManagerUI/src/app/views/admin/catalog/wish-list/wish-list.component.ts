@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {OrdersService} from "../../../../services/orders.service";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {OrderList, OrdersInterface} from "../../../../interfaces/orders";
@@ -21,17 +21,20 @@ import {MatSort} from "@angular/material/sort";
     ]),
   ],
 })
-export class WishListComponent implements OnInit {
-  availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery'];
-  columnsToDisplay = [  'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery',];
-  exHeadFill=false;
+export class WishListComponent implements OnInit,AfterViewInit  {
+  title1="Wishlist";
+  title2="Home - Catalog - ";
+  title3="Wishlist";
+  availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery','billing','payment','price'];
+  columnsToDisplay = [  'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery'];
   expandedElement: OrdersInterface|null = null;
   listOfOrder: MatTableDataSource<OrdersInterface> = new MatTableDataSource();
   selection = new SelectionModel<OrdersInterface>(true, []);
   toppings = new FormControl();
   @ViewChild(MatPaginator,{static:true}) paginator?: MatPaginator;
   @ViewChild(MatSort) sort: MatSort | null = null;
-
+  exHeadFill=false;
+  extention = true;
 
   constructor(private ordersService: OrdersService) {
 
@@ -40,7 +43,6 @@ export class WishListComponent implements OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    console.log(this.listOfOrder);
     this.listOfOrder.filter = filterValue.trim().toLowerCase();
 
     if (this.listOfOrder.paginator) {
@@ -80,8 +82,7 @@ export class WishListComponent implements OnInit {
 
   /** Selects all rows if they are not all selected; otherwise clear selection. */
   selectedOptions: any;
-  iconChange=true;
-  expandIconChange=false;
+
 
 
   /** The label for the checkbox on the passed row */
@@ -109,9 +110,9 @@ export class WishListComponent implements OnInit {
   headFill() {
     this.exHeadFill = !this.exHeadFill;
   }
-  expandedIconChange() {
-    this.expandIconChange = !this.expandIconChange;
-    console.log("expanded works")
+
+  secExtendControl() {
+    this.extention = !this.extention;
   }
 }
 

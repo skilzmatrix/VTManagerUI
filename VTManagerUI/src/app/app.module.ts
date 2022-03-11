@@ -86,6 +86,12 @@ import { SystemInfoComponent } from './views/admin/settings/system-info/system-i
 import { PageHeadComponent } from './components/page-head/page-head.component';
 import { PageBodyComponent } from './components/page-body/page-body.component';
 import { TableComponent } from './components/table/table.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from '@angular/material/core';
+import { AdminComponent } from './layouts/admin/admin.component';
+import { NavBarComponent } from './layouts/admin/nav-bar/nav-bar.component';
+import {MatSortModule} from "@angular/material/sort";
+import { SideBarComponent } from './layouts/admin/side-bar/side-bar.component';
 
 
 @NgModule({
@@ -145,41 +151,46 @@ import { TableComponent } from './components/table/table.component';
     PageHeadComponent,
     PageBodyComponent,
     TableComponent,
-
+    AdminComponent,
+    NavBarComponent,
+    SideBarComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatExpansionModule,
-    MatTableModule,
-    MatCheckboxModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatCardModule,
-    MatPaginatorModule,
-    MatSelectModule,
-    MultiSelectModule,
-    MatTabsModule,
-    MatChipsModule,
-    EditorModule,
-    InputTextModule,
-    CalendarModule,
-    ChipsModule,
-    DropdownModule,
-    CheckboxModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatListModule,
-    MatGridListModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatExpansionModule,
+        MatTableModule,
+        MatCheckboxModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatCardModule,
+        MatPaginatorModule,
+        MatSelectModule,
+        MultiSelectModule,
+        MatTabsModule,
+        MatChipsModule,
+        EditorModule,
+        InputTextModule,
+        CalendarModule,
+        ChipsModule,
+        DropdownModule,
+        CheckboxModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatListModule,
+        MatGridListModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatSortModule,
+    ],
   providers: [
     ProductsService
   ],

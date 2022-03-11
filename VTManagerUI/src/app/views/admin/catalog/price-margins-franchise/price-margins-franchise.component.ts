@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {OrderList, OrdersInterface} from "../../../../interfaces/orders";
 import {MatTableDataSource} from "@angular/material/table";
 import {SelectionModel} from "@angular/cdk/collections";
@@ -20,17 +20,20 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
       transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],})
-export class PriceMarginsFranchiseComponent implements OnInit {
-  availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery'];
-  columnsToDisplay = [  'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery',];
-  exHeadFill=false;
+export class PriceMarginsFranchiseComponent implements OnInit,AfterViewInit  {
+  title1="Price margins (Franchise)";
+  title2="Home - Catalog - ";
+  title3="Price Margins";
+  availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery','billing','payment','price'];
+  columnsToDisplay = [  'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery'];
   expandedElement: OrdersInterface|null = null;
   listOfOrder: MatTableDataSource<OrdersInterface> = new MatTableDataSource();
   selection = new SelectionModel<OrdersInterface>(true, []);
   toppings = new FormControl();
   @ViewChild(MatPaginator,{static:true}) paginator?: MatPaginator;
   @ViewChild(MatSort) sort: MatSort | null = null;
-
+  exHeadFill=false;
+  extention = true;
 
   constructor(private ordersService: OrdersService) {
 
@@ -39,7 +42,6 @@ export class PriceMarginsFranchiseComponent implements OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    console.log(this.listOfOrder);
     this.listOfOrder.filter = filterValue.trim().toLowerCase();
 
     if (this.listOfOrder.paginator) {
@@ -81,6 +83,7 @@ export class PriceMarginsFranchiseComponent implements OnInit {
   selectedOptions: any;
 
 
+
   /** The label for the checkbox on the passed row */
   checkboxLabel(row?: OrdersInterface): string {
     if (!row) {
@@ -105,6 +108,10 @@ export class PriceMarginsFranchiseComponent implements OnInit {
 
   headFill() {
     this.exHeadFill = !this.exHeadFill;
+  }
+
+  secExtendControl() {
+    this.extention = !this.extention;
   }
 }
 

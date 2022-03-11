@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {OrderList, OrdersInterface} from "../../../../interfaces/orders";
 import {MatTableDataSource} from "@angular/material/table";
 import {SelectionModel} from "@angular/cdk/collections";
@@ -7,6 +7,8 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {OrdersService} from "../../../../services/orders.service";
 import {animate, state, style, transition, trigger} from "@angular/animations";
+import {ProductList, ProductsInterface} from "../../../../interfaces/products";
+import {ProductsService} from "../../../../services/products.service";
 
 @Component({
   selector: 'app-product-types',
@@ -20,44 +22,52 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
       transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],})
-export class ProductTypesComponent implements OnInit {
-  availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery'];
-  columnsToDisplay = [  'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery',];
+export class ProductTypesComponent implements AfterViewInit,OnInit {
+  title1="Product Types";
+  title2="Home - Catalog - ";
+  title3="Product Types";
+  @Output() newItemEvent = new EventEmitter<string>();
+  addNewItem(value: string) {
+    this.newItemEvent.emit(value);
+  }
+  availableColumns:any = [  'image','name', 'product_type', 'categories', 'supplier', 'stock', 'btw', 'status'];
+  columnsToDisplay = ['image','name', 'product_type', 'categories', 'supplier', 'stock', 'btw', 'status'];
   exHeadFill=false;
-  expandedElement: OrdersInterface|null = null;
-  listOfOrder: MatTableDataSource<OrdersInterface> = new MatTableDataSource();
-  selection = new SelectionModel<OrdersInterface>(true, []);
+  expandedElement: ProductsInterface|null = null;
+  listOfProduct: MatTableDataSource<ProductsInterface> = new MatTableDataSource();
+  selection = new SelectionModel<ProductsInterface>(true, []);
   toppings = new FormControl();
   @ViewChild(MatPaginator,{static:true}) paginator?: MatPaginator;
   @ViewChild(MatSort) sort: MatSort | null = null;
+  math=(Math.floor(Math.random()*100));
 
 
-  constructor(private ordersService: OrdersService) {
+  constructor(private productsService: ProductsService) {
 
   }
 
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    console.log(this.listOfOrder);
-    this.listOfOrder.filter = filterValue.trim().toLowerCase();
+    console.log(this.listOfProduct);
+    this.listOfProduct.filter = filterValue.trim().toLowerCase();
 
-    if (this.listOfOrder.paginator) {
-      this.listOfOrder.paginator.firstPage();
+    if (this.listOfProduct.paginator) {
+      this.listOfProduct.paginator.firstPage();
     }
   }
   ngOnInit() {
-    this.getOrderList();
+    this.getProductList();
   }
   ngAfterViewInit() {
-    this.listOfOrder.paginator = this.paginator as MatPaginator;
-    this.listOfOrder.sort = this.sort;
+    this.listOfProduct.paginator = this.paginator as MatPaginator;
+    this.listOfProduct.sort = this.sort;
   }
-  getOrderList() {
-    this.ordersService.getOrders()
+  getProductList() {
+    this.productsService.getProducts()
       .subscribe({
-        next: (data : OrderList) => {
-          this.listOfOrder.data = data.orders;
+        next: (data : ProductList) => {
+          this.listOfProduct.data = data.products;
 
         }, error: (error) => {
           console.log(error);
@@ -68,7 +78,7 @@ export class ProductTypesComponent implements OnInit {
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
     const numSelected = this.selection.selected.length;
-    const numRows = this.listOfOrder.data.length;
+    const numRows = this.listOfProduct.data.length;
 
 
     const x = () => {
@@ -82,11 +92,11 @@ export class ProductTypesComponent implements OnInit {
 
 
   /** The label for the checkbox on the passed row */
-  checkboxLabel(row?: OrdersInterface): string {
+  checkboxLabel(row?: ProductsInterface): string {
     if (!row) {
       return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
     }
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.postcode + 1}`;
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.name + 1}`;
   }
 
   masterToggle() {
@@ -95,7 +105,7 @@ export class ProductTypesComponent implements OnInit {
       return;
     }
 
-    this.selection.select(...this.listOfOrder.data);
+    this.selection.select(...this.listOfProduct.data);
   }
 
 
@@ -107,5 +117,3 @@ export class ProductTypesComponent implements OnInit {
     this.exHeadFill = !this.exHeadFill;
   }
 }
-
-
