@@ -33,8 +33,14 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
   @ViewChild(MatPaginator,{static:true}) paginator?: MatPaginator;
   @ViewChild(MatSort) sort: MatSort | null = null;
   exHeadFill=false;
-  extention = true;
-
+  extention =true;
+  newOrderControlIndicator= false;
+  selected = '';
+  private n=1;
+  selectedOptions: any;
+  users = ['Anne&Max Rotterdam Korte Hoog 1', 'Anne&Max Rotterdam Korte Hoog 2'];
+  private product :number = 1;
+  times=['10.00 - 1.00','12.00 - 3.00','4.00 - 7.30','9.30 - 12.30']
   constructor(private ordersService: OrdersService) {
 
   }
@@ -80,9 +86,16 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
   }
 
   /** Selects all rows if they are not all selected; otherwise clear selection. */
-  selectedOptions: any;
 
-
+  countOfProduct(){
+      return Array(this.product ).fill(0).map((x,i)=>i);
+  }
+  addPro(){
+    this.product = this.product+1;
+  }
+  remPro(){
+    this.product = this.product-1;
+  }
 
   /** The label for the checkbox on the passed row */
   checkboxLabel(row?: OrdersInterface): string {
@@ -112,6 +125,10 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
 
   secExtendControl() {
     this.extention = !this.extention;
+  }
+
+  newOrderControl() {
+    this.newOrderControlIndicator = !this.newOrderControlIndicator;
   }
 }
 

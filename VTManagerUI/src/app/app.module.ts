@@ -109,8 +109,6 @@ import { SideBarComponent } from './layouts/admin/side-bar/side-bar.component';
     StatisticsComponent,
     StylePaginatorDirective,
     LoginComponent,
-    OrderDeatailsComponent,
-    OrderDeatailsComponent,
     ProductsComponent,
     RemovedProductsComponent,
     CustomerSpecificProductsComponent,
@@ -154,6 +152,7 @@ import { SideBarComponent } from './layouts/admin/side-bar/side-bar.component';
     AdminComponent,
     NavBarComponent,
     SideBarComponent,
+    OrderDeatailsComponent,
   ],
     imports: [
         BrowserModule,

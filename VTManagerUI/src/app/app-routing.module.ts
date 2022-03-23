@@ -65,6 +65,7 @@ import {UsersComponent} from "./views/admin/settings/users/users.component";
 import {LogComponent} from "./views/admin/settings/log/log.component";
 import {SystemInfoComponent} from "./views/admin/settings/system-info/system-info.component";
 import {AdminComponent} from "./layouts/admin/admin.component";
+import {OrderDeatailsComponent} from "./views/admin/orders/orders/order-deatails/order-deatails.component";
 const routes: Routes = [
   // admin views
   {
@@ -73,6 +74,7 @@ const routes: Routes = [
     children: [
       { path: "dashboard", component: DashboardComponent },
       { path: "orders/orders", component: OrdersComponent },
+      { path: "orders/orders/:id", component: OrderDeatailsComponent},
       { path: "orders/deleted-orders", component: DeletedOrdersComponent},
       { path: "orders/colli-orders-tomorrow", component: ColliOrdersTomorrowComponent},
       { path: "orders/completed-orders", component: CompletedOrdersComponent},

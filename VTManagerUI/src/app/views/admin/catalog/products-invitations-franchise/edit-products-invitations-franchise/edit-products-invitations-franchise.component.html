@@ -1,54 +1,56 @@
-<section class="bg-[#F7F7F7] text-gray font-sans">
-  <div class="p-4">
-    <div class="flex justify-between">
-      <div>
-        <div class="text-[18px] text-head-text " >
-          <div class="font-semibold">
-            Edit Product Invitation
+<app-navigation>
+  <section class="bg-[#F7F7F7] text-gray font-sans">
+    <div class="p-4">
+      <div class="flex justify-between">
+        <div>
+          <div class="text-[18px] text-head-text " >
+            <div class="font-semibold">
+              Edit Product Invitation
+            </div>
+          </div>
+          <div class="font-light text-[14px]">
+            Home -<span class="font-semibold text-dark-text">&nbsp;Product Details </span>
           </div>
         </div>
-        <div class="font-light text-[14px]">
-          Home -<span class="font-semibold text-dark-text">&nbsp;Product Details </span>
+        <div class="flex space-x-2">
+          <button  class="text-white bg-[#FF0000] w-[100px] rounded-md"><i class="fi fi-rr-trash  align-middle pr-2"></i>Delete</button>
         </div>
-      </div>
-      <div class="flex space-x-2">
-        <button  class="text-white bg-[#FF0000] w-[100px] rounded-md"><i class="fi fi-rr-trash  align-middle pr-2"></i>Delete</button>
       </div>
     </div>
-  </div>
-  the id is : {{id}}
-  <div class="bg-white rounded-md m-4 ">
-    <div class="p-4 flex flex-col space-y-4" >
-      <div class="space-y-[30px] pt-[30px]">
-        <div class="w-[670px]">
-          <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
-        </div>
-        <div class="w-[670px]">
-          <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
-        </div>
-        <div class="w-[670px]">
-          <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
-        </div>
-        <div class="flex space-x-[10px]">
-          <div class="w-[330px] ">
+    the id is : {{id}}
+    <div class="bg-white rounded-md m-4 ">
+      <div class="p-4 flex flex-col space-y-4" >
+        <div class="space-y-[30px] pt-[30px]">
+          <div class="w-[670px]">
+            <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
+          </div>
+          <div class="w-[670px]">
+            <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
+          </div>
+          <div class="w-[670px]">
+            <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
+          </div>
+          <div class="flex space-x-[10px]">
+            <div class="w-[330px] ">
                 <span class="p-float-label">
                   <input type="text" pInputText [(ngModel)]="value1" >
                   <label >InputText</label>
                 </span>
-          </div>
-          <div class="w-[330px] ">
+            </div>
+            <div class="w-[330px] ">
                 <span class="p-float-label">
                   <input type="text" pInputText [(ngModel)]="value1" >
                   <label >InputText</label>
                 </span>
+            </div>
           </div>
         </div>
-      </div>
-      <hr class="text-[#00000029]">
-      <div class="flex justify-end space-x-[10px]">
-        <button  type="button" class="h-[36px] w-[78px] text-[#FBC02D] rounded border">Cancel</button>
-        <button  type="button" class="h-[36px] w-[64px] text-white rounded bg-[#56CAE5]">Save</button>
+        <hr class="text-[#00000029]">
+        <div class="flex justify-end space-x-[10px]">
+          <button  type="button" class="h-[36px] w-[78px] text-[#FBC02D] rounded border">Cancel</button>
+          <button  type="button" class="h-[36px] w-[64px] text-white rounded bg-[#56CAE5]">Save</button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</app-navigation>

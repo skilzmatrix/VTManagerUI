@@ -165,7 +165,6 @@ export class OffersDetailsComponent implements OnInit {
       .subscribe({
         next    : (data: ProductList) => {
           this.ProductDetails.data = data.products;
-          console.log("fun " + this.ProductDetails.data);
         }, error: (error) => {
           console.log(error);
         }

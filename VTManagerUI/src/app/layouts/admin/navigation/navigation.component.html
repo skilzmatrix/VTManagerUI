@@ -135,7 +135,7 @@
               <a
                 [routerLink]="['/catalog/products']"
                 class="text-[13px]   py-1.5 font-medium  rounded block"
-                routerLinkActive
+                routerLinkActive="routerLinkActive"
                 #adminCatalogProducts="routerLinkActive"
                 [ngClass]="adminCatalogProducts.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
                 <li class="items-center px-2	">Products</li>
@@ -143,7 +143,7 @@
               <a
                 [routerLink]="['/catalog/removed-products']"
                 class="text-[13px]   py-1.5 font-medium   rounded block"
-                routerLinkActive
+                routerLinkActive="routerLinkActive"
                 #adminCatalogRemovedProducts="routerLinkActive"
                 [ngClass]="adminCatalogRemovedProducts.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
                 <li class="items-center px-2	">Removed Products</li>
@@ -151,7 +151,7 @@
               <a
                 [routerLink]="['/catalog/customer-specific-products']"
                 class="text-[13px]   py-1.5 font-medium   rounded block"
-                routerLinkActive
+                routerLinkActive="routerLinkActive"
                 #adminCatalogCustomerSpecificProducts="routerLinkActive"
                 [ngClass]="adminCatalogCustomerSpecificProducts.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
                 <li class="items-center px-2	">Customer Specific Products</li>
@@ -159,7 +159,7 @@
               <a
                 [routerLink]="['/catalog/franchise-specific-products']"
                 class="text-[13px]  py-1.5 font-medium  rounded block"
-                routerLinkActive
+                routerLinkActive="routerLinkActive"
                 #adminCatalogFranchiseSpecificProducts="routerLinkActive"
                 [ngClass]="adminCatalogFranchiseSpecificProducts.isActive ? 'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
                 <li class="items-center px-2	">Franchise Specific Products</li>
@@ -167,15 +167,15 @@
               <a
                 [routerLink]="['/catalog/product-invitations-franchise']"
                 class="text-[13px]  py-1.5 font-medium   rounded block"
-                routerLinkActive
+                routerLinkActive="routerLinkActive"
                 #adminCatalogProductInvitationsFranchise="routerLinkActive"
                 [ngClass]="adminCatalogProductInvitationsFranchise.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
                 <li class="items-center px-2	">Product Invitations (Franchise)</li>
               </a>
               <a
-                [routerLink]="['catalog/categories']"
+                [routerLink]="['/catalog/categories']"
                 class="text-[13px] py-1.5 font-medium   rounded block"
-                routerLinkActive
+                routerLinkActive="routerLinkActive"
                 #adminCatalogCategories="routerLinkActive"
                 [ngClass]="adminCatalogCategories.isActive ?  'text-[#009CB2] bg-[#E0FFFF]':'text-[#00000061] bg-white' ">
                 <li class="items-center px-2	">Categories</li>
@@ -541,7 +541,6 @@
       </div>
     </mat-toolbar>
     <!-- Add Content Here -->
-    <router-outlet class="font-sans"></router-outlet>
-
+    <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
