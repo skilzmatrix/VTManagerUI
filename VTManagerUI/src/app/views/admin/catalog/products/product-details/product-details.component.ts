@@ -44,11 +44,6 @@ export class ProductDetailsComponent implements OnInit {
   listOfOrder: MatTableDataSource<OrdersInterface> = new MatTableDataSource();
   selection                                        = new SelectionModel<OrdersInterface>(true, []);
   addOnBlur                                        = true;
-  readonly separatorKeysCodes                      = [ENTER, COMMA] as const;
-  fruits: Fruit[]                                  = [{name: 'Lemon'}, {name: 'Lime'}, {name: 'Apple'}];
-  value4: string                                   = '';
-  text1: any;
-  value1                                           ='Rund ribeye geportioneerd 5x200gram';
   cities                                           = ['en', 'fr', 'es'];
   selectedCity                                     = [];
   selectedValues                                   = [];
@@ -57,6 +52,9 @@ export class ProductDetailsComponent implements OnInit {
   text2                                            = "";
   langTitle=['En', 'Fr', 'Es'];
   selectedlangTitle=[];
+  value='Rund ribeye geportioneerd 5x200gram';
+
+
   @ViewChild(MatPaginator, {static: true}) paginator?: MatPaginator;
   @ViewChild(MatSort) sort: MatSort | null         = null;
 
@@ -68,7 +66,11 @@ export class ProductDetailsComponent implements OnInit {
 
   }
 
-
+  openTab = 1;
+  checked=true;
+  toggleTabs($tabNumber: number){
+    this.openTab = $tabNumber;
+  }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     console.log(this.listOfOrder);
@@ -111,30 +113,6 @@ export class ProductDetailsComponent implements OnInit {
 
     }
     return numSelected === numRows;
-  }
-
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
-  selectedOptions: any;
-
-
-  add(event: MatChipInputEvent): void {
-    const value = (event.value || '').trim();
-
-    // Add our fruit
-    if (value) {
-      this.fruits.push({name: value});
-    }
-
-    // Clear the input value
-    event.chipInput!.clear();
-  }
-
-  remove(fruit: Fruit): void {
-    const index = this.fruits.indexOf(fruit);
-
-    if (index >= 0) {
-      this.fruits.splice(index, 1);
-    }
   }
 
   /** The label for the checkbox on the passed row */

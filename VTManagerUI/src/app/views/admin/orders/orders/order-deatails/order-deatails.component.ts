@@ -7,6 +7,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {OrdersService} from "../../../../../services/orders.service";
 import {animate, state, style, transition, trigger} from "@angular/animations";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-order-deatails',
@@ -21,14 +22,15 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
     ]),
   ],
 })export class OrderDeatailsComponent implements OnInit {
+  public id: string = '';
   delivery_statuses=['Waiting','Ready','Delivered'];
   payment_statuses=['Waiting','Ready','Delivered'];
   billing_statuses=['Waiting','Ready','Delivered'];
   title1="Orders";
   title2="Home -";
   title3="Orders";
-  availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery','billing','payment','price'];
-  columnsToDisplay = [  'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery'];
+  availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date'];
+    columnsToDisplay = [  'customer', 'business', 'postcode', 'order_date'];
   expandedElement: OrdersInterface|null = null;
   listOfOrder: MatTableDataSource<OrdersInterface> = new MatTableDataSource();
   selection = new SelectionModel<OrdersInterface>(true, []);
@@ -44,10 +46,16 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   users = ['Anne&Max Rotterdam Korte Hoog 1', 'Anne&Max Rotterdam Korte Hoog 2'];
   private product :number = 1;
   times=['10.00 - 1.00','12.00 - 3.00','4.00 - 7.30','9.30 - 12.30']
-  constructor(private ordersService: OrdersService) {
+  supplierSecIndicator = true;
+  publisherSecIndicator = false;
+  constructor(private ordersService: OrdersService,
+              private route: ActivatedRoute,
+              private router: Router,
+              ) {
 
   }
 
+  math=(Math.floor(Math.random()*100));
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -59,6 +67,7 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
   }
   ngOnInit() {
     this.getOrderList();
+    this.id = this.route.snapshot.paramMap.get('id') ?? '';
   }
   ngAfterViewInit() {
     this.listOfOrder.paginator = this.paginator as MatPaginator;
@@ -132,6 +141,15 @@ import {animate, state, style, transition, trigger} from "@angular/animations";
 
   newOrderControl() {
     this.newOrderControlIndicator = !this.newOrderControlIndicator;
+  }
+
+  supplierSec() {
+    this.supplierSecIndicator = !this.supplierSecIndicator;
+    this.publisherSecIndicator = !this.publisherSecIndicator;
+  }
+  publisherSec() {
+    this.publisherSecIndicator = !this.publisherSecIndicator;
+    this.supplierSecIndicator = !this.supplierSecIndicator;
   }
 }
 

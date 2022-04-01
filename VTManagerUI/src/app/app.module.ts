@@ -92,6 +92,7 @@ import { AdminComponent } from './layouts/admin/admin.component';
 import { NavBarComponent } from './layouts/admin/nav-bar/nav-bar.component';
 import {MatSortModule} from "@angular/material/sort";
 import { SideBarComponent } from './layouts/admin/side-bar/side-bar.component';
+import { OrderListDetailsComponent } from './views/admin/orders/order-list/order-list-details/order-list-details.component';
 
 
 @NgModule({
@@ -153,6 +154,7 @@ import { SideBarComponent } from './layouts/admin/side-bar/side-bar.component';
     NavBarComponent,
     SideBarComponent,
     OrderDeatailsComponent,
+    OrderListDetailsComponent,
   ],
     imports: [
         BrowserModule,

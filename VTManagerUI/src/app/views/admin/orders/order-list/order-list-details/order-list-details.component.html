@@ -1,0 +1,78 @@
+<app-navigation>
+  <section class="bg-[#F7F7F7] text-gray mx-auto">
+    <div class="p-6">
+      <app-page-head [text1]="title1" [text2]="title2" [text3]="title3">
+        <button class="flex space-x-4 font-sans flex bg-[#FF0000] text-white  rounded-md flex align-middle p-2 px-3 h-[36px] text-[14px] ">
+          <i class="fi fi-rr-trash  align-middle px-2"></i>Delete
+        </button>
+      </app-page-head>
+      <app-page-body>
+        <div class="pl-[24px] pt-[24px] ">
+          <div>
+            <mat-form-field class="h-[36px] w-[816px]" appearance="outline">
+              <mat-label>First name</mat-label>
+              <input matInput class="h-[36px] w-[816px]">
+            </mat-form-field>
+          </div>
+          <div class="py-[12px]">
+            <mat-form-field appearance="outline" class="h-[36px] w-[816px]">
+              <mat-label>Users</mat-label>
+              <mat-select [formControl]="usersControl" multiple class="h-[36px] w-[816px]">
+                <mat-select-trigger>
+                  <mat-chip-list>
+                    <mat-chip *ngFor="let user of users"
+                              [removable]="true" (removed)="remove(user)"  selected>
+                      <div class="bg-[#B4E9F5] text-[14px] font-normal">{{ user }}</div>
+                      <mat-icon matChipRemove>
+                        <div>
+                          <i class="fi fi-rr-cross-small"></i>
+                        </div>
+                      </mat-icon>
+                    </mat-chip>
+                  </mat-chip-list>
+                </mat-select-trigger>
+
+                <mat-option *ngFor="let avlUser of avlUsers" [value]="avlUser">
+                  {{ avlUser }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="py-[12px]">
+            <mat-form-field appearance="outline" class="h-[36px] w-[816px]">
+              <mat-label>Users</mat-label>
+              <mat-select [formControl]="usersControl" multiple class="h-[36px] w-[816px]">
+                <mat-select-trigger>
+                  <mat-chip-list>
+                    <mat-chip *ngFor="let user of users"
+                              [removable]="true" (removed)="remove(user)"  selected>
+                      {{ user }}
+                      <mat-icon matChipRemove>
+                        <div>
+                          <i class="fi fi-rr-cross-small"></i>
+                        </div>
+                      </mat-icon>
+                    </mat-chip>
+                  </mat-chip-list>
+                </mat-select-trigger>
+                <mat-option *ngFor="let avlUser of avlUsers" [value]="avlUser">
+                  {{ avlUser }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="py-[42px] ">
+          <div class="px-[24px] py-[10px] border-t border-[#00000029] flex flex-row-reverse gap-[16px]">
+            <button class="font-sans bg-[#56CAE5] text-white border rounded-md align-middle py-[10py] px-[16px] h-[36px] w-[64px]  text-[14px] ">
+              Save
+            </button>
+            <button class="font-sans bg-white text-[#FBC02D] border border-[#0000001F] rounded-md align-middle py-[10py] px-[16px] h-[36px] w-[78px] text-[14px] ">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </app-page-body>
+    </div>
+  </section>
+</app-navigation>

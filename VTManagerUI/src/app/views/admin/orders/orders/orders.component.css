@@ -46,3 +46,22 @@ tr.example-element-row:not(.example-expanded-row):active {
   opacity: 0.5;
 }
 
+.columnSec{
+  width: 105px !important;
+}
+.mat-form-field {
+  height: 46px !important;
+
+}
+.mat-form-field-outline{
+  height:36px !important;
+}
+.mat-form-field-infix{
+  height: 39px !important;
+
+}
+.mat-form-field{
+  top: -3px !important;
+
+
+}

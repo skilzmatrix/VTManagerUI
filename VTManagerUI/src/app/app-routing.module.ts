@@ -66,6 +66,9 @@ import {LogComponent} from "./views/admin/settings/log/log.component";
 import {SystemInfoComponent} from "./views/admin/settings/system-info/system-info.component";
 import {AdminComponent} from "./layouts/admin/admin.component";
 import {OrderDeatailsComponent} from "./views/admin/orders/orders/order-deatails/order-deatails.component";
+import {
+  OrderListDetailsComponent
+} from "./views/admin/orders/order-list/order-list-details/order-list-details.component";
 const routes: Routes = [
   // admin views
   {
@@ -79,6 +82,7 @@ const routes: Routes = [
       { path: "orders/colli-orders-tomorrow", component: ColliOrdersTomorrowComponent},
       { path: "orders/completed-orders", component: CompletedOrdersComponent},
       { path: "orders/order-list", component: OrderListComponent},
+      { path: "orders/order-list/:id", component: OrderListDetailsComponent},
       { path: "orders/deliveries-via-csv-files", component: DeliveriesViaCsvFilesComponent},
       { path: "orders/statistics", component: StatisticsComponent},
       { path: "orders/supplier-overview", component: SupplierOverviewComponent},

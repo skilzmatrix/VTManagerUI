@@ -45,3 +45,14 @@ tr.example-element-row:not(.example-expanded-row):active {
 .example-element-description-attribution {
   opacity: 0.5;
 }
+.mat-tab-label-content{
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+.mat-focus-indicator .ng-star-inserted .mat-tab-label-active{
+  opacity: none !important;
+}
+.mat-tab-label{
+  padding: 0PX  !important;
+  width: 112px !important;
+}

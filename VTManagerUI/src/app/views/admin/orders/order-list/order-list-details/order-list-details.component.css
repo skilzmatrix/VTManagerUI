@@ -1,0 +1,15 @@
+
+.mat-form-field-outline{
+  height:36px !important;
+}
+.mat-form-field:hover{
+  border-color: #2babd3 !important;
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+  background-color: #B4E9F5 !important;
+  color: #00000099 !important;
+}
+.mat-form-field-infix{
+
+}
