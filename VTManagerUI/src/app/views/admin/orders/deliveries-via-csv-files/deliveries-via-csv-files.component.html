@@ -14,8 +14,9 @@
             </button>
           </div>
           <div class="flex space-x-2">
-            <mat-form-field >
-              <mat-select multiple [(ngModel)]="columnsToDisplay"   placeholder='Columns'>
+            <mat-form-field appearance="outline" class="h-[22px]">
+              <mat-label>Columns</mat-label>
+              <mat-select multiple [(ngModel)]="columnsToDisplay"  class="h-[22px]" >
                 <mat-option *ngFor="let col of availableColumns" [value]="col" class="text-primary-blue">{{col}}</mat-option>
               </mat-select>
             </mat-form-field>
@@ -219,7 +220,7 @@
               </th>
               <td mat-cell *matCellDef="let element" class=" mx-auto text-[14px] text-dark-text font-sans">
                 <div class="flex space-x-3 px-4 justify-center">
-                  <i class="fi fi-rr-notebook text-primary-blue"></i>
+                  <i routerLink={{element.no}} class="fi fi-rr-notebook text-primary-blue"></i>
                   <i class="fi fi-rr-cloud-download text-primary-blue"></i>
                 </div>
               </td>

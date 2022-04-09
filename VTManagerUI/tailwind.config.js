@@ -17,22 +17,26 @@ module.exports = {
         'border-gray':'#0000001F',
 
       },
+      zIndex: {
+        "-1": "-1",
+      },
+      fontFamily: {
+        'body': ['Raleway'],
+        'sans':['Raleway'],
+        'roboto':['Roboto'],
+      },
+      fontWeight: {
+        'extralight': 100,
+        'light': 200,
+        'normal': 300,
+        'medium': 400,
+        'semibold': 500,
+        'bold': 600,
+        'extrabold': 700,
+        'black': 800,
+      }
     },
-    fontFamily: {
-          'body': ['Raleway'],
-          'sans':['Raleway'],
-    },
-    fontWeight: {
-      'thin': 100,
-      'extralight': 200,
-      'light': 300,
-      'normal': 400,
-      'medium': 500,
-      'semibold': 600,
-      'bold': 700,
-      'extrabold': 800,
-      'black': 900,
-    }
+
 
   },
   plugins: [

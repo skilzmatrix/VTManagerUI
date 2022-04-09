@@ -69,6 +69,13 @@ import {OrderDeatailsComponent} from "./views/admin/orders/orders/order-deatails
 import {
   OrderListDetailsComponent
 } from "./views/admin/orders/order-list/order-list-details/order-list-details.component";
+import {
+  SuplierOrderDetailsComponent
+} from "./views/admin/orders/orders/suplier-order-details/suplier-order-details.component";
+import {CsvContentComponent} from "./views/admin/orders/deliveries-via-csv-files/csv-content/csv-content.component";
+import {
+  NewProductDetailsComponent
+} from "./views/admin/catalog/products/new-product-details/new-product-details.component";
 const routes: Routes = [
   // admin views
   {
@@ -78,16 +85,19 @@ const routes: Routes = [
       { path: "dashboard", component: DashboardComponent },
       { path: "orders/orders", component: OrdersComponent },
       { path: "orders/orders/:id", component: OrderDeatailsComponent},
+      { path: "orders/orders/:id/:id", component: SuplierOrderDetailsComponent},
       { path: "orders/deleted-orders", component: DeletedOrdersComponent},
       { path: "orders/colli-orders-tomorrow", component: ColliOrdersTomorrowComponent},
       { path: "orders/completed-orders", component: CompletedOrdersComponent},
       { path: "orders/order-list", component: OrderListComponent},
       { path: "orders/order-list/:id", component: OrderListDetailsComponent},
       { path: "orders/deliveries-via-csv-files", component: DeliveriesViaCsvFilesComponent},
+      { path: "orders/deliveries-via-csv-files/:id", component: CsvContentComponent},
       { path: "orders/statistics", component: StatisticsComponent},
       { path: "orders/supplier-overview", component: SupplierOverviewComponent},
       { path: "orders/unconfirmed-orders", component: UnconfirmedOrdersComponent},
       { path: "catalog/products", component: ProductsComponent},
+      { path: "catalog/products/new", component: NewProductDetailsComponent},
       { path: "catalog/categories", component: CategoriesComponent},
       { path: "catalog/removed-products", component: RemovedProductsComponent},
       { path: "catalog/customer-specific-products", component: CustomerSpecificProductsComponent},

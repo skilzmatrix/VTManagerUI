@@ -1,0 +1,381 @@
+<div *ngIf="newOrderControlIndicator" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 flex">
+  <div class="overflow-x-hidden overflow-y-auto absolute bg-black opacity-10 z-40 h-full w-full fixed flex modal"></div>
+  <form class="overflow-x-hidden overflow-y-auto absolute fixed right-0 h-screen w-1/2 bg-white z-40 opacity-100  shadow-2xl">
+    <div class="py-3 px-6 font-sans">
+      <div class="flex justify-between">
+        <div class="text-[#00000099] font-medium text-[18px]">Edit Product</div>
+        <div (click)="newOrderControl()"><i class="fi fi-rr-cross-small cursor-pointer text-[#00000061] py-1 text-[22px]"></i></div>
+      </div>
+      <div class="space-y-[24px] font-sans">
+        <div class="flex space-x-[10px] w-full h-[54px] items-center">
+          <img src="https://picsum.photos/40/40" class="w-[40px] h-[40px] rounded-full">
+          <div class="text-[#000000] text-[16px] font-normal">Pumpkin soup with sage (Bellamy’s)</div>
+        </div>
+        <div class="relative">
+          <input id="Order Quantity" name="Order Quantity" type="text" class="peer h-[54px] w-full border rounded-md border-[#0000001F] text-[#00000099] text-[16px] placeholder-transparent focus:outline-none focus:border-[#56CAE5] indent-3" placeholder="john@doe.com" value="2" />
+          <label for="Order Quantity" class="absolute left-4 -top-2 leading-[16px] tracking-tight bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-2 peer-placeholder-shown:left-4 peer-focus:left-4  peer-focus:-top-2 peer-focus:text-[#00000099] peer-focus:text-[12px]">Order Quantity</label>
+          <label class="absolute right-0  bg-white text-[#00000099] font-semibold text-[16px] top-[19px] right-[16px] ">box</label>
+        </div>
+        <div class="relative">
+          <input id="Unit Product Price" name="Unit Product Price" type="text" class="peer h-[54px] w-full border rounded-md border-[#0000001F] text-[#00000099] text-[16px] placeholder-transparent focus:outline-none focus:border-[#56CAE5] indent-12" placeholder="john@doe.com" value="2" />
+          <label for="Unit Product Price" class="absolute left-4 -top-2 leading-[16px] tracking-tight bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-2 peer-focus:-top-2 peer-focus:text-[#00000099] peer-focus:text-[12px]">Unit Product Price</label>
+          <label class="absolute  bg-white text-[#00000099] top-[16px] left-[16px]"><i class="fi fi-rr-euro text-[24px]"></i>
+          </label>
+        </div>
+        <div class="relative">
+          <input id="Supplier price" name="Supplier price" type="text" class="peer h-[54px] w-full border rounded-md border-[#0000001F] text-[#00000099] text-[16px] placeholder-transparent focus:outline-none focus:border-[#56CAE5] indent-12" placeholder="john@doe.com" value="2" />
+          <label for="Supplier price" class="absolute left-4 -top-2 leading-[16px] tracking-tight bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-2 peer-focus:-top-2 peer-focus:text-[#00000099] peer-focus:text-[12px]">Supplier price</label>
+          <label class="absolute  bg-white text-[#00000099] top-[16px] left-[16px]"><i class="fi fi-rr-euro text-[24px]"></i></label>
+        </div>
+        <div class="relative">
+          <input id="Delivered Quantity" name="Delivered Quantity" type="text" class="peer h-[54px] w-full border rounded-md border-[#0000001F] text-[#00000099] text-[16px] placeholder-transparent focus:outline-none focus:border-[#56CAE5] indent-3" placeholder="john@doe.com" value="2" />
+          <label for="Delivered Quantity" class="absolute left-4 -top-2 leading-[16px] tracking-tight bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-2 peer-focus:-top-2 peer-focus:text-[#00000099] peer-focus:text-[12px]">Delivered Quantity</label>
+          <label class="absolute right-0  bg-white text-[#00000099] font-semibold text-[16px] top-[19px] right-[16px] ">box</label>
+        </div>
+        <div class="relative">
+          <input id="Total Product Price" name="Total Product Price" type="text" class="peer h-[54px] w-full border rounded-md border-[#0000001F] text-[#00000099] text-[16px] placeholder-transparent focus:outline-none focus:border-[#56CAE5] indent-12" placeholder="john@doe.com" value="2" />
+          <label for="Total Product Price" class="absolute left-4 -top-2 leading-[16px] tracking-tight bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-2 peer-focus:-top-2 peer-focus:text-[#00000099] peer-focus:text-[12px]">Total Product Price</label>
+          <label class="absolute  bg-white text-[#00000099] top-[16px] left-[16px]"><i class="fi fi-rr-euro text-[24px]"></i>
+          </label>
+        </div>
+        <div class="relative">
+          <input id="Total Supplier Price" name="Total Supplier price" type="text" class="peer h-[54px] w-full border rounded-md border-[#0000001F] text-[#00000099] text-[16px] placeholder-transparent focus:outline-none focus:border-[#56CAE5] indent-12" placeholder="john@doe.com" value="2" />
+          <label for="Total Supplier price" class="absolute left-4 -top-2 leading-[16px] tracking-tight bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-2 peer-focus:-top-2 peer-focus:text-[#00000099] peer-focus:text-[12px]">Total Supplier price</label>
+          <label class="absolute  bg-white text-[#00000099] top-[16px] left-[16px]"><i class="fi fi-rr-euro text-[24px]"></i></label>
+        </div>
+        <div class="relative">
+          <textarea id="Remarks" name="Remarks" type="text" class="peer h-[113px] w-full border rounded-md border-[#0000001F] text-[#00000099] text-[16px] placeholder-transparent focus:outline-none focus:border-[#56CAE5]"></textarea>
+          <label for="Remarks" class="absolute left-4 -top-2 leading-[16px] tracking-tight bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-2 peer-focus:-top-2 peer-focus:text-[#00000099] peer-focus:text-[12px]">Remarks</label>
+        </div>
+      </div>
+
+    </div>
+    <div class=" fixed bottom-0 bg-white h-[54px] w-1/2 border-t border-[#0000001F]">
+      <div class=" w-full h-[54px] z-50 pt-[10px] pb-[10px]  px-6 font-sans flex flex-row-reverse gap-[16px]">
+          <button class="font-sans bg-[#56CAE5] text-white border rounded-md align-middle  h-[36px] w-[64px]  text-[14px] ">
+            Save
+          </button>
+          <button class="font-sans bg-white text-[#FBC02D] border border-[#0000001F] rounded-md align-middle  h-[36px] w-[78px] text-[14px] ">
+            Cancel
+          </button>
+      </div>
+    </div>
+  </form>
+</div>
+<app-navigation>
+  <section class="bg-[#F7F7F7] text-gray mx-auto">
+    <div class="p-6">
+      <div class="flex justify-between pb-4">
+        <div>
+          <div class="text-[18px] text-head-text " >
+            <div class="font-semibold">Order # {{idId}} for {{idUser}}</div>
+          </div>
+          <div class="font-light text-[14px]">
+            Home - Orders - Order # {{idId}} - <span class="font-semibold text-dark-text">Supplier Order Details</span>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-[16px]">
+        <div class="w-full rounded-md bg-white flex justify-between px-[24px] py-[16px] h-[68px]">
+          <div>
+            <div class="flex  space-x-[16px]">
+              <div class="flex ">
+                <div class="pt-1.5"><i class="fi fi-rr-shopping-cart text-[#56CAE5] "></i></div>
+                <div class="text-[#00000099] font-semibold text-[24px]">&nbsp;&nbsp;{{idId}}</div>
+              </div>
+              <div class="relative">
+                <select id="status" name="status" class="peer h-[36px] w-[193px] border rounded-md border-[#0000001F] text-[#00000099] text-[12px] placeholder-transparent focus:outline-none focus:border-[#56CAE5] indent-2" placeholder="john@doe.com" onclick="this.setAttribute('value', this.value);">
+                  <option value="" selected disabled >Waiting for Shipment</option>
+                  <option *ngFor="let status of delivery_statuses" [value]=""><div class=" bg-black rounded-md" >{{status}}</div></option>
+                </select>
+                <label for="status" class="absolute left-4 -top-2 leading-[16px] tracking-tight bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-2 peer-focus:-top-2 peer-focus:text-[#00000099] peer-focus:text-[12px]">Status</label>
+              </div>
+              <div class="relative">
+                <input id="Colli DKW" name="Colli DKW" type="text" class="peer h-[36px] w-[125px] border rounded-md border-[#0000001F] text-[#00000099] text-[16px] placeholder-transparent focus:outline-none focus:border-[#56CAE5] indent-2" placeholder="john@doe.com" value="2" />
+                <label for="Colli DKW" class="absolute left-4 -top-2 leading-[16px] tracking-tight bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-2 peer-focus:-top-2 peer-focus:text-[#00000099] peer-focus:text-[12px]">Colli DKW</label>
+              </div>
+              <div class="relative">
+                <input id="Colli Frozen" name="Colli Frozen" type="text" class="peer h-[36px] w-[125px] border rounded-md border-[#0000001F] text-[#00000099] text-[16px] placeholder-transparent focus:outline-none focus:border-[#56CAE5] indent-2" placeholder="john@doe.com" value="2" />
+                <label for="Colli Frozen" class="absolute left-4 -top-2 leading-[16px] tracking-tight bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-2 peer-focus:-top-2 peer-focus:text-[#00000099] peer-focus:text-[12px]">Colli Frozen</label>
+              </div>
+              <div class="relative">
+                <input id="Colli Koel" name="Colli Koel" type="text" class="peer h-[36px] w-[125px] border rounded-md border-[#0000001F] text-[#00000099] text-[16px] placeholder-transparent focus:outline-none focus:border-[#56CAE5] indent-2" placeholder="john@doe.com" value="2" />
+                <label for="Colli Koel" class="absolute left-4 -top-2 leading-[16px] tracking-tight bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-2 peer-focus:-top-2 peer-focus:text-[#00000099] peer-focus:text-[12px]">Colli Koel</label>
+              </div>
+            </div>
+          </div>
+          <div class="flex space-x-[12px]">
+            <button  class="text-white bg-[#56CAE5] rounded-md flex align-middle p-2 px-3 h-[36px] text-[14px] ">Update</button>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-[16px]">
+          <div class="col-span-1 space-y-[16px]">
+            <div class="  bg-white rounded-md px-[24px] py-[16px] space-y-[16px]">
+              <div class="flex justify-between ">
+                <div class="text-[#00000099] text-[20px]">Order Details</div>
+                <div class="h-[36px] w-[36px] bg-[#F7F7F7] rounded-full relative"><i class="fi fi-rr-pencil absolute left-2.5 top-2 text-[#00000099]"></i></div>
+              </div>
+              <div>
+                <div class="text-[#00000061] text-[12px]">Order Date</div>
+                <div class="text-[#00000099] text-[16px]">28 November 2021</div>
+              </div>
+              <div>
+                <div class="text-[#00000061] text-[12px]">Delivery Date</div>
+                <div class="text-[#00000099] text-[16px]">28 November 2021</div>
+              </div>
+              <div>
+                <div class="text-[#00000061] text-[12px]">Delivery Time</div>
+                <div class="text-[#00000099] text-[16px]">28 November 2021</div>
+              </div>
+            </div>
+            <div class="  bg-white rounded-md px-[24px] py-[16px] space-y-[16px]">
+              <div class="flex justify-between ">
+                <div class="text-[#00000099] text-[20px]">Customer</div>
+                <div class="h-[36px] w-[36px] bg-[#F7F7F7] rounded-full relative"><i class="fi fi-rr-pencil absolute left-2.5 top-2 text-[#00000099]"></i></div>
+              </div>
+              <div class="flex space-x-[16px] border-b w-full border-[#E0E0E0] pb-[15px]">
+                <span class="fi fi-rr-phone-call text-[#56CAE5] w-[12px] h-[16px]"></span>
+                <div class="text-[#00000099] text-[16px]">0646255163</div>
+              </div>
+              <div class="flex space-x-[16px] border-b w-full border-[#E0E0E0] pb-[15px]">
+                <span class="fi fi-rr-envelope text-[#56CAE5] w-[12px] h-[16px]"></span>
+                <div class="text-[#00000099] text-[16px]">perron22@xs4all.nl</div>
+              </div><div class="flex space-x-[16px] border-b w-full border-[#E0E0E0] pb-[15px]">
+              <span class="fi fi-rr-home text-[#56CAE5] w-[12px] h-[16px]"></span>
+              <div class="text-[#00000099] text-[16px]">Gorillas Amsterdam 2259</div>
+            </div>
+              <div class="flex space-x-[16px] border-b w-full border-[#E0E0E0] pb-[15px]">
+                <span class="fi fi-rr-map-marker-home text-[#56CAE5] w-[12px] h-[16px]"></span>
+                <div class="text-[#00000099] text-[16px]">Danzigerbocht 21 A <br>
+                                                          1013 AM Amsterdam Netherlands</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 space-y-[16px]">
+            <div class="bg-white rounded-md">
+              <div class="px-5 pt-5 flex justify-between">
+                <div class="flex space-x-4">
+                  <div class=" flex text-[14px] relative w-[342px] h-[32px]">
+                    <input (keyup)="applyFilter($event)" placeholder="Search Orders" class="absolute rounded-lg outline-0 indent-10  bg-[#F5F8FA] h-full w-full left-0 ">
+                    <i class="fi fi-rr-search absolute left-0 p-2 pl-4"></i>
+                  </div >
+                  <button (click)=headFill() [ngClass]="exHeadFill ? 'bg-dark-blue rounded-full text-white w-[36px] h-[36px] pt-1' : 'bg-none text-[#56CBE5] w-[36px] h-[36px] pt-1'">
+                    <i class="fi fi-rr-filter text-md  "></i>
+                  </button>
+                </div>
+              </div>
+              <div class="px-4">
+                <table mat-table
+                       [dataSource]="listOfOrder"
+                       multiTemplateDataRows
+                       class="px-4 table-auto  mx-auto w-full " matSort>
+                  <ng-container matColumnDef="extend" >
+                    <th mat-header-cell *matHeaderCellDef>
+                      <div class="flex-col items-center">
+                        <div class="h-[46px] w-[20px]  pt-[20px]"></div>
+                        <div *ngIf="exHeadFill">
+                          <div class=" border-t h-[46px] w-[10px] border-[#EFEFEF]" >
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" (click)="expandedElement = expandedElement === element ? null : element ">
+                      <div *ngIf="expandedElement === element ? null : element ; else secExtend " class="h-[46px] w-[10px] flex items-center text-[#009CB2]">
+                        <i class="fi fi-rr-angle-right"></i>
+                      </div>
+                      <ng-template #secExtend class="h-[46px] w-[10px] flex items-center text-[#009CB2]">
+                        <i class="fi fi-rr-angle-down text-[#009CB2]"></i>
+                      </ng-template>
+                    </td>
+                  </ng-container>
+                  <ng-container matColumnDef="select" >
+                    <th mat-header-cell *matHeaderCellDef class="w-[46px]">
+                      <div class="flex-col items-center">
+                        <mat-checkbox
+                          (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()"
+                          [aria-label]="checkboxLabel()" class="h-[46px] pt-[20px]">
+                        </mat-checkbox>
+                        <div *ngIf="exHeadFill">
+                          <div class=" border-t h-[46px] w-[46px] border-[#EFEFEF]" >
+                          </div>
+                        </div>
+                      </div>
+
+                    </th>
+                    <td mat-cell *matCellDef="let row" class="px-2">
+                      <mat-checkbox (click)="$event.stopPropagation()"
+                                    (change)="$event ? selection.toggle(row) : null"
+                                    [checked]="selection.isSelected(row)"
+                                    [aria-label]="checkboxLabel(row)">
+                      </mat-checkbox>
+                    </td>
+                  </ng-container>
+                  <ng-container matColumnDef="no">
+                    <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans" mat-sort-header>
+                      <div class="flex-col items-center">
+                        <div class="h-[46px] pt-[20px] pr-2">NUMBER</div>
+                        <span *ngIf="exHeadFill">
+                  <div class=" border-t h-[46px] border-[#EFEFEF] mx-auto" >
+                      <input (keyup)="applyFilter($event)"  placeholder="Number" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-md h-[36px] mt-[5px] truncate w-[50px] mx-r placeholder-[#00000099]">
+                  </div>
+                </span>
+                      </div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans font-bold"> {{element.no}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="customer">
+                    <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                      <div class="flex-col items-center">
+                        <div class="h-[46px] pt-[20px] pr-2">CUSTOMER</div>
+                        <div *ngIf="exHeadFill">
+                          <div class=" border-t h-[46px] border-[#EFEFEF]" >
+                            <input (keyup)="applyFilter($event)"  placeholder="Customer" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-md h-[36px] mt-[5px] w-[150px] truncate mr-2 placeholder-[#00000099]">
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans "> {{element.customer}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="business" >
+                    <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                      <div class="flex-col items-center">
+                        <div class="h-[46px] pt-[20px] pr-2">BUSINESS</div>
+                        <div *ngIf="exHeadFill">
+                          <div class=" border-t h-[46px] border-[#EFEFEF]" >
+                            <input (keyup)="applyFilter($event)"  placeholder="Business" class="indent-2 text-[14px] bg-[#F5F8FA]  outline-0 rounded-md h-[36px] mt-[5px] w-[80px] truncate mr-2 placeholder-[#00000099]">
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="px-2 text-[14px] font-sans text-[#009CB2]"> {{element.business}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="postcode">
+                    <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                      <div class="flex-col items-center">
+                        <div class="h-[46px] pt-[20px] pr-2">POSTCODE</div>
+                        <div *ngIf="exHeadFill">
+                          <div class=" border-t h-[46px] border-[#EFEFEF]" >
+                            <input (keyup)="applyFilter($event)"  placeholder="Postcode" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-md h-[36px] mt-[5px] w-[80px] truncate mr-2 placeholder-[#00000099]">
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.postcode}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="order_date">
+                    <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                      <div class="flex-col items-center">
+                        <div class="h-[46px] pt-[20px] px-r">ORDER&nbsp;DATE</div>
+                        <div *ngIf="exHeadFill">
+                          <div class=" border-t h-[46px] w-[130px] border-[#EFEFEF] flex" >
+                            <input [matDatepicker]="picker" placeholder="Order Date" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l-md h-[36px] mt-[5px] w-[90px] truncate ml-2 placeholder-[#00000099]">
+                            <mat-datepicker #picker></mat-datepicker>
+                            <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r-md h-[36px] mt-[5px] pt-[12px] w-[20px] mr-2">
+                              <i (click)="picker.open()" class="fi fi-rr-calendar "></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.order_date}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="date_of_delivery">
+                    <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                      <div class="flex-col items-center">
+                        <div class="h-[46px] pt-[20px] px-r">DATE&nbsp;OF&nbsp;DELIVERY</div>
+                        <div *ngIf="exHeadFill">
+                          <div class=" border-t h-[46px] w-[130px] border-[#EFEFEF] flex" >
+                            <input [matDatepicker]="picker" placeholder="Order Date" class="indent-2 text-[14px] bg-[#F5F8FA] outline-0 rounded-l-md h-[36px] mt-[5px] w-[90px] truncate ml-2 placeholder-[#00000099]">
+                            <mat-datepicker #picker></mat-datepicker>
+                            <div class="text-[14px] bg-[#F5F8FA] outline-0 rounded-r-md h-[36px] mt-[5px] pt-[12px] w-[20px] mr-2">
+                              <i (click)="picker.open()" class="fi fi-rr-calendar "></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.date_of_delivery}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="actions" >
+                    <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                      <div class="flex-col items-center">
+                        <div class="h-[46px] pt-[20px] px-r text-center">ACTIONS</div>
+                        <div *ngIf="exHeadFill">
+                          <div class=" border-t h-[46px] border-[#EFEFEF]" >
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class=" mx-auto text-[14px] text-dark-text font-sans">
+                      <div class="flex space-x-3 px-4 justify-center">
+                        <i (click)="newOrderControl()" class="fi fi-rr-pencil text-primary-blue"></i>
+                      </div>
+                    </td>
+                  </ng-container>
+                  <ng-container matColumnDef="expandedDetail">
+                    <td mat-cell *matCellDef="let element" colspan="13" >
+                      <div class="example-element-detail"
+                           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                        <div class="bg-[#F7F7F7] w-full grid grid-cols-6 font-sans">
+                          <div class="col-span-1 p-4">
+                            <div class="space-y-4">
+                              <div class="">
+                                <div class="text-[12px] text-[#00000061] font-sans">Venue</div>
+                                <div class="text-[16px] text-dark-text font-sans">Amsterdam</div>
+                              </div>
+                              <div class="">
+                                <div class="text-[12px] text-[#00000061] font-sans">Discount</div>
+                                <div class="text-[16px] text-dark-text font-sans">€0.00</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-span-1 p-4">
+                            <div class="space-y-4">
+                              <div class="row-span-1">
+                                <div class="text-[12px] text-[#00000061]">Billing</div>
+                                <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-[#F57F17]">Billable</span></div>
+                              </div>
+                              <div class="row-span-1">
+                                <div class="text-[12px] text-[#00000061]">Invoice</div>
+                                <div class="text-[16px]  text-primary-blue">25071</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-span-1 p-4">
+                            <div class="text-[12px] text-[#00000061]">Payment</div>
+                            <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-primary-blue">Paid</span></div>
+                          </div>
+                          <div class="col-span-1 p-4">
+                            <div class="text-[12px] text-[#00000061] font-sans">Price</div>
+                            <div class="text-[16px] text-dark-text font-sans">€663.34</div>
+                          </div>
+                          <div class="col-span-1 p-4">
+                            <div class="text-[12px] text-[#00000061] font-sans">Transport</div>
+                            <div class="text-[16px] text-dark-text font-sans">€0.00</div>
+                          </div>
+                          <div class="col-span-1 p-4">
+                            <div class="text-[12px] text-[#00000061]">Packing slip</div>
+                            <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-[#F57F17]">issues</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </ng-container>
+
+                  <tr mat-header-row  *matHeaderRowDef="['extend', 'select','no'].concat(columnsToDisplay).concat(['actions'])" class=" border-b-2  border-[#EFEFEF]" ></tr>
+
+                  <tr mat-row *matRowDef="let element; columns: ['extend', 'select','no'].concat(columnsToDisplay).concat(['actions']);"
+                      [class.example-expanded-row]="expandedElement === element"
+                      class="example-element-row  border-b-1 border-dashed border-[#EFEFEF]"></tr>
+                  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row" ></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</app-navigation>

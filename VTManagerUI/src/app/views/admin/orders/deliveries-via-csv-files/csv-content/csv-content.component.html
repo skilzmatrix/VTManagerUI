@@ -1,0 +1,114 @@
+<app-navigation>
+  <section class="bg-[#F7F7F7] text-gray mx-auto">
+    <div class="p-6">
+      <app-page-head [text1]="title1" [text2]="title2" [text3]="title3">
+        <button class="text-white bg-light-blue rounded-md w-[142px] flex align-middle p-2 px-3 h-[36px] text-[14px] "><i class="fi fi-rr-cloud-download font-black  align-middle pt-0.5 pr-1"></i> Download File</button>
+      </app-page-head>
+      <app-page-body>
+        <div class="flex pt-6 pl-4 items-center"><i class="fi fi-rr-file text-[#56CAE5] pr-[8px] mt-[4px]"></i> <p class="text-[#00000099] text-[16px] ">applications_factors_pula.xlsx</p></div>
+        <div class="px-4">
+          <table mat-table
+                 [dataSource]="listOfOrder"
+                 multiTemplateDataRows
+                 class="px-4 table-auto  mx-auto w-full " matSort>
+            <ng-container matColumnDef="no">
+              <th mat-header-cell *matHeaderCellDef class=" text-[#00000061] font-sans" >
+                <div class="flex-col items-center">
+                  <div class="h-[46px] pt-[20px] pr-2 text-[12px]">NUMBER</div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans font-bold"> {{element.no}} </td>
+            </ng-container>
+            <ng-container matColumnDef="customer">
+              <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                <div class="flex-col items-center">
+                  <div class="h-[46px] pt-[20px] pr-2">CUSTOMER</div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-[#009CB2] font-sans "> {{element.customer}} </td>
+            </ng-container>
+            <ng-container matColumnDef="business" >
+              <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                <div class="flex-col items-center">
+                  <div class="h-[46px] pt-[20px] pr-2">BUSINESS</div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element" class="px-2 text-[14px] font-sans text-[#009CB2]"> {{element.business}} </td>
+            </ng-container>
+            <ng-container matColumnDef="postcode">
+              <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                <div class="flex-col items-center">
+                  <div class="h-[46px] pt-[20px] pr-2">POSTCODE</div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.postcode}} </td>
+            </ng-container>
+            <ng-container matColumnDef="order_date">
+              <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                <div class="flex-col items-center">
+                  <div class="h-[46px] pt-[20px] px-r">ORDER&nbsp;DATE</div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans "> {{element.order_date}} </td>
+            </ng-container>
+            <ng-container matColumnDef="date_of_delivery">
+              <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                <div class="flex-col items-center">
+                  <div class="h-[46px] pt-[20px] px-r">DATE&nbsp;OF&nbsp;DELIVERY</div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.date_of_delivery}} </td>
+            </ng-container>
+            <ng-container matColumnDef="delivery">
+              <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                <div class="flex-col items-center">
+                  <div class="h-[46px] pt-[20px] px-r">DELIVERY</div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element" class="px-2 text-[11px] text-dark-text font-sans " ><span class="bg-[#4C9ED1] py-1 px-2 rounded-full text-center text-white"> {{element.delivery}} </span></td>
+            </ng-container>
+            <ng-container matColumnDef="payment" >
+              <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                <div class="flex-col items-center">
+                  <div class="h-[46px] pt-[20px] px-r">PAYMENT</div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.payment}} </td>
+            </ng-container>
+            <ng-container matColumnDef="billing" >
+              <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                <div class="flex-col items-center">
+                  <div class="h-[46px] pt-[20px] px-r">BILLING</div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.billing}} </td>
+            </ng-container>
+            <ng-container matColumnDef="price" >
+              <th mat-header-cell *matHeaderCellDef class="text-[12px] text-[#00000061] font-sans">
+                <div class="flex-col items-center">
+                  <div class="h-[46px] pt-[20px] px-r">PRICE</div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element" class="px-2 text-[14px] text-dark-text font-sans"> {{element.price}} </td>
+            </ng-container>
+
+            <tr mat-header-row  *matHeaderRowDef="['no'].concat(columnsToDisplay)" class=" border-b-2  border-[#EFEFEF]" ></tr>
+
+            <tr mat-row *matRowDef="let element; columns: ['no'].concat(columnsToDisplay);"
+                [class.example-expanded-row]="expandedElement === element"
+                class="example-element-row  border-b-1 border-dashed border-[#EFEFEF]"></tr>
+          </table>
+          <mat-paginator style-paginator
+                         [pageSizeOptions]="[10, 20,50]"
+                         [pageSize]="10"
+                         [length]="listOfOrder.data.length"
+                         [showTotalPages]="5 ">
+            ></mat-paginator >
+
+        </div>
+
+      </app-page-body>
+    </div>
+  </section>
+</app-navigation>
+

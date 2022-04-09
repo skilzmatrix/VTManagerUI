@@ -1,72 +1,89 @@
  <div *ngIf="newOrderControlIndicator" class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 flex">
    <div class="overflow-x-hidden overflow-y-auto absolute bg-black opacity-10 z-40 h-full w-full fixed flex modal"></div>
-   <form class="overflow-x-hidden overflow-y-auto absolute fixed right-0 h-screen w-1/2 bg-white z-50 opacity-100 py-3 px-6 space-y-3 font-sans shadow-2xl">
-     <div class="flex justify-between">
-       <div class="text-[#00000099] font-semibold text-[18px]">Add New Order</div>
-       <div (click)="newOrderControl()"><i class="fi fi-rr-cross-small cursor-pointer text-[#00000061] py-1 text-[22px]"></i></div>
-     </div>
-     <div class="flex w-full h-[34px] bg-[#F5F8FA] items-center py-1 px-3 space-x-2  rounded-md">
-       <i class="fi fi-rr-user text-primary-blue pt-1"></i>
-       <select  class="h-full w-full font-sans text-[16px] text-[#00000099] font-light bg-[#F5F8FA] outline-none">
-         <option *ngFor="let user of users" [value]="user" class="text-[16px] text-[#00000098]">{{user}}</option>
-       </select>
-     </div>
-     <div class="text-[16px] font-semibold">
-       Products
-     </div>
-     <div *ngFor="let n of countOfProduct();">
-       <div class="flex  w-full h-[35px] items-center py-1 space-x-3  text-[14px] justify-between">
-         <div  class="flex h-[36px] w-1/2 space-x-6 justify-between ">
-           <div class="h-[36px] min-w-[390px]  border border-[#0000001F] p-2 rounded-md">
-             <select class="outline-none font-sans w-full h-full text-[#00000099] ">
-               <option *ngFor="let user of users" [value]="user" class="" ><p class="">{{user}}</p></option>
-             </select>
+   <form class="overflow-x-hidden overflow-y-auto absolute fixed right-0 h-screen w-1/2 bg-white z-50 opacity-100 font-sans shadow-2xl">
+     <div class=" px-6 font-sans ">
+       <div class="flex justify-between h-[56px] items-center">
+         <div class="text-[#00000099] font-medium leading-[24px] text-[20px]">Add New Order</div>
+         <div (click)="newOrderControl()"><i class="fi fi-rr-cross-small cursor-pointer text-[#00000061] py-1 text-[22px]"></i></div>
+       </div>
+       <div class="flex items-center mt-[2px]">
+         <div class="flex w-full h-[34px] bg-[#F5F8FA] items-center py-1 px-3 space-x-2  rounded-lg">
+           <i class="fi fi-rr-user text-primary-blue pt-1"></i>
+           <select  class="h-full w-full font-sans text-[16px] text-[#00000099] font-normal p-0 border-none bg-[#F5F8FA] outline-none">
+             <option *ngFor="let user of users" [value]="user" class="text-[16px] text-[#00000098]">{{user}}</option>
+           </select>
+         </div>
+       </div>
+       <div class="text-[16px] font-semibold mt-[8px]">
+         Products
+       </div>
+       <div *ngFor="let n of countOfProduct();" class="mt-[16px]">
+         <div class="flex  w-full h-[35px] items-center py-1 space-x-3  text-[14px] justify-between">
+           <div  class="flex h-[36px] w-1/2 space-x-6 justify-between ">
+             <div class="h-[36px] min-w-[390px]  max-w-[390px] border border-[#0000001F] px-2 py-1 rounded-lg">
+               <select class="outline-none font-sans w-full h-full border-none p-0 text-[#00000099] ">
+                 <option selected hidden disabled ><p class="opacity-[70] text-[#00000099]">No products chosen yet...</p></option>
+                 <option *ngFor="let user of users" [value]="user" class="" >{{user}}</option>
+               </select>
+             </div>
+             <input type="number" placeholder="1" value="index" class="font-sans bg-[#F5F8FA] p-1 border border-[#0000001F] p-2 rounded-lg indent-2 text-[14px] h-[36px] w-[58px] placeholder-[#00000099]">
            </div>
-           <input type="number" placeholder="1" value="index" class="font-sans bg-[#F5F8FA] p-1 border border-[#0000001F] p-2 rounded-md indent-2 text-[14px] rounded-md h-[36px] w-[58px] placeholder-[#00000099]">
-         </div>
-         <div class="content-center flex">
-           <i (click)="addPro()" class="fi fi-rr-add text-primary-blue items-center pt-[10px]" ></i>
-         </div>
-       </div>
-     </div>
-     <div class="relative  h-[77px] w-full">
-       <input class="indent-5 border border-[#0000001F] mt-2 rounded-md h-[68px] w-full focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600" id="email" type="text" >
-       <label  class=" text-[#00000099] absolute  left-[14px] text-[12px] "><p class="font-semibold bg-white">Notes</p></label>
-     </div>
-     <div class="flex pt-3 justify-between gap-5">
-       <div class="h-[56px] w-[308px] border rounded-md border-[#0000001F] flex p-1" >
-         <div class="relative h-full w-full">
-           <input [matDatepicker]="picker" class="h-full indent-3 outline-none text-[16px] " >
-           <label  class=" text-[#00000099] absolute -mt-3.5 left-[10px] text-[12px] font-semibold"><p class="bg-white">Delivery Date</p></label>
-         </div>
-         <mat-datepicker #picker></mat-datepicker>
-         <div class=" outline-none h-full p-[10px]">
-           <i (click)="picker.open()" class="fi fi-rr-calendar text-[#56CAE5] text-[22px] "></i>
+           <div class="content-center flex">
+             <i (click)="addPro()" class="fi fi-rr-add text-primary-blue items-center pt-[10px]" ></i>
+           </div>
          </div>
        </div>
-       <div class="h-[56px] w-[308px] border rounded-md border-[#0000001F] flex p-1 relative" >
-         <select  class="h-full w-full font-sans text-[16px  outline-none">
+       <div class="relative mt-[23px]">
+         <input id="notes" name="notes" type="text" class="peer h-[68px] w-full border rounded-lg border-[#0000001F] text-[#00000099] text-[16px] placeholder-transparent focus:outline-none focus:border-[#56CAE5] indent-3" placeholder="john@doe.com" value="" />
+         <label for="notes" class="	 absolute font-roboto leading-[16px] tracking-wide font-normal	 bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-7 peer-focus:-top-2 -top-2 peer-placeholder-shown:left-4 peer-focus:left-4 left-4  peer-focus:text-[#00000099] peer-focus:text-[12px]">Notes</label>
+       </div>
+       <div class="flex justify-between gap-5 mt-[23px]">
+         <div class="h-[56px] w-[308px] border rounded-lg border-[#0000001F] flex p-1" >
+           <div class="relative h-full w-full">
+             <input id="datePicker" name="datePicker"  [matDatepicker]="picker" class="peer h-full w-full indent-3 outline-none text-[16px] " placeholder=" " >
+             <label for="datePicker" class="absolute   leading-[16px] tracking-wide font-normal	 bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-4 peer-focus:-top-3 -top-3 peer-placeholder-shown:left-4 peer-focus:left-4 left-4  peer-focus:text-[#00000099] peer-focus:text-[12px] tracking-wide font-normal		leading-4 font-roboto">Delivery Date</label>
+           </div>
+           <mat-datepicker #picker></mat-datepicker>
+           <div class=" outline-none h-full p-[10px]">
+             <i (click)="picker.open()" class="fi fi-rr-calendar text-[#56CAE5] text-[22px] "></i>
+           </div>
+         </div>
+         <div class="h-[56px] w-[308px] border rounded-lg border-[#0000001F] flex p-1 relative" >
+           <select  class="peer h-full w-full font-sans text-[16px  hover:outline-none border-none p-0" placeholder=" ">
+             <option *ngFor="let time of times"  [value]="time" class="text-[16px] text-[#00000098]">{{time}}</option>
+           </select>
+           <label for="datePicker" class="absolute  font-roboto leading-[16px] tracking-wide font-normal	 bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-4 peer-focus:-top-2 -top-2 peer-placeholder-shown:left-4 peer-focus:left-4 left-4  peer-focus:text-[#00000099] peer-focus:text-[12px]">Delivery Date</label>
+         </div>
+       </div>
+       <div class="h-[56px] w-full border rounded-lg border-[#0000001F] flex p-1 relative mt-[23px]" >
+         <select  class="h-full w-full font-sans text-[16px p-0 border-none outline-none">
+           <option selected disabled hidden ><div class="text-[#000000BC] opacity-20 text-[16px]">Choose payment mode</div></option>
            <option *ngFor="let time of times" [value]="time" class="text-[16px] text-[#00000098]">{{time}}</option>
          </select>
-         <label  class=" text-[#00000099] absolute -mt-3.5 left-[12px] text-[12px] font-semibold"><p class="bg-white ">Delivery Time</p></label>
+         <label  class="font-roboto tracking-wide font-normal		leading-4 text-[#00000099] absolute -mt-3.5 left-[12px] text-[12px] "><p class="bg-white ">Payment method</p></label>
+       </div>
+       <div class="flex w-full border border-[#0000001F] h-[56px] items-center px-[16px] focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600 rounded-lg mt-[23px]">
+         <p class="text-[#00000099] text-[16px] font-bold">€</p>
+         <div class="relative  h-full w-full ">
+           <input class="indent-5  outline-none h-full w-full "  type="text" >
+           <label  class="font-roboto tracking-wide font-normal		leading-4 text-[#00000099] absolute -mt-2.5 -left-[16px] text-[12px] "><p class="font-normal bg-white">Transport Cost</p></label>
+         </div>
+       </div>
+       <div class="mt-[15px]">
+         <p class="text-[#00000061] text-[12px] ">Total Cost</p>
+         <p class="text-[#00000099] text-[16px] font-bold">€</p>
        </div>
      </div>
-     <div class="h-[56px] w-full border rounded-md border-[#0000001F] flex p-1 relative" >
-       <select  class="h-full w-full font-sans text-[16px  outline-none">
-         <option *ngFor="let time of times" [value]="time" class="text-[16px] text-[#00000098]">{{time}}</option>
-       </select>
-       <label  class=" text-[#00000099] absolute -mt-3.5 left-[12px] text-[12px] font-semibold"><p class="bg-white ">Payment method</p></label>
-     </div>
-     <div class="flex w-full border border-[#0000001F] h-[56px] items-center px-[16px] focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600 rounded-md">
-       <p class="text-[#00000099] text-[16px] font-bold">€</p>
-       <div class="relative  h-full w-full ">
-         <input class="indent-5  outline-none h-full w-full "  type="text" >
-         <label  class=" text-[#00000099] absolute -mt-2.5 -left-[16px] text-[12px] "><p class="font-semibold bg-white">Transport Cost</p></label>
+
+     <div class=" fixed bottom-0 bg-white h-[54px] w-1/2 border-t border-[#0000001F]">
+       <div class=" w-full h-[54px] z-50 pt-[10px] pb-[10px]  px-6 font-sans flex flex-row-reverse gap-[16px]">
+         <button class="font-sans bg-[#56CAE5] text-white border rounded-lg align-middle  h-[36px] w-[105px]  text-[14px] ">
+           Save Order
+         </button>
+         <button class="font-sans bg-white text-[#FBC02D] border border-[#0000001F] rounded-lg align-middle  h-[36px] w-[78px] text-[14px] ">
+           Cancel
+         </button>
        </div>
-     </div>
-     <div>
-       <p class="text-[#00000061] text-[12px] ">Total Cost</p>
-       <p class="text-[#00000099] text-[16px] font-bold">€</p>
      </div>
    </form>
  </div>
@@ -88,15 +105,15 @@
             </button>
           </div>
           <div class="flex space-x-2">
-            <button [matMenuTriggerFor]="actions" class="text-light-blue border border-border-gray rounded-md px-3 h-[36px] text-[14px] items-center">
-              Action<i class="fi fi-rr-caret-down text-dark-text align-middle pl-2"></i>
+            <button [matMenuTriggerFor]="actions" class="text-light-blue border border-border-gray rounded-md px-3 h-[36px] text-[14px] flex items-center">
+              Action<i class="fi fi-rr-caret-down text-dark-text flex align-middle pl-2"></i>
             </button>
             <mat-menu #actions="matMenu" xPosition="before">
               <button mat-menu-item class="text-[#FF0000] "><i class="fi fi-rr-trash  align-middle px-2"></i>Delete</button>
             </mat-menu>
 
-            <button [matMenuTriggerFor]="exports" class="text-light-blue border border-border-gray rounded-md px-3 h-[36px] text-[14px] ">
-              <i class="fi fi-rr-upload  align-middle px-2"></i>Export<i class="fi fi-rr-caret-down text-dark-text align-middle pl-2"></i>
+            <button [matMenuTriggerFor]="exports" class="text-light-blue border border-border-gray rounded-md px-3 h-[36px] text-[14px] flex items-center">
+              <i class="fi fi-rr-upload flex align-middle px-2"></i>Export<i class="fi fi-rr-caret-down text-dark-text flex align-middle pl-2"></i>
             </button>
             <mat-menu #exports="matMenu" xPosition="before">
               <button mat-menu-item>Download as CSV</button>
@@ -104,13 +121,24 @@
               <button mat-menu-item>Warehouse colli labels</button>
               <button mat-menu-item>Packing List</button>
             </mat-menu>
+<!--            <button [matMenuTriggerFor]="colu" class="text-light-blue border border-border-gray rounded-md px-3 h-[36px] text-[14px] ">-->
+<!--              <i class="fi fi-rr-upload  align-middle px-2"></i>Columns<i class="fi fi-rr-caret-down text-dark-text align-middle pl-2"></i>-->
+<!--            </button>-->
+<!--            <mat-menu #colu="matMenu" xPosition="before" class="w-[200px] h-[200px] px-4 flex flex-col space-y-6"  >-->
+<!--                <select multiple [(ngModel)]="columnsToDisplay"  class="h-[220px]" >-->
+<!--                  <option *ngFor="let col of availableColumns" [value]="col" class="text-primary-blue">{{col}}</option>-->
+<!--                </select>-->
+<!--            </mat-menu>-->
+            <div class="relative">
+              <div class="absolute border h-[36px] w-[105px] border-[#0000001F] rounded-md"></div>
+              <mat-form-field class="  relative h-[6px] w-[106px]">
+                <mat-label class="text-[#56CBE5]  items-center flex"><p>Columns</p> <i class="fi fi-rr-caret-down flex align-middle text-[#00000099]"></i></mat-label>
+                <mat-select multiple [(ngModel)]="columnsToDisplay"  class="border h-[22px]" >
+                  <mat-option *ngFor="let col of availableColumns" [value]="col" class=" text-primary-blue">{{col}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
 
-            <mat-form-field appearance="outline" class="h-[22px]">
-              <mat-label>Columns</mat-label>
-              <mat-select multiple [(ngModel)]="columnsToDisplay"  class="h-[22px]" >
-                <mat-option *ngFor="let col of availableColumns" [value]="col" class="text-primary-blue">{{col}}</mat-option>
-              </mat-select>
-            </mat-form-field>
           </div>
         </div>
         <div class="px-4">
@@ -130,10 +158,10 @@
               </th>
               <td mat-cell *matCellDef="let element" (click)="expandedElement = expandedElement === element ? null : element ">
                 <div *ngIf="expandedElement === element ? null : element ; else secExtend " class="h-[46px] w-[10px] flex items-center text-[#009CB2]">
-                  <i class="fi fi-rr-angle-right"></i>
+                  <i class="fi fi-rr-angle-small-right font-black text-[20px]"></i>
                 </div>
                 <ng-template #secExtend class="h-[46px] w-[10px] flex items-center text-[#009CB2]">
-                  <i class="fi fi-rr-angle-down text-[#009CB2]"></i>
+                  <i class="fi fi-rr-angle-small-down font-black text-[20px] text-[#009CB2]"></i>
                 </ng-template>
               </td>
             </ng-container>
@@ -322,45 +350,59 @@
                 <div class="example-element-detail"
                      [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
                   <div class="bg-[#F7F7F7] w-full grid grid-cols-6 font-sans">
-                    <div class="col-span-1 p-4">
+                    <div class="col-span-1 p-4" *ngIf="!columnsToDisplay.includes('customer')">
                       <div class="space-y-4">
-                        <div class="">
-                          <div class="text-[12px] text-[#00000061] font-sans">Venue</div>
-                          <div class="text-[16px] text-dark-text font-sans">Amsterdam</div>
-                        </div>
-                        <div class="">
-                          <div class="text-[12px] text-[#00000061] font-sans">Discount</div>
-                          <div class="text-[16px] text-dark-text font-sans">€0.00</div>
-                        </div>
+                          <div class="text-[12px] text-[#00000061] font-sans">Customer</div>
+                          <div class="text-[16px] text-dark-text font-sans">{{element.customer}}</div>
                       </div>
                     </div>
-                    <div class="col-span-1 p-4">
+                    <div class="col-span-1 p-4" *ngIf="!columnsToDisplay.includes('business')">
                       <div class="space-y-4">
-                        <div class="row-span-1">
-                          <div class="text-[12px] text-[#00000061]">Billing</div>
-                          <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-[#F57F17]">Billable</span></div>
-                        </div>
-                        <div class="row-span-1">
-                          <div class="text-[12px] text-[#00000061]">Invoice</div>
-                          <div class="text-[16px]  text-primary-blue">25071</div>
-                        </div>
+                          <div class="text-[12px] text-[#00000061] font-sans">Business</div>
+                          <div class="text-[16px] text-dark-text font-sans">{{element.business}}</div>
                       </div>
                     </div>
-                    <div class="col-span-1 p-4">
-                      <div class="text-[12px] text-[#00000061]">Payment</div>
-                      <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-primary-blue">Paid</span></div>
+                    <div class="col-span-1 p-4" *ngIf="!columnsToDisplay.includes('postcode')">
+                      <div class="space-y-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Postcode</div>
+                          <div class="text-[16px] text-dark-text font-sans">{{element.postcode}}</div>
+                      </div>
                     </div>
-                    <div class="col-span-1 p-4">
-                      <div class="text-[12px] text-[#00000061] font-sans">Price</div>
-                      <div class="text-[16px] text-dark-text font-sans">€663.34</div>
+                    <div class="col-span-1 p-4" *ngIf="!columnsToDisplay.includes('order_date')">
+                      <div class="space-y-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Order Date</div>
+                          <div class="text-[16px] text-dark-text font-sans">{{element.order_date}}</div>
+                      </div>
                     </div>
-                    <div class="col-span-1 p-4">
-                      <div class="text-[12px] text-[#00000061] font-sans">Transport</div>
-                      <div class="text-[16px] text-dark-text font-sans">€0.00</div>
+                    <div class="col-span-1 p-4" *ngIf="!columnsToDisplay.includes('date_of_delivery')">
+                      <div class="space-y-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Date Of Delivery</div>
+                          <div class="text-[16px] text-dark-text font-sans">{{element.date_of_delivery}}</div>
+                      </div>
                     </div>
-                    <div class="col-span-1 p-4">
-                      <div class="text-[12px] text-[#00000061]">Packing slip</div>
-                      <div class="text-[12px] text-white bg-none"><span class=" p-1 px-2 rounded-full  bg-[#F57F17]">issues</span></div>
+                    <div class="col-span-1 p-4" *ngIf="!columnsToDisplay.includes('delivery')">
+                      <div class="space-y-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Delivery</div>
+                          <div class="text-[16px] text-dark-text font-sans">{{element.delivery}}</div>
+                      </div>
+                    </div>
+                    <div class="col-span-1 p-4" *ngIf="!columnsToDisplay.includes('payment')">
+                      <div class="space-y-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Payment</div>
+                          <div class="text-[16px] text-dark-text font-sans">{{element.payment}}</div>
+                      </div>
+                    </div>
+                    <div class="col-span-1 p-4" *ngIf="!columnsToDisplay.includes('billing')">
+                      <div class="space-y-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Billing</div>
+                          <div class="text-[16px] text-dark-text font-sans">{{element.billing}}</div>
+                      </div>
+                    </div>
+                    <div class="col-span-1 p-4" *ngIf="!columnsToDisplay.includes('price')">
+                      <div class="space-y-4">
+                          <div class="text-[12px] text-[#00000061] font-sans">Price</div>
+                          <div class="text-[16px] text-dark-text font-sans">{{element.price}}</div>
+                      </div>
                     </div>
                   </div>
                 </div>

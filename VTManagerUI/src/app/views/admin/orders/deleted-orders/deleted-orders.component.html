@@ -16,8 +16,9 @@
           </div>
           <div class="flex space-x-2">
             <button class="text-white bg-light-blue rounded  flex align-middle p-2 px-3 h-[36px] text-[14px] "><i class="fi fi-rr-undo-alt font-black  align-middle pt-0.5 pr-1"></i>Put Back</button>
-            <mat-form-field >
-              <mat-select multiple [(ngModel)]="columnsToDisplay"   placeholder='Columns'>
+            <mat-form-field appearance="outline" class="h-[22px]">
+              <mat-label>Columns</mat-label>
+              <mat-select multiple [(ngModel)]="columnsToDisplay"  class="h-[22px]" >
                 <mat-option *ngFor="let col of availableColumns" [value]="col" class="text-primary-blue">{{col}}</mat-option>
               </mat-select>
             </mat-form-field>

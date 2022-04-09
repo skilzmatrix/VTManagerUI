@@ -21,7 +21,8 @@ import {ActivatedRoute, Router} from "@angular/router";
       transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],
-})export class OrderDeatailsComponent implements OnInit {
+})
+export class OrderDeatailsComponent implements OnInit {
   public id: string = '';
   delivery_statuses=['Waiting','Ready','Delivered'];
   payment_statuses=['Waiting','Ready','Delivered'];

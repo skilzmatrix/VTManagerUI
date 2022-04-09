@@ -1,16 +1,18 @@
-import {AfterViewInit, Component, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {SelectionModel} from '@angular/cdk/collections';
-import {animate, state, style, transition, trigger} from "@angular/animations";
-import {OrderList, OrdersInterface} from "../../../../interfaces/orders";
-import {OrdersService} from "../../../../services/orders.service";
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {OrderList, OrdersInterface} from "../../../../../interfaces/orders";
 import {MatTableDataSource} from "@angular/material/table";
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {SelectionModel} from "@angular/cdk/collections";
+import {FormControl} from "@angular/forms";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSort} from "@angular/material/sort";
+import {OrdersService} from "../../../../../services/orders.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {animate, state, style, transition, trigger} from "@angular/animations";
+
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.css'],
+  selector: 'app-suplier-order-details',
+  templateUrl: './suplier-order-details.component.html',
+  styleUrls: ['./suplier-order-details.component.css'],
   providers: [OrdersService],
   animations: [
     trigger('detailExpand', [
@@ -20,33 +22,42 @@ import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angul
     ]),
   ],
 })
-export class OrdersComponent implements OnInit,AfterViewInit  {
+export class SuplierOrderDetailsComponent implements OnInit {
+  public id: string = '';
+  public idId: string = '';
+  public idUser: string = '';
+  delivery_statuses=['Waiting','Ready','Delivered'];
+  statu='';
   title1="Orders";
   title2="Home -";
   title3="Orders";
-  availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery','billing','payment','price'];
-  columnsToDisplay:any = ['customer', 'business', 'postcode', 'order_date', 'date_of_delivery', 'delivery',];
+  availableColumns:any = [ 'customer', 'business', 'postcode', 'order_date'];
+  columnsToDisplay = [  'customer', 'business', 'postcode', 'order_date'];
   expandedElement: OrdersInterface|null = null;
   listOfOrder: MatTableDataSource<OrdersInterface> = new MatTableDataSource();
   selection = new SelectionModel<OrdersInterface>(true, []);
-  toppings       = new FormControl();
+  toppings = new FormControl();
   @ViewChild(MatPaginator,{static:true}) paginator?: MatPaginator;
   @ViewChild(MatSort) sort: MatSort | null = null;
   exHeadFill=false;
   extention =true;
-  newOrderControlIndicator= true ;
+  newOrderControlIndicator= true;
   selected = '';
   private n=1;
   selectedOptions: any;
   users = ['Anne&Max Rotterdam Korte Hoog 1', 'Anne&Max Rotterdam Korte Hoog 2'];
   private product :number = 1;
   times=['10.00 - 1.00','12.00 - 3.00','4.00 - 7.30','9.30 - 12.30']
-
-  constructor(private ordersService: OrdersService) {
+  supplierSecIndicator = true;
+  publisherSecIndicator = false;
+  constructor(private ordersService: OrdersService,
+              private route: ActivatedRoute,
+              private router: Router,
+  ) {
 
   }
 
-
+  math=(Math.floor(Math.random()*100));
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -58,6 +69,9 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
   }
   ngOnInit() {
     this.getOrderList();
+    this.id = this.route.snapshot.paramMap.get('id') ?? '';
+    this.idId=this.id.slice(0,3);
+    this.idUser=this.id.slice(3);
   }
   ngAfterViewInit() {
     this.listOfOrder.paginator = this.paginator as MatPaginator;
@@ -66,13 +80,13 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
   getOrderList() {
     this.ordersService.getOrders()
       .subscribe({
-      next: (data : OrderList) => {
-        this.listOfOrder.data = data.orders;
+        next: (data : OrderList) => {
+          this.listOfOrder.data = data.orders;
 
-      }, error: (error) => {
-        console.log(error);
-      }
-    });
+        }, error: (error) => {
+          console.log(error);
+        }
+      });
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
@@ -90,7 +104,7 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
   /** Selects all rows if they are not all selected; otherwise clear selection. */
 
   countOfProduct(){
-      return Array(this.product ).fill(0).map((x,i)=>i);
+    return Array(this.product ).fill(0).map((x,i)=>i);
   }
   addPro(){
     this.product = this.product+1;
@@ -118,7 +132,7 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
 
 
   tableColumnController() {
-   console.log("activated table column controller");
+    console.log("activated table column controller");
   }
 
   headFill() {
@@ -131,6 +145,15 @@ export class OrdersComponent implements OnInit,AfterViewInit  {
 
   newOrderControl() {
     this.newOrderControlIndicator = !this.newOrderControlIndicator;
+  }
+
+  supplierSec() {
+    this.supplierSecIndicator = !this.supplierSecIndicator;
+    this.publisherSecIndicator = !this.publisherSecIndicator;
+  }
+  publisherSec() {
+    this.publisherSecIndicator = !this.publisherSecIndicator;
+    this.supplierSecIndicator = !this.supplierSecIndicator;
   }
 }
 

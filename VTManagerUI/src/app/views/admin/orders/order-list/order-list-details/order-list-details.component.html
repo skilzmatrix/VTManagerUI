@@ -2,17 +2,12 @@
   <section class="bg-[#F7F7F7] text-gray mx-auto">
     <div class="p-6">
       <app-page-head [text1]="title1" [text2]="title2" [text3]="title3">
-        <button class="flex space-x-4 font-sans flex bg-[#FF0000] text-white  rounded-md flex align-middle p-2 px-3 h-[36px] text-[14px] ">
-          <i class="fi fi-rr-trash  align-middle px-2"></i>Delete
-        </button>
       </app-page-head>
       <app-page-body>
         <div class="pl-[24px] pt-[24px] ">
-          <div>
-            <mat-form-field class="h-[36px] w-[816px]" appearance="outline">
-              <mat-label>First name</mat-label>
-              <input matInput class="h-[36px] w-[816px]">
-            </mat-form-field>
+          <div class="relative">
+            <input id="Orderlist Name" name="Orderlist Name" type="text" class="peer h-[54px] w-[816px]  border rounded-md border-[#0000001F] text-[#00000099] text-[16px] placeholder-transparent focus:outline-none focus:border-[#56CAE5] indent-3" placeholder="john@doe.com" value="2" />
+            <label for="Orderlist Name" class="absolute left-4 -top-2 leading-[16px] tracking-tight bg-white text-[#00000099] text-[12px] transition-all peer-placeholder-shown:text-[16px] peer-placeholder-shown:font-medium peer-placeholder-shown:text-[#00000099] peer-placeholder-shown:top-5 peer-placeholder-shown:left-4 peer-focus:left-4  peer-focus:-top-2 peer-focus:text-[#00000099] peer-focus:text-[12px]">Orderlist Name</label>
           </div>
           <div class="py-[12px]">
             <mat-form-field appearance="outline" class="h-[36px] w-[816px]">

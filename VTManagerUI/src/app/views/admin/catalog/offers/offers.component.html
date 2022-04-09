@@ -25,8 +25,9 @@
               <button mat-menu-item class="text-[#FF0000] "><i class="fi fi-rr-trash  align-middle px-2"></i>Delete</button>
             </mat-menu>
 
-            <mat-form-field >
-              <mat-select multiple [(ngModel)]="columnsToDisplay"   placeholder='Columns'>
+            <mat-form-field appearance="outline" class="h-[22px]">
+              <mat-label>Columns</mat-label>
+              <mat-select multiple [(ngModel)]="columnsToDisplay"  class="h-[22px]" >
                 <mat-option *ngFor="let col of availableColumns" [value]="col" class="text-primary-blue">{{col}}</mat-option>
               </mat-select>
             </mat-form-field>

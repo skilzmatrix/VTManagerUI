@@ -93,6 +93,9 @@ import { NavBarComponent } from './layouts/admin/nav-bar/nav-bar.component';
 import {MatSortModule} from "@angular/material/sort";
 import { SideBarComponent } from './layouts/admin/side-bar/side-bar.component';
 import { OrderListDetailsComponent } from './views/admin/orders/order-list/order-list-details/order-list-details.component';
+import { SuplierOrderDetailsComponent } from './views/admin/orders/orders/suplier-order-details/suplier-order-details.component';
+import { CsvContentComponent } from './views/admin/orders/deliveries-via-csv-files/csv-content/csv-content.component';
+import { NewProductDetailsComponent } from './views/admin/catalog/products/new-product-details/new-product-details.component';
 
 
 @NgModule({
@@ -155,6 +158,9 @@ import { OrderListDetailsComponent } from './views/admin/orders/order-list/order
     SideBarComponent,
     OrderDeatailsComponent,
     OrderListDetailsComponent,
+    SuplierOrderDetailsComponent,
+    CsvContentComponent,
+    NewProductDetailsComponent,
   ],
     imports: [
         BrowserModule,

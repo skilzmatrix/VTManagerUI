@@ -2,6 +2,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.raleway_bold_20px{
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color:#000000DE;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+.raleway_regular_14px{
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  color:#00000061;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+
 /*// Background border*/
 .mat-checkbox .mat-checkbox-frame {
   /*border-color: none;*/
@@ -104,16 +122,41 @@ th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:la
   background: none !important;
 }
 
-.mat-form-field-infix{
-  padding-top: 2px !important;
-  padding-bottom: 2px !important;
+/*.mat-form-field-infix{*/
+/*  padding-top: 0 !important;*/
+/*  padding-bottom: 0 !important;*/
+/*}*/
+
+/*.mat-form-field{*/
+/*  top: -3px !important;*/
+
+
+/*}*/
+/*.mat-select-arrow-wrapper{*/
+/*  transform: translateY(35%) !important;*/
+/*}*/
+.mat-tab-label{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  min-width: auto !important;
+  opacity: 100% !important;
+}
+.mat-tab-label:focus{
+  color: #56CBE5 !important;
+}
+.mat-tab-header{
+  border-bottom: none !important;
 }
 
-.mat-form-field{
-  top: -3px !important;
-
+.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-0.5em) translateX(1em) scale(0.9) !important;
 
 }
-.mat-select-arrow-wrapper{
-  transform: translateY(35%) !important;
+.mat-form-field-underline{
+  width: 0 !important;
 }
+.cdk-overlay-pane{
+  transform: translateX(-157px) translateY(22px) !important;
+}
+
+

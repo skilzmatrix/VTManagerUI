@@ -1,0 +1,80 @@
+table {
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+/*.mat-select-min-line{*/
+/*  color:#00000099 !important;*/
+/*  font-size: 16px !important;*/
+
+/*}*/
+
+
+/*.mat-select-value{*/
+/*  color:#0f0000 !important;*/
+/*}*/
+
+
+/*input:focus ~ label,*/
+/*input:not(:placeholder-shown) ~ label,*/
+/*select:focus ~ label,*/
+/*select:not([value='']):valid ~ label {*/
+/*   !*@apply transform; scale-75; -translate-y-6;*!*/
+/*  --tw-translate-x: 0;*/
+/*  --tw-rotate: 0;*/
+/*  --tw-skew-x: 0;*/
+/*  --tw-skew-y: 0;*/
+/*  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate))*/
+/*  skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));*/
+/*  --tw-scale-x: 0.75;*/
+/*  --tw-scale-y: 0.75;*/
+/*  --tw-translate-y: -18px;*/
+/*  color: #00000099;*/
+/*  left: 10px;*/
+/*  z-index: 1;*/
+/*  padding-left:6px ;*/
+/*  padding-right:6px ;*/
+/*  font-weight: 500;*/
+/*}*/

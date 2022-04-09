@@ -45,3 +45,9 @@ tr.example-element-row:not(.example-expanded-row):active {
 .example-element-description-attribution {
   opacity: 0.5;
 }
+.mat-select-value{
+  visibility: hidden !important;
+}
+.mat-select-arrow{
+  visibility: hidden !important;
+}

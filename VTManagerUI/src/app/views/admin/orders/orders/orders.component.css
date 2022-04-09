@@ -65,3 +65,18 @@ tr.example-element-row:not(.example-expanded-row):active {
 
 
 }
+.mat-select-multiple{
+  visibility: hidden !important;
+  border:none !important;
+  padding: 0 !important;
+}
+.mat-select-multiple {
+  appearance: none !important;
+}
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 0em !important;
+}
+.mat-form-field-label {
+  border:1px !important;
+}
+

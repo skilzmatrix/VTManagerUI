@@ -1,0 +1,110 @@
+<app-navigation>
+  <section class="bg-[#F7F7F7] text-gray mx-auto">
+    <div class="p-6">
+      <app-page-head [text1]="title1" [text2]="title2" [text3]="title3">
+      </app-page-head>
+      <app-page-body>
+        <div class="w-full ">
+            <div class="flex justify-between border-b border-[#E3E3E3]">
+              <ul class="flex font-sans text-[14px]">
+                <li class="px-[20px] pt-[13px] pb-[11px] -mb-0.5" (click)="toggleTabs(1)" [ngClass]="{'text-[#666666]': openTab !== 1, 'bg-white text-[#009CB2] border-[#E3E3E3] border border-b-white rounded-t-md': openTab === 1}">
+                  English
+                </li>
+              </ul>
+              <div class="pr-[31px] pt-[16px]"><i class="fi fi-rr-add text-[#56CAE5]"></i></div>
+            </div>
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+              <div class="px-4 py-5 flex-auto">
+                <div class="tab-content tab-space">
+                  <div [ngClass]="{'hidden': openTab !== 1, 'block': openTab === 1}">
+                    <div class="p-4 flex flex-col space-y-4" >
+                      <p class="text-[#00000099] text-[20px] font-medium">Product Info</p>
+                      <form>
+                        <div class="flex space-x-6">
+                          <label class="bg-[#F7F7F7] flex w-[150px] h-[150px] rounded justify-center items-center border border-dashed	">
+                            <div class=" rounded-full flex justify-center text-center items-center text-[20px] text-[#707070]">
+                              No Image
+                            </div>
+                            <input type="file" class=" hidden">
+                          </label>
+                          <div class="flex flex-col space-y-[10px] pt-[34px] h-[150px] ">
+                            <button class="bg-[#56CAE5] h-[36px]  w-[123px] rounded-md text-white text-center">Upload Image</button>
+                            <button class="bg-[#FBC02D] h-[36px] w-[123px] rounded-md text-[#00000099] text-center">Delete Image</button>
+                          </div>
+                        </div>
+                      </form>
+                      <div class="gap-[16px] pt-[30px] text-sans">
+                        <mat-form-field appearance="outline" class="w-[816px]">
+                          <mat-label>Product Name</mat-label>
+                          <input matInput type="text" value="Rund ribeye geportioneerd 5x200gram" class="text-sans text-[#000000BC] text-[16px] h-[39.5px] w-full ">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="w-[816px]">
+                          <mat-label class="text-sans">Supplier</mat-label>
+                          <mat-select class="text-sans h-[39.5px] w-full ">
+                            <mat-option *ngFor="let supplier of cities" value="supplier">{{supplier}}</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                        <div class="flex space-x-[16px]">
+                          <mat-form-field appearance="outline" class="w-[400px]">
+                            <mat-label class="text-sans">Category</mat-label>
+                            <mat-select class="text-sans h-[39.5px] w-full ">
+                              <mat-option *ngFor="let supplier of cities" value="supplier">{{supplier}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <mat-form-field appearance="outline" class="w-[400px]">
+                            <mat-label class="text-sans">Product type</mat-label>
+                            <mat-select class="h-[39.5px] w-full text-sans">
+                              <mat-option *ngFor="let supplier of cities" value="supplier">{{supplier}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+                        <div class="flex space-x-[16px]">
+                          <mat-form-field appearance="outline" class="w-[400px]">
+                            <mat-label class="text-sans">Category</mat-label>
+                            <mat-select class="text-sans h-[39.5px] w-full ">
+                              <mat-option *ngFor="let supplier of cities" value="supplier">{{supplier}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <div class="h-[56px] pt-[16px]">
+                            <mat-checkbox class="flex align-middle items-center" [(ngModel)]="checked">Weegproduct ?</mat-checkbox>
+                          </div>
+                        </div>
+                        <div class="flex space-x-[16px]">
+                          <mat-form-field appearance="outline" class="w-[400px]">
+                            <mat-label>Sales Quantity</mat-label>
+                            <input matInput type="text" value="1.00" class="text-sans text-[#000000BC] text-[16px] h-[39.5px] w-full ">
+                          </mat-form-field>
+                          <mat-form-field appearance="outline" class="w-[400px]">
+                            <mat-label class="text-sans">Category</mat-label>
+                            <mat-select class="text-sans h-[39.5px] w-full ">
+                              <mat-option *ngFor="let supplier of cities" value="supplier">{{supplier}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+                        <div class="flex ">
+                          <mat-form-field appearance="outline" class="w-[400px]">
+                            <mat-label class="text-sans">Category</mat-label>
+                            <mat-select class="text-sans h-[39.5px] w-full ">
+                              <mat-option *ngFor="let supplier of cities" value="supplier">{{supplier}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+                        <div class="flex space-x-[10px]">
+                          <div class="w-[810px] "> <p-editor  [style]="{'height':'180px'}"></p-editor></div>
+                        </div>
+                      </div>
+                      <hr class="text-[#00000029]">
+                      <div class="flex justify-end space-x-[10px]">
+                        <button  type="button" class="h-[36px] w-[78px] text-[#FBC02D] rounded border">Cancel</button>
+                        <button  type="button" class="h-[36px] w-[64px] text-white rounded bg-[#56CAE5]">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </app-page-body>
+    </div>
+  </section>
+</app-navigation>
